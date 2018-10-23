@@ -55,7 +55,9 @@
   <ItemGroup>
     <Content Include="Eventos\EventoCSharp.txt" />
     <Content Include="Eventos\EventoVB.txt" />
-    <Content Include="XMLFile1.xml" />
+    <Content Include="XMLFile1.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
