@@ -35,10 +35,10 @@
             // 
             // bt
             // 
-            this.bt.Location = new System.Drawing.Point(285, 32);
+            this.bt.Location = new System.Drawing.Point(285, 35);
             this.bt.Name = "bt";
-            this.bt.Size = new System.Drawing.Size(75, 23);
-            this.bt.TabIndex = 0;
+            this.bt.Size = new System.Drawing.Size(75, 20);
+            this.bt.TabIndex = 1;
             this.bt.Text = "Aceptar";
             this.bt.UseVisualStyleBackColor = true;
             this.bt.Click += new System.EventHandler(this.bt_Click);
@@ -48,7 +48,7 @@
             this.txt.Location = new System.Drawing.Point(23, 35);
             this.txt.Name = "txt";
             this.txt.Size = new System.Drawing.Size(256, 20);
-            this.txt.TabIndex = 1;
+            this.txt.TabIndex = 0;
             this.txt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // lbl

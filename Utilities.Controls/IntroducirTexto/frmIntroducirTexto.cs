@@ -23,7 +23,7 @@ namespace Utilities.Controls.IntroducirTexto
 
         private void frmIntroducirTexto_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void bt_Click(object sender, EventArgs e)

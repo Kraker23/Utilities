@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Clases.MessageTemporal;
-using static Utilities.Clases.Leyenda.DropDownLeyenda;
-using static Utilities.Clases.Leyenda.Menu;
+using static Utilities.Controls.Leyenda.DropDownLeyenda;
+using static Utilities.Controls.Leyenda.Menu;
 
 namespace Utilities.Test
 {
@@ -61,7 +61,7 @@ namespace Utilities.Test
 
             ContextMenuStrip menu = new ContextMenuStrip();
 
-            menu.Items.Add("Hola", Utilities.Clases.Leyenda.Menu.GetImagen(Color.Red));
+            menu.Items.Add("Hola", Utilities.Controls.Leyenda.Menu.GetImagen(Color.Red));
 
             bt.Menu = menu;
 

@@ -56,6 +56,11 @@
     <Compile Include="IntroducirTexto\frmIntroducirTexto.Designer.cs">
       <DependentUpon>frmIntroducirTexto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Leyenda\DropDownLeyenda.cs" />
+    <Compile Include="Leyenda\Menu.cs" />
+    <Compile Include="Leyenda\ToolStripCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ProgressBarBackGround\cProgressBackground.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -80,7 +85,7 @@
       <DependentUpon>cProgressBackground.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
@@ -117,6 +122,8 @@
     <Content Include="Iconos\text_binary.png" />
     <Content Include="Iconos\text_binary1.png" />
     <Content Include="Iconos\text_marked.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\check2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

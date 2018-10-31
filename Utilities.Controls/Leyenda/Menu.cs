@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Utilities.Clases.Leyenda
+namespace Utilities.Controls.Leyenda
 {
     public class Menu
     {
@@ -55,7 +55,7 @@ namespace Utilities.Clases.Leyenda
                     {
                         menuLocation = new Point(0, Height);
                     }
-
+                    
                     Menu.Show(this, menuLocation);
                 }
             }

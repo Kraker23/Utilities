@@ -8,7 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 
-namespace Utilities.Clases.Leyenda
+namespace Utilities.Controls.Leyenda
 {
     public class DropDownLeyenda
     {
