@@ -81,7 +81,7 @@
         #endregion
 
         private System.Windows.Forms.Button bt;
-        private System.Windows.Forms.TextBox txt;
         private System.Windows.Forms.Label lbl;
+        public System.Windows.Forms.TextBox txt;
     }
 }

@@ -52,5 +52,10 @@ namespace Utilities.Extensions
             }
             return resultado;
         }
+
+        public static List<T> getPrimeros<T>(this List<T> source, int primeros)
+        {
+            return source.GetRange(0, source.Count > primeros ? primeros : source.Count);
+        }
     }
 }

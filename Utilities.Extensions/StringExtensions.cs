@@ -256,6 +256,33 @@ namespace Utilities.Extensions
             return occurencies;
         }
 
+        /// <summary>
+        /// Duplicar el Texto X Veces 
+        /// </summary>
+        /// <param name="texto">texto que se va a dulicar</param>
+        /// <param name="veces">Cuantas veces se va a Duplicar</param>
+        /// <returns></returns>
+        public static string DuplicarTexto(this string texto, int veces)
+        {
+            string resultado = string.Empty;
+            if (veces > 1)
+            {
+                for (int i = 1; i <= veces; i++)
+                {
+                    resultado += texto;
+                }
+                return resultado;
+            }
+            else if (veces == 1)
+            {
+                return texto;
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
+
         /// <summary> Obtener el nombre del archivo de una ruta</summary>
         /// <param name="path"></param>
         /// <returns></returns>

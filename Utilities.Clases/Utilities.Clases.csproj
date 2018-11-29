@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PortaPapeles\PortaPapeles.cs" />
     <Compile Include="Correo\Correo.cs" />
     <Compile Include="Error\Error.cs" />
     <Compile Include="MessageTemporal\MessageBoxTemporal.cs" />

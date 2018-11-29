@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilities.Clases.PortaPapeles;
+using Utilities.Controls.AutoUpdate;
+using Utilities.Controls.IntroducirTexto.EditarImagen;
 
 namespace Utilities.Test
 {
@@ -16,7 +20,20 @@ namespace Utilities.Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
+            //Application.Run(new frmEditarImg());
+
+            Application.Run(new frmUpdate("\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase", "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio"));
+          
+
+            //Image    img = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
+            //Application.Run(new frmEditarImg(new Bitmap(img)));
+
+            //Image img = PortaPapeles.getClipboardImage();
+            //if (img != null)
+            //{
+            //    Application.Run(new frmEditarImg(new Bitmap(img)));
+            //}
         }
     }
 }
