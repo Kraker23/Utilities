@@ -53,6 +53,13 @@ namespace Utilities.Extensions
             return resultado;
         }
 
+        /// <summary>
+        /// Obtener los Primeros X Elementos de una lista
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="primeros"></param>
+        /// <returns></returns>
         public static List<T> getPrimeros<T>(this List<T> source, int primeros)
         {
             return source.GetRange(0, source.Count > primeros ? primeros : source.Count);
