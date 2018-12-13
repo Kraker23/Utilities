@@ -110,9 +110,10 @@ namespace Utilities.Controls.AutoUpdate
                     }).ContinueWith((t) =>
                     {
                         //MOVIENDO DE TEMPORAL A LOCAL
-                        Accion("\t\t ----> Moviendo Archivos de Temporal a Local");
+                        Accion("\t\t ----> Modificando archivos de Solo Lectura");
                         CambiarEstadoReadOnly();
 
+                        Accion("\t\t ----> Moviendo Archivos de Temporal a Local");
                         MoverTempALocal();
                         Accion("\t\t ----> Finalizar Moviendo ");
                     }).ContinueWith((t) =>
