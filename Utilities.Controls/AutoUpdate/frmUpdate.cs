@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Text;
@@ -110,6 +111,8 @@ namespace Utilities.Controls.AutoUpdate
                     {
                         //MOVIENDO DE TEMPORAL A LOCAL
                         Accion("\t\t ----> Moviendo Archivos de Temporal a Local");
+                        CambiarEstadoReadOnly();
+
                         MoverTempALocal();
                         Accion("\t\t ----> Finalizar Moviendo ");
                     }).ContinueWith((t) =>
@@ -148,6 +151,22 @@ namespace Utilities.Controls.AutoUpdate
                 MessageBoxTemporal.Show("No hay Acceso a la Rutas", "Comprobar Actualizacion", 2);
                 this.DialogResult = DialogResult.Ignore;
                 this.Close();
+            }
+        }
+
+        private void CambiarEstadoReadOnly()
+        {
+            if (archivos.Exists(x => x.SoloLectura == true))
+            {
+                foreach (DatoArchivo item in archivos.Where(x => x.SoloLectura == true))
+                {
+                    FileAttributes fa = File.GetAttributes(item.Url);
+
+                    fa &= ~FileAttributes.ReadOnly;
+                    
+                    File.SetAttributes(item.Url, fa);
+                    
+                }
             }
         }
 
@@ -242,6 +261,7 @@ namespace Utilities.Controls.AutoUpdate
                             Url = pathArchivo,
                             Archivo = true,
                             Level = Level,
+                            SoloLectura = IsFileReadOnly(pathArchivo),
                             rutaBase = rutaBase,
                             rutaSinBase = pathArchivo.Substring(rutaBase.Length)
 
@@ -273,6 +293,16 @@ namespace Utilities.Controls.AutoUpdate
             return archivos;
         }
 
+        public static bool IsFileReadOnly(string FileName)
+        {
+            // Create a new FileInfo object.
+            FileInfo fInfo = new FileInfo(FileName);
+
+            // Return the IsReadOnly property value.
+            return fInfo.IsReadOnly;
+
+        }
+
         public class DatoArchivo
         {
             public string Nombre { get; set; }
@@ -282,7 +312,15 @@ namespace Utilities.Controls.AutoUpdate
             public bool Archivo { get; set; }
             public string rutaBase { get; set; }
             public string rutaSinBase { get; set; }
+            public bool SoloLectura { get; set; }
 
+            public override string ToString()
+            {
+                string archivo = Archivo ? "1" : "0";
+                string lectura = SoloLectura ? "1" : "0";
+                return Nombre + "[" + Fecha.ToShortDateString() + "]" + "{" + archivo + "}" + "--->" + lectura;
+                //return base.ToString(); 
+            }
         }
 
         private void btUltimaFecha_Click(object sender, EventArgs e)
