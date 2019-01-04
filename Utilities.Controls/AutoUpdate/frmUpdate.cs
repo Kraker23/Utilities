@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 using Utilities.Clases.MessageTemporal;
 
 namespace Utilities.Controls.AutoUpdate
@@ -25,7 +26,9 @@ namespace Utilities.Controls.AutoUpdate
         private List<DatoArchivo> archivosTemp;
         public bool ExisteAcutalizacion = false;
         public bool CompletadaActualizacion = false;
+        public bool todo = false;
         public string Error;
+        public string nombreArchivoConfig;
 
         public frmUpdate()
         {
@@ -33,6 +36,10 @@ namespace Utilities.Controls.AutoUpdate
             //RutaLocal = System.IO.Directory.GetCurrentDirectory();
             RutaLocal = "\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase";
             RutaServidor = "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio";
+
+            //RutaLocal = "C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivos ";
+            //RutaServidor = "C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivo Cliente";
+
             RutaTemporal = System.IO.Path.Combine(RutaLocal, "tempUpdate");
             archivos = new List<DatoArchivo>();
             archivosLocales = new List<DatoArchivo>();
@@ -47,7 +54,7 @@ namespace Utilities.Controls.AutoUpdate
 
         }
 
-        public frmUpdate(string rutaLocal,string rutaServidor)
+        public frmUpdate(string rutaLocal,string rutaServidor,string nombreArchivoConfig="")
         {
             InitializeComponent();
             //RutaLocal = System.IO.Directory.GetCurrentDirectory();
@@ -58,7 +65,52 @@ namespace Utilities.Controls.AutoUpdate
             archivosLocales = new List<DatoArchivo>();
             archivosServidores = new List<DatoArchivo>();
             archivosTemp = new List<DatoArchivo>();
+            if (!string.IsNullOrEmpty(nombreArchivoConfig))
+            {
+                this.nombreArchivoConfig = nombreArchivoConfig;
+                todo = GetTipoActualizacion();
+            }
             this.TopMost = true;
+        }
+
+        private bool GetTipoActualizacion()
+        {
+            if (System.IO.File.Exists(Path.Combine(RutaServidor,nombreArchivoConfig)))
+            {
+                string rutaConfig = Path.Combine(RutaServidor, nombreArchivoConfig);
+                
+                var xDoc = new XmlDocument();
+                xDoc.Load(rutaConfig);
+
+
+                XmlNodeList xPersonas = xDoc.GetElementsByTagName("configuration");
+                XmlNodeList xLista = ((XmlElement)xPersonas[0]).GetElementsByTagName("appSettings");
+                XmlNodeList xLADD = ((XmlElement)xPersonas[0]).GetElementsByTagName("add");
+
+                foreach (XmlElement nodo in xLADD)
+                {
+                    string xKey = nodo.GetAttribute("key");
+                    string xValue = nodo.GetAttribute("value");
+                    if (!string.IsNullOrEmpty(xKey) && xKey== "ActualizarTodo")
+                    {
+                        if (!string.IsNullOrEmpty(xValue))
+                        {
+                            if (xValue.ToLower() =="si")
+                            {
+                                return true;
+                            }
+                            else if (xValue.ToLower() == "no")
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                    string xNombre = nodo.InnerText;
+
+                }
+
+            }
+            return false;
         }
 
         private void frmUpdate_Load(object sender, EventArgs e)
@@ -93,7 +145,7 @@ namespace Utilities.Controls.AutoUpdate
                     ExisteAcutalizacion = true;
                     CheckForIllegalCrossThreadCalls = false;
                     cProgress.Start();
-                    Accion("Existe una nueva version");
+                    Accion("Existe una nueva version",true);
                     Task.Factory.StartNew(() =>
                     {
                         CargarListas();
@@ -101,31 +153,31 @@ namespace Utilities.Controls.AutoUpdate
                     }).ContinueWith((t) =>
                     {
                         //COPIANDO DEL SERVIDOR A TEMPORAL
-                        Accion("\t\t ----> Copiar Archivos de Servidor a Temporal");
+                        Accion("\t\t ----> Copiar Archivos de Servidor a Temporal", true);
                         CopiarDeSevidorATemporal();
-                        Accion("\t\t ----> Finalizar Copiado " + archivosTemp.Count());
                     }).ContinueWith((t) =>
                     {
-                        CargarListas();
+                        CargarListas(true);
+                        Accion("\t\t ----> Finalizar Copiado " + archivosTemp.Count(), true);
                     }).ContinueWith((t) =>
                     {
                         //MOVIENDO DE TEMPORAL A LOCAL
-                        Accion("\t\t ----> Modificando archivos de Solo Lectura");
+                        Accion("\t\t ----> Modificando archivos de Solo Lectura", true);
                         CambiarEstadoReadOnly();
 
-                        Accion("\t\t ----> Moviendo Archivos de Temporal a Local");
+                        Accion("\t\t ----> Moviendo Archivos de Temporal a Local", true);
                         MoverTempALocal();
                         Accion("\t\t ----> Finalizar Moviendo ");
                     }).ContinueWith((t) =>
                     {
 
                         //ELIMINAR TEMPORAL
-                        Accion("\t\t ----> Eliminar Temporal");
+                        Accion("\t\t ----> Eliminar Temporal", true);
                         EliminarTemporal();
-                        Accion("\t\t ----> Finalizar Eliminar ");
+                        Accion("\t\t ----> Finalizar Eliminar ", true);
                     }).ContinueWith((t) =>
                     {
-                        CargarListas();
+                        //CargarListas();
                         CheckForIllegalCrossThreadCalls = true;
                         cProgress.End();
                         CompletadaActualizacion = true;
@@ -140,7 +192,7 @@ namespace Utilities.Controls.AutoUpdate
                 {
                     
                     CompletadaActualizacion = true;
-                    Accion("No existe una nueva version");
+                    Accion("No existe una nueva version", true);
                     MessageBoxTemporal.Show("No existe una nueva version","Comprobar Actualizacion",1);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -157,9 +209,9 @@ namespace Utilities.Controls.AutoUpdate
 
         private void CambiarEstadoReadOnly()
         {
-            if (archivos.Exists(x => x.SoloLectura == true))
+            if (archivosLocales.Exists(x => x.SoloLectura == true))
             {
-                foreach (DatoArchivo item in archivos.Where(x => x.SoloLectura == true))
+                foreach (DatoArchivo item in archivosLocales.Where(x => x.SoloLectura == true))
                 {
                     FileAttributes fa = File.GetAttributes(item.Url);
 
@@ -180,24 +232,28 @@ namespace Utilities.Controls.AutoUpdate
             return false;
         }
 
-        private void CargarListas()
+        private void CargarListas(bool soloTemp =false)
         {
             txtBase.Clear();
             txtServidor.Clear();
-            archivosLocales = buscarArchivos(RutaLocal);
-            foreach (DatoArchivo item in archivosLocales.OrderBy(x => x.Level).ThenBy(x => x.Archivo))
+            if (!soloTemp)
             {
-                string tabulaciones = DuplicarTexto("\t", item.Level);
+                archivosLocales = buscarArchivos(RutaLocal);
+                //foreach (DatoArchivo item in archivosLocales.OrderBy(x => x.Level).ThenBy(x => x.Archivo))
+                //{
+                //    string tabulaciones = DuplicarTexto("\t", item.Level);
 
-                txtBase.Text += tabulaciones + " -> " + item.Nombre + " (" + item.Fecha.ToShortDateString() + " " + item.Fecha.ToShortTimeString() + ")" + Environment.NewLine;
-            }
-            archivosServidores = buscarArchivos(RutaServidor);
-            foreach (DatoArchivo item in archivosServidores.OrderBy(x => x.Level).ThenBy(x => x.Archivo))
-            {
-                string tabulaciones = DuplicarTexto("\t", item.Level);
-                txtServidor.Text += tabulaciones + " -> " + item.Nombre + " (" + item.Fecha.ToShortDateString() + " " + item.Fecha.ToShortTimeString() + ")" + Environment.NewLine;
+                //    txtBase.Text += tabulaciones + " -> " + item.Nombre + " (" + item.Fecha.ToShortDateString() + " " + item.Fecha.ToShortTimeString() + ")" + Environment.NewLine;
+                //}
+                archivosServidores = buscarArchivos(RutaServidor);
+                //foreach (DatoArchivo item in archivosServidores.OrderBy(x => x.Level).ThenBy(x => x.Archivo))
+                //{
+                //    string tabulaciones = DuplicarTexto("\t", item.Level);
+                //    txtServidor.Text += tabulaciones + " -> " + item.Nombre + " (" + item.Fecha.ToShortDateString() + " " + item.Fecha.ToShortTimeString() + ")" + Environment.NewLine;
+                //}
             }
             archivosTemp = buscarArchivos(RutaTemporal);
+            
             
         }
 
@@ -385,7 +441,6 @@ namespace Utilities.Controls.AutoUpdate
             }
             foreach (DatoArchivo item in archivosServidores)
             {
-                Accion(string.Format("Copiando -> {0}+",item.Nombre));
                 if (archivosLocales.Exists(x => x.Nombre == item.Nombre && x.Level == item.Level && x.rutaSinBase == item.rutaSinBase))
                 {
                     DatoArchivo aLocal = archivosLocales.First(x => x.Nombre == item.Nombre && x.Level == item.Level && x.rutaSinBase == item.rutaSinBase);
@@ -396,28 +451,35 @@ namespace Utilities.Controls.AutoUpdate
                         {
 
                             System.IO.File.Copy(item.Url, rutaActual, true);
+                            Accion(string.Format("Copiando -> {0}", item.Nombre));
                         }
                         else
                         {
                             if (!System.IO.Directory.Exists(rutaActual))
                             {
                                 System.IO.Directory.CreateDirectory(rutaActual);
+                                Accion(string.Format("Copiando -> {0}", item.Nombre));
                             }
                         }
                     }
                     else
                     {
-                        string rutaActual = RutaTemporal + aLocal.Url.Substring(RutaLocal.Length);
-                        if (item.Archivo)
+                        if (todo)
                         {
-
-                            System.IO.File.Copy(item.Url, rutaActual, true);
-                        }
-                        else
-                        {
-                            if (!System.IO.Directory.Exists(rutaActual))
+                            string rutaActual = RutaTemporal + aLocal.Url.Substring(RutaLocal.Length);
+                            if (item.Archivo)
                             {
-                                System.IO.Directory.CreateDirectory(rutaActual);
+
+                                System.IO.File.Copy(item.Url, rutaActual, true);
+                                Accion(string.Format("Copiando -> {0}", item.Nombre));
+                            }
+                            else
+                            {
+                                if (!System.IO.Directory.Exists(rutaActual))
+                                {
+                                    System.IO.Directory.CreateDirectory(rutaActual);
+                                    Accion(string.Format("Copiando -> {0}", item.Nombre));
+                                }
                             }
                         }
                     }
@@ -430,12 +492,14 @@ namespace Utilities.Controls.AutoUpdate
                     {
 
                         System.IO.File.Copy(item.Url, rutaActual, true);
+                        Accion(string.Format("Copiando -> {0}", item.Nombre));
                     }
                     else
                     {
                         if (!System.IO.Directory.Exists(rutaActual))
                         {
                             System.IO.Directory.CreateDirectory(rutaActual);
+                            Accion(string.Format("Copiando -> {0}", item.Nombre));
                         }
                     }
                 }
@@ -474,7 +538,6 @@ namespace Utilities.Controls.AutoUpdate
             }
             foreach (DatoArchivo item in archivosServidores)
             {
-                Accion(string.Format("Moviendo -> {0}+", item.Nombre));
                 if (archivosLocales.Exists(x => x.Nombre == item.Nombre && x.Level == item.Level && x.rutaSinBase == item.rutaSinBase))
                 {
                     DatoArchivo aLocal = archivosLocales.First(x => x.Nombre == item.Nombre && x.Level == item.Level && x.rutaSinBase == item.rutaSinBase);
@@ -483,55 +546,60 @@ namespace Utilities.Controls.AutoUpdate
                         string rutaActual = RutaLocal + aLocal.Url.Substring(RutaLocal.Length);
                         if (item.Archivo)
                         {
-
                             System.IO.File.Copy(item.Url, rutaActual, true);
+                            Accion(string.Format("Moviendo -> {0} ", item.Nombre));
                         }
                         else
                         {
                             if (!System.IO.Directory.Exists(rutaActual))
                             {
                                 System.IO.Directory.CreateDirectory(rutaActual);
+                                Accion(string.Format("Moviendo -> {0} ", item.Nombre));
                             }
                         }
                     }
                     else
                     {
-                        string rutaActual = RutaLocal + aLocal.Url.Substring(RutaLocal.Length);
-                        if (item.Archivo)
+                        if (todo)
                         {
-
-                            System.IO.File.Copy(item.Url, rutaActual, true);
-                        }
-                        else
-                        {
-                            if (!System.IO.Directory.Exists(rutaActual))
+                            string rutaActual = RutaLocal + aLocal.Url.Substring(RutaLocal.Length);
+                            if (item.Archivo)
                             {
-                                System.IO.Directory.CreateDirectory(rutaActual);
+                                System.IO.File.Copy(item.Url, rutaActual, true);
+                                Accion(string.Format("Moviendo -> {0} ", item.Nombre));
+                            }
+                            else
+                            {
+                                if (!System.IO.Directory.Exists(rutaActual))
+                                {
+                                    System.IO.Directory.CreateDirectory(rutaActual);
+                                    Accion(string.Format("Moviendo -> {0} ", item.Nombre));
+                                }
                             }
                         }
                     }
-
                 }
                 else
                 {
                     string rutaActual = RutaLocal + item.Url.Substring(RutaServidor.Length);
                     if (item.Archivo)
                     {
-
                         System.IO.File.Copy(item.Url, rutaActual, true);
+                        Accion(string.Format("Moviendo -> {0} ", item.Nombre));
                     }
                     else
                     {
                         if (!System.IO.Directory.Exists(rutaActual))
                         {
                             System.IO.Directory.CreateDirectory(rutaActual);
+                            Accion(string.Format("Moviendo -> {0} ", item.Nombre));
                         }
                     }
                 }
             }
         }
 
-        private void Accion(string mensaje)
+        private void Accion(string mensaje,bool titulo=false)
         {
             List<string> lineas = txtDescripcion.Lines.ToList();
 
@@ -540,6 +608,10 @@ namespace Utilities.Controls.AutoUpdate
             txtDescripcion.Lines = lineas.ToArray();
             Thread.Sleep(25);
             
+            if (titulo)
+            {
+                lblTitulo.Text = mensaje;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

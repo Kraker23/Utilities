@@ -118,6 +118,44 @@ namespace Utilities.Test
 
         }
 
-        
+        private void button4_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < contextMenuStrip1.Items.Count; i++)
+            {
+                if (contextMenuStrip1.Items[i].Text=="")
+                {
+
+                }
+            }
+
+            ToolStripMenuItem item, submenu;
+
+            submenu = new ToolStripMenuItem();
+            submenu.Text = "Sub-menu 1";
+
+            item = new ToolStripMenuItem();
+            item.Text = "Sub-item 1";
+            submenu.DropDownItems.Add(item);
+
+            item = new ToolStripMenuItem();
+            item.Text = "Sub-item 2";
+            submenu.DropDownItems.Add(item);
+
+            contextMenuStrip1.Items.Add(submenu);
+
+            ToolStripMenuItem item2;
+
+            //contextMenuStrip1.Items[i]
+
+            item2 = new ToolStripMenuItem();
+            item2.Text = "Sub-item 1";
+            ((ToolStripMenuItem)contextMenuStrip1.Items[0]).DropDownItems.Add(item2);
+
+            item2 = new ToolStripMenuItem();
+            item2.Text = "Sub-item 2";
+            ((ToolStripMenuItem)contextMenuStrip1.Items[0]).DropDownItems.Add(item2);
+
+            contextMenuStrip1.Items.Add(submenu);
+        }
     }
 }

@@ -28,23 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem7 = new System.Windows.Forms.ListViewItem(new string[] {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             "prueba"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Red, null);
-            System.Windows.Forms.ListViewItem listViewItem8 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "prueba 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Lime, null);
-            System.Windows.Forms.ListViewItem listViewItem9 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "p3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Yellow, null);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.cProgressBackground = new Utilities.Controls.ProgressBarBackGround.cProgressBackground();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.botonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.cProgressBackground = new Utilities.Controls.ProgressBarBackGround.cProgressBackground();
+            this.toolStripCheck1 = new Utilities.Controls.Leyenda.ToolStripCheck();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -78,15 +87,6 @@
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // cProgressBackground
-            // 
-            this.cProgressBackground.Location = new System.Drawing.Point(554, -1);
-            this.cProgressBackground.MostrarTiempoCarga = true;
-            this.cProgressBackground.Name = "cProgressBackground";
-            this.cProgressBackground.Size = new System.Drawing.Size(243, 36);
-            this.cProgressBackground.TabIndex = 4;
-            this.cProgressBackground.Visible = false;
-            // 
             // comboBox1
             // 
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -108,9 +108,9 @@
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem7,
-            listViewItem8,
-            listViewItem9});
+            listViewItem4,
+            listViewItem5,
+            listViewItem6});
             this.listView1.Location = new System.Drawing.Point(30, 291);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(204, 73);
@@ -131,18 +131,81 @@
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(100, 125);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(150, 150);
             this.toolStripContainer1.Location = new System.Drawing.Point(329, 198);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(150, 175);
             this.toolStripContainer1.TabIndex = 10;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.botonToolStripMenuItem,
+            this.toolStripTextBox1,
+            this.toolStripMenuItem1,
+            this.toolStripCheck1,
+            this.toolStripComboBox1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 122);
+            // 
+            // botonToolStripMenuItem
+            // 
+            this.botonToolStripMenuItem.Name = "botonToolStripMenuItem";
+            this.botonToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.botonToolStripMenuItem.Text = "Boton";
+            // 
+            // toolStripTextBox1
+            // 
+            this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
+            this.toolStripTextBox1.Text = "Text box";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // cProgressBackground
+            // 
+            this.cProgressBackground.Location = new System.Drawing.Point(554, -1);
+            this.cProgressBackground.MostrarTiempoCarga = true;
+            this.cProgressBackground.Name = "cProgressBackground";
+            this.cProgressBackground.Size = new System.Drawing.Size(243, 36);
+            this.cProgressBackground.TabIndex = 4;
+            this.cProgressBackground.Visible = false;
+            // 
+            // toolStripCheck1
+            // 
+            this.toolStripCheck1.ID = 0;
+            this.toolStripCheck1.Name = "toolStripCheck1";
+            this.toolStripCheck1.Size = new System.Drawing.Size(181, 22);
+            this.toolStripCheck1.StarClicked = false;
+            this.toolStripCheck1.Text = "toolStripCheck1";
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(329, 84);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "contextMenu";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listView1);
@@ -157,6 +220,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.toolStripContainer1.ResumeLayout(false);
             this.toolStripContainer1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -172,6 +237,13 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem botonToolStripMenuItem;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private Controls.Leyenda.ToolStripCheck toolStripCheck1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.Button button4;
     }
 }
 

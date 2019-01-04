@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArraysExtensiones.cs" />
+    <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="ListasExtensiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtensions.cs" />
