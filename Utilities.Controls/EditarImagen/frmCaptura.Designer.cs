@@ -1,6 +1,6 @@
-﻿namespace Utilities.Controls.IntroducirTexto.EditarImagen
+﻿namespace Utilities.Controls.EditarImagen
 {
-    partial class frmEditarImg
+    partial class frmCaptura
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditarImg));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCaptura));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -42,7 +41,6 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbUndo = new System.Windows.Forms.ToolStripButton();
             this.tsbReedo = new System.Windows.Forms.ToolStripButton();
-            this.ni = new System.Windows.Forms.NotifyIcon(this.components);
             this.pck = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
@@ -183,13 +181,6 @@
             this.tsbReedo.Text = "Rehacer";
             this.tsbReedo.Visible = false;
             // 
-            // ni
-            // 
-            this.ni.Icon = ((System.Drawing.Icon)(resources.GetObject("ni.Icon")));
-            this.ni.Text = "Alta incidencia";
-            this.ni.Visible = true;
-            this.ni.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ni_MouseDoubleClick);
-            // 
             // pck
             // 
             this.pck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -215,7 +206,7 @@
             this.panel2.Size = new System.Drawing.Size(784, 44);
             this.panel2.TabIndex = 15;
             // 
-            // frmEditarImg
+            // frmCaptura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -228,10 +219,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
-            this.Name = "frmEditarImg";
+            this.Name = "frmCaptura";
             this.ShowInTaskbar = false;
-            this.Text = "Alta incidencia";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Text = "Editar Captura de Pantalla";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmEditarImg_FormClosing);
             this.Load += new System.EventHandler(this.frmEditarImg_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEditarImg_KeyDown);
@@ -253,7 +244,6 @@
         private System.Windows.Forms.ToolStripButton tsbLine;
         private System.Windows.Forms.ToolStripButton tsbRect;
         private System.Windows.Forms.ToolStripButton tsbArrow;
-        private System.Windows.Forms.NotifyIcon ni;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton btnColor;
         private System.Windows.Forms.PictureBox pck;

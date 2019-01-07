@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Clases.PortaPapeles;
 using Utilities.Controls.AutoUpdate;
-using Utilities.Controls.IntroducirTexto.EditarImagen;
+using Utilities.Controls.EditarImagen;
 
 namespace Utilities.Test
 {
@@ -25,10 +25,12 @@ namespace Utilities.Test
 
            //Application.Run(new frmUpdate("\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase", "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio"));
            //Application.Run(new frmUpdate("C:\\Users\\Andres\\Desktop\\Gestor utilidades", "\\\\172.18.2.159\\Software\\Programacion\\Cristian\\MiniGestorCodigo"));
-           Application.Run(new frmUpdate("C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivo Cliente", "C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivos", "AdPlanningSharp.Planificador.Starter.exe.config"));
+           //Application.Run(new frmUpdate("C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivo Cliente", "C:\\Users\\Andres\\Desktop\\pruebas Borrado archivos\\Archivos", "AdPlanningSharp.Planificador.Starter.exe.config"));
 
-            //Image    img = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
-            //Application.Run(new frmEditarImg(new Bitmap(img)));
+            //Image img = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
+            //Application.Run(new frmCaptura(new Bitmap(img)));
+            Application.Run(new frmCaptura());
+            
 
             //Image img = PortaPapeles.getClipboardImage();
             //if (img != null)

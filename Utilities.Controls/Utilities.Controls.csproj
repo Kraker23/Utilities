@@ -50,11 +50,17 @@
     <Compile Include="AutoUpdate\frmUpdate.Designer.cs">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="EditarImagen\frmEditarImg.cs">
+    <Compile Include="EditarImagen\frmCaptura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EditarImagen\frmEditarImg.Designer.cs">
-      <DependentUpon>frmEditarImg.cs</DependentUpon>
+    <Compile Include="EditarImagen\frmCaptura.Designer.cs">
+      <DependentUpon>frmCaptura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarImagen\frmEditarImgAndres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarImagen\frmEditarImgAndres.Designer.cs">
+      <DependentUpon>frmEditarImgAndres.cs</DependentUpon>
     </Compile>
     <Compile Include="Encriptar\frmStrEncrypt.cs">
       <SubType>Form</SubType>
@@ -90,8 +96,11 @@
     <EmbeddedResource Include="AutoUpdate\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EditarImagen\frmEditarImg.resx">
-      <DependentUpon>frmEditarImg.cs</DependentUpon>
+    <EmbeddedResource Include="EditarImagen\frmCaptura.resx">
+      <DependentUpon>frmCaptura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarImagen\frmEditarImgAndres.resx">
+      <DependentUpon>frmEditarImgAndres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Encriptar\frmStrEncrypt.resx">
       <DependentUpon>frmStrEncrypt.cs</DependentUpon>
@@ -133,6 +142,9 @@
     <Content Include="Iconos\form_red.png" />
     <Content Include="Iconos\gears_run.png" />
     <Content Include="Iconos\gear_preferences.png" />
+    <Content Include="Iconos\pantalla%281%29.png" />
+    <Content Include="Iconos\pantalla.ico" />
+    <Content Include="Iconos\pantalla.png" />
     <Content Include="Iconos\preferences.png" />
     <Content Include="Iconos\scroll.png" />
     <Content Include="Iconos\scroll_ok.png" />

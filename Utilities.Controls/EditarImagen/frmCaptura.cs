@@ -11,9 +11,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Utilities.Controls.IntroducirTexto.EditarImagen
+namespace Utilities.Controls.EditarImagen
 {
-    public partial class frmEditarImg : Form
+    public partial class frmCaptura : Form
     {
 
         #region Variables
@@ -65,7 +65,7 @@ namespace Utilities.Controls.IntroducirTexto.EditarImagen
 
         #region Constructro
 
-        public frmEditarImg()
+        public frmCaptura()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -82,7 +82,7 @@ namespace Utilities.Controls.IntroducirTexto.EditarImagen
             calcularZoom();
         }
 
-        public frmEditarImg(Bitmap Imagen)
+        public frmCaptura(Bitmap Imagen)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
@@ -128,8 +128,7 @@ namespace Utilities.Controls.IntroducirTexto.EditarImagen
             }
         }
 
-
-        private void ni_MouseDoubleClick(object sender, MouseEventArgs e)
+        public void CapturarPantalla()
         {
             // realizar el screenshot de todas las pantallas y unirlas en una sola imagen.
             try
@@ -176,6 +175,11 @@ namespace Utilities.Controls.IntroducirTexto.EditarImagen
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void ni_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+         
 
         }
 
@@ -463,7 +467,7 @@ namespace Utilities.Controls.IntroducirTexto.EditarImagen
             }
         }
 
-        /// <summary>Cabio de herramienta. Estable los chechs y herramienta activa</summary>
+        /// <summary>Cambio de herramienta. Estable los chechs y herramienta activa</summary>
         /// <param name="tsb">botón pulsado. Puede ser nulo al esteablecer la herramienta a None</param>
         /// <param name="newTool">herramienta a selecciónar o desseleccionar.</param>
         private void cambiarHerramienta(ToolStripButton tsb, eTools newTool)
