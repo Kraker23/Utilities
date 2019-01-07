@@ -22,7 +22,7 @@ namespace Utilities.Controls.EditarImagen
         enum eTools { None, Recortar, Linea, Rectangulo, Flecha }
 
         // indador si el fomulario
-        bool onlyEdit = false;
+        //bool onlyEdit = false;
 
         // Captura de pantalla original sin modificaciones
         Bitmap imgOriginal = null;
@@ -76,10 +76,12 @@ namespace Utilities.Controls.EditarImagen
 
 
             Image Imagen = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
-            this.onlyEdit = true;
+            //this.onlyEdit = true;
             this.img = new Bitmap(Imagen);
             this.pck.Image = img;
             calcularZoom();
+            this.CapturarPantalla();
+            this.Size= new Size(1569, 844);
         }
 
         public frmCaptura(Bitmap Imagen)
@@ -89,7 +91,7 @@ namespace Utilities.Controls.EditarImagen
             
             crearIconos();
 
-            this.onlyEdit = true;
+            //this.onlyEdit = true;
             this.img = Imagen;
             this.pck.Image = img;
             calcularZoom();
@@ -103,7 +105,7 @@ namespace Utilities.Controls.EditarImagen
 
         private void frmEditarImg_Load(object sender, EventArgs e)
         {
-            this.Visible = onlyEdit;
+            this.Visible = true;// onlyEdit;
         }
 
         private void frmEditarImg_FormClosing(object sender, FormClosingEventArgs e)
@@ -186,43 +188,45 @@ namespace Utilities.Controls.EditarImagen
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if (onlyEdit)
-            {
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.imgOriginal.Dispose();
-                this.Close();
-            }
-            else
-            {
-                // upload image
-                this.uploadImageCache();
+            GuardarImagen();
+            this.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.imgOriginal.Dispose();
+            this.Close();
+            
+        }
 
-                this.img.Dispose();
-                this.imgOriginal.Dispose();
-
-                this.ShowInTaskbar = false;
-                this.WindowState = FormWindowState.Minimized;
-                this.Visible = false;
+        private void GuardarImagen()
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Images|*.png;*.bmp;*.jpg";
+            ImageFormat format = ImageFormat.Png;
+            sfd.FileName = "CapturaPantalla_" + DateTime.Now.ToShortDateString().Replace('/', '-');
+            sfd.Title = "Save an Image File";
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                string ext = System.IO.Path.GetExtension(sfd.FileName);
+                switch (ext)
+                {
+                    case ".jpg":
+                        format = ImageFormat.Jpeg;
+                        break;
+                    case ".bmp":
+                        format = ImageFormat.Bmp;
+                        break;
+                }
+                if (sfd.FileName != "")
+                {
+                    ImagenResultado.Save(sfd.FileName, format);
+                }
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (onlyEdit)
-            {
-                this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-                this.Close();
-            }
-            else
-            {
-                this.img.Dispose();
-                this.imgOriginal.Dispose();
-
-                this.ShowInTaskbar = false;
-                this.WindowState = FormWindowState.Minimized;
-                this.Visible = false;
-
-            }
+            
+            this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.Close();
+            
         }
 
 
@@ -602,49 +606,7 @@ namespace Utilities.Controls.EditarImagen
             }
 
         }
-
-
-        /// <summary>Sube la imagen editada a la cache</summary>
-        private void uploadImageCache()
-        {
-            //try
-            //{
-            //    // recuperamos los bytes con compresión png
-            //    byte[] result = null;
-            //    using (MemoryStream stream = new MemoryStream())
-            //    {
-            //        img.Save(stream, ImageFormat.Png);
-            //        result = stream.ToArray();
-            //    }
-
-            //    // objetos de cache
-            //    var md = new Metadata() { Name = Guid.NewGuid().ToString() + ".png", ContentType = "application/png" };
-            //    var data = new CacheData() { Metadata = md, Binario = result };
-
-            //    // cache y subida del fichero
-            //    var cache = new Cache();
-            //    var id = cache.Upload(data);
-
-            //    if (string.IsNullOrEmpty(id))
-            //    {
-            //        MessageBox.Show("Error al subir el archivo");
-            //    }
-            //    else
-            //    {
-            //        // recuperamos la url de alta de incidencias y le agregamos el identificador del fichero
-            //        var url = string.Format(Configuracion.FEALTAINCIDENCIA, id);
-            //        System.Diagnostics.Process.Start(url);
-
-            //        /*var doc = cache.Download(id);
-            //        System.IO.File.WriteAllBytes(@"C:\"+id+".p doc.Binario*/
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //}
-        }
-
+        
         #endregion
 
     }

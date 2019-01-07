@@ -58,7 +58,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(96)))), ((int)(((byte)(96)))));
-            this.btnCancelar.Location = new System.Drawing.Point(566, 6);
+            this.btnCancelar.Location = new System.Drawing.Point(544, 6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(100, 30);
             this.btnCancelar.TabIndex = 11;
@@ -74,11 +74,11 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAceptar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAceptar.Location = new System.Drawing.Point(672, 6);
+            this.btnAceptar.Location = new System.Drawing.Point(650, 6);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(100, 30);
+            this.btnAceptar.Size = new System.Drawing.Size(117, 30);
             this.btnAceptar.TabIndex = 10;
-            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.Text = "Guardar Como";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
