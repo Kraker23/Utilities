@@ -93,6 +93,26 @@ namespace Utilities.Controls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap deshacerMultiple_2_ {
+            get {
+                object obj = ResourceManager.GetObject("deshacerMultiple(2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap deshacerMultiple_3_ {
+            get {
+                object obj = ResourceManager.GetObject("deshacerMultiple(3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap earth_network {
             get {
                 object obj = ResourceManager.GetObject("earth_network", resourceCulture);

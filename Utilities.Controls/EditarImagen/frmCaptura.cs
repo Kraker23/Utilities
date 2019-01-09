@@ -74,11 +74,35 @@ namespace Utilities.Controls.EditarImagen
             {
                 limgAnterior.RemoveAt(limgAnterior.IndexOf(limgAnterior.Last()));
             }
+            public void UndoPlus(List<int> posiciones, int posicion)
+            {
+                foreach (int pos in posiciones.OrderByDescending(x=>x))
+                {
+                    limgAnterior.RemoveAt(pos);
+                }
+                if (limgAnterior.Count() > posicion)
+                {
+                    limgAnterior.RemoveAt(posicion);
+                }
+
+            }
 
             /// <summary>Rehacer</summary>
             public void Redo()
             {
                 limgPosterior.RemoveAt(limgPosterior.IndexOf(limgPosterior.Last()));
+            }
+
+            public void RedoPlus(List<int> posiciones, int posicion)
+            {
+                foreach (int pos in posiciones.OrderByDescending(x => x))
+                {
+                    limgPosterior.RemoveAt(pos);
+                }
+                if (limgPosterior.Count() > posicion)
+                {
+                    limgPosterior.RemoveAt(posicion);
+                }
             }
         }
 
@@ -376,7 +400,8 @@ namespace Utilities.Controls.EditarImagen
                 else
                 {
                     pEnd = new Point(this.relImgPosX, this.relImgPosY);
-
+                    //if (pStart.X - pEnd.X!=0 && pStart.Y - pEnd.Y != 0)
+                    //{
                     switch (activeTool)
                     {
                         case eTools.Flecha: this.flecha(false); break;
@@ -384,10 +409,12 @@ namespace Utilities.Controls.EditarImagen
                         case eTools.Recortar: this.recortar(false); break;
                         case eTools.Rectangulo: this.rectangulo(false); break;
                     }
+                    if (imgTmp != null)
+                    {
+                        imgTmp.Dispose();
+                        imgTmp = null;
 
-                    imgTmp.Dispose();
-                    imgTmp = null;
-
+                    }
                     //pck.Image = img;
                     pck.Image = ImagenG.img;
                     pck.Refresh();
@@ -397,6 +424,7 @@ namespace Utilities.Controls.EditarImagen
                     pStart = Point.Empty;
                     pEnd = Point.Empty;
                     editStart = false;
+                    //}
                 }
             }
         }
@@ -727,15 +755,20 @@ namespace Utilities.Controls.EditarImagen
             {
                 if (ImagenG.limgAnterior.Count() > pos)
                 {
+                    ImagenG.limgPosterior.Add(ImagenG.img);
+                    List<int> posiciones = new List<int>();
                     for (int i = 0; i < ImagenG.limgAnterior.Count(); i++)
                     {
-                        if (pos==i)
-                        { }
+                        if (pos<i)
+                        {
+                            posiciones.Add(i);
+                            ImagenG.limgPosterior.Add(ImagenG.limgAnterior[i]);
+                        }
                     }
 
-                    ImagenG.limgPosterior.Add(ImagenG.img);
-                    ImagenG.img = ImagenG.imgAnterior;
-                    ImagenG.Undo();
+                    //ImagenG.limgPosterior.Add(ImagenG.img);
+                    ImagenG.img = ImagenG.limgAnterior[pos];
+                    ImagenG.UndoPlus(posiciones,pos);
                     //ImagenG.imgAnterior = getImgAnterior();
 
 
@@ -803,8 +836,27 @@ namespace Utilities.Controls.EditarImagen
             if (ImagenG.imgPosterior != null)
             {
                 ImagenG.limgAnterior.Add(ImagenG.img);
-                ImagenG.img = ImagenG.imgPosterior;
-                ImagenG.Redo();
+                List<int> posiciones = new List<int>();
+                for (int i = 0; i < ImagenG.limgPosterior.Count(); i++)
+                {
+                    if (pos < i)
+                    {
+                        posiciones.Add(i);
+                        ImagenG.limgAnterior.Add(ImagenG.limgPosterior[i]);
+                    }
+                }
+
+                //ImagenG.limgPosterior.Add(ImagenG.img);
+                ImagenG.img = ImagenG.limgPosterior[pos];
+                ImagenG.RedoPlus(posiciones,pos);
+                //ImagenG.imgAnterior = getImgAnterior();
+
+
+
+
+                //ImagenG.limgAnterior.Add(ImagenG.img);
+                //ImagenG.img = ImagenG.imgPosterior;
+                //ImagenG.Redo();
                 //ImagenG.imgAnterior = getImgAnterior();
 
 
@@ -834,13 +886,16 @@ namespace Utilities.Controls.EditarImagen
 
         private void visibilidadBtMod()
         {
-            tsbUndo.Visible = ImagenG.imgAnterior != null;
-            tsbReedo.Visible = ImagenG.imgPosterior != null;
+            //toolStripSeparator2.Visible = ImagenG.imgAnterior != null || ImagenG.imgPosterior != null;
 
-            toolStripSeparator2.Visible = ImagenG.imgAnterior != null || ImagenG.imgPosterior != null;
+            tsbUndo.Enabled = ImagenG.imgAnterior != null;
+            tsbReedo.Enabled = ImagenG.imgPosterior != null;
 
 
-            tsbddUndo.Visible = ImagenG.imgAnterior != null;
+
+            //toolStripSeparator3.Visible = ImagenG.imgAnterior != null || ImagenG.imgPosterior != null;
+
+            tsbddUndo.Enabled = ImagenG.imgAnterior != null;
             tsbddUndo.DropDownItems.Clear();
             int i = 0;
             foreach (Bitmap item in ImagenG.limgAnterior)
@@ -850,20 +905,54 @@ namespace Utilities.Controls.EditarImagen
                 tsItem.Name = string.Format("{0}",i);
                 tsItem.Image = item;
                 //On-Click event
-                tsItem.Click += new EventHandler(tsbddItem_onClick);
+                tsItem.Click += new EventHandler(tsbddUndoItem_onClick);
                 //Add the submenu to the parent menu
                 tsbddUndo.DropDownItems.Add(tsItem);
                 i++;
             }
 
+
+
+            tsbddRedo.Enabled = ImagenG.imgPosterior != null;
+            tsbddRedo.DropDownItems.Clear();
+            int c = 0;
+            foreach (Bitmap item in ImagenG.limgPosterior)
+            {
+                ToolStripItem tsItem = new ToolStripMenuItem();
+                tsItem.Text = "Modificacion " + (c + 1);
+                tsItem.Name = string.Format("{0}", c);
+                tsItem.Image = item;
+                //On-Click event
+                tsItem.Click += new EventHandler(tsbddRedoItem_onClick);
+                //Add the submenu to the parent menu
+                tsbddRedo.DropDownItems.Add(tsItem);
+                c++;
+            }
+
         }
 
-        private void tsbddItem_onClick(object sender, EventArgs e)
+        private void tsbddUndoItem_onClick(object sender, EventArgs e)
         {
-           // throw new NotImplementedException();
+            int pos = 0;
+            if (int.TryParse(((ToolStripItem)sender).Name,out pos))
+            {
+                UndoPlus(pos);
+            }
         }
 
-       
+        private void tsbddRedoItem_onClick(object sender, EventArgs e)
+        {
+            int pos = 0;
+            if (int.TryParse(((ToolStripItem)sender).Name, out pos))
+            {
+                RedoPlus(pos);
+            }
+        }
+
+        //TODO falta poner que los dibujos tambien creen imagenes nuevas, como el recorte.
+        //poner grosor de linea
+        //y circulo
+
         #endregion
 
     }

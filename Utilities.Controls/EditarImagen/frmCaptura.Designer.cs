@@ -35,6 +35,7 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.pck = new System.Windows.Forms.PictureBox();
             this.tsbRecortar = new System.Windows.Forms.ToolStripButton();
             this.btnColor = new System.Windows.Forms.ToolStripButton();
@@ -44,6 +45,7 @@
             this.tsbUndo = new System.Windows.Forms.ToolStripButton();
             this.tsbReedo = new System.Windows.Forms.ToolStripButton();
             this.tsbddUndo = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbddRedo = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pck)).BeginInit();
@@ -95,7 +97,9 @@
             this.toolStripSeparator2,
             this.tsbUndo,
             this.tsbReedo,
-            this.tsbddUndo});
+            this.toolStripSeparator3,
+            this.tsbddUndo,
+            this.tsbddRedo});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -111,7 +115,6 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            this.toolStripSeparator2.Visible = false;
             // 
             // panel2
             // 
@@ -122,6 +125,11 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(784, 44);
             this.panel2.TabIndex = 15;
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
             // 
             // pck
             // 
@@ -191,33 +199,44 @@
             // tsbUndo
             // 
             this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbUndo.Enabled = false;
             this.tsbUndo.Image = global::Utilities.Controls.Properties.Resources.deshacer;
             this.tsbUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUndo.Name = "tsbUndo";
             this.tsbUndo.Size = new System.Drawing.Size(23, 20);
             this.tsbUndo.Text = "Deshacer";
-            this.tsbUndo.Visible = false;
             this.tsbUndo.Click += new System.EventHandler(this.tsbUndo_Click);
             // 
             // tsbReedo
             // 
             this.tsbReedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReedo.Enabled = false;
             this.tsbReedo.Image = global::Utilities.Controls.Properties.Resources.deshacer_1_;
             this.tsbReedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReedo.Name = "tsbReedo";
             this.tsbReedo.Size = new System.Drawing.Size(23, 20);
             this.tsbReedo.Text = "Rehacer";
-            this.tsbReedo.Visible = false;
             this.tsbReedo.Click += new System.EventHandler(this.tsbReedo_Click);
             // 
             // tsbddUndo
             // 
             this.tsbddUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbddUndo.Image = ((System.Drawing.Image)(resources.GetObject("tsbddUndo.Image")));
+            this.tsbddUndo.Enabled = false;
+            this.tsbddUndo.Image = global::Utilities.Controls.Properties.Resources.deshacerMultiple_2_;
             this.tsbddUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbddUndo.Name = "tsbddUndo";
             this.tsbddUndo.Size = new System.Drawing.Size(29, 20);
             this.tsbddUndo.Text = "toolStripDropDownButton1";
+            // 
+            // tsbddRedo
+            // 
+            this.tsbddRedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbddRedo.Enabled = false;
+            this.tsbddRedo.Image = global::Utilities.Controls.Properties.Resources.deshacerMultiple_3_;
+            this.tsbddRedo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbddRedo.Name = "tsbddRedo";
+            this.tsbddRedo.Size = new System.Drawing.Size(29, 20);
+            this.tsbddRedo.Text = "toolStripDropDownButton1";
             // 
             // frmCaptura
             // 
@@ -265,5 +284,7 @@
         private System.Windows.Forms.ToolStripButton tsbUndo;
         private System.Windows.Forms.ToolStripButton tsbReedo;
         private System.Windows.Forms.ToolStripDropDownButton tsbddUndo;
+        private System.Windows.Forms.ToolStripDropDownButton tsbddRedo;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
     }
 }
