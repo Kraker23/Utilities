@@ -132,6 +132,8 @@
     <Content Include="Iconos\checks.png" />
     <Content Include="Iconos\delete2.png" />
     <Content Include="Iconos\delete21.png" />
+    <Content Include="Iconos\deshacer%281%29.png" />
+    <Content Include="Iconos\deshacer.png" />
     <Content Include="Iconos\documents_gear.png" />
     <Content Include="Iconos\document_down.png" />
     <Content Include="Iconos\document_exchange.png" />

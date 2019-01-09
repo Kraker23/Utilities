@@ -25,16 +25,18 @@ namespace Utilities.Controls.EditarImagen
         //bool onlyEdit = false;
 
         // Captura de pantalla original sin modificaciones
-        Bitmap imgOriginal = null;
+        // Bitmap imgOriginal = null;
 
         //Bitmap ant = null;
         // Img de trabajo 
-        Bitmap img = null;
+        // Bitmap img = null;
         // Img temporal para mostrar los preview de las herramientas
         Bitmap imgTmp = null;
+        //Img Anterior a las Modificaciones
+        // Bitmap imgAnterior = null;
 
         // Puntos de la imagen para edición 
-        Point pStart,pEnd;
+        Point pStart, pEnd;
         // Indicador para saber si se ha iniciado una acción de edición
         bool editStart = false;
 
@@ -45,6 +47,42 @@ namespace Utilities.Controls.EditarImagen
         Color drawColor = Color.Red;
         // Pincel con el color seleccionado por el usuario
         Brush drawBrush = Brushes.Red;
+
+        public class ImagenGlobal
+        {
+            // Img de trabajo 
+            public Bitmap img = null;
+            // Captura de pantalla original sin modificaciones
+            public Bitmap imgOriginal = null;
+            //Img Anterior a la ultima Modificacion
+            public Bitmap imgAnterior  { get { return limgAnterior.Count==0 ?null : limgAnterior.Last(); } }
+            public List<Bitmap> limgAnterior = new List<Bitmap>();
+            //Img Despues de Deshacer a la ultima Modificacion
+            public Bitmap imgPosterior { get { return limgPosterior.Count == 0 ? null : limgPosterior.Last(); } }
+            public List<Bitmap> limgPosterior = new List<Bitmap>();
+            /// <summary>Imagen editada resultante </summary>
+            public Bitmap ImagenResultado { get { return img; } }
+
+            public string DimensionActual { get { return img ==null ? "0" : img.Width + ";" + img.Height; } }
+            public string DimensionAnterior { get { return imgAnterior == null ? "0" : imgAnterior.Width + ";" + imgAnterior.Height; } }
+            public string DimensionPosterior { get { return imgPosterior == null ? "0" : imgPosterior.Width + ";" + imgPosterior.Height; } }
+            public int DimensionlistaAnterior { get { return limgAnterior.Count(); } }
+            public int DimensionlistaPosterior { get { return limgPosterior.Count(); } }
+
+            /// <summary>DesHacer</summary>
+            public void Undo()
+            {
+                limgAnterior.RemoveAt(limgAnterior.IndexOf(limgAnterior.Last()));
+            }
+
+            /// <summary>Rehacer</summary>
+            public void Redo()
+            {
+                limgPosterior.RemoveAt(limgPosterior.IndexOf(limgPosterior.Last()));
+            }
+        }
+
+        ImagenGlobal ImagenG = new ImagenGlobal();
 
         #region Zoom
         // variables para el control del zoom realizado a la imagen y posición del ratón
@@ -58,7 +96,7 @@ namespace Utilities.Controls.EditarImagen
         #endregion
 
         /// <summary>Imagen editada resultante </summary>
-        public Bitmap ImagenResultado { get { return img; } }
+        //public Bitmap ImagenResultado { get { return img; } }
 
         #endregion
 
@@ -69,7 +107,7 @@ namespace Utilities.Controls.EditarImagen
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            
+
             crearIconos();
 
             //this.onlyEdit = false;
@@ -77,25 +115,29 @@ namespace Utilities.Controls.EditarImagen
 
             Image Imagen = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
             //this.onlyEdit = true;
-            this.img = new Bitmap(Imagen);
-            this.pck.Image = img;
+            //this.img = new Bitmap(Imagen);
+            //this.pck.Image = img;
+            this.ImagenG.img = new Bitmap(Imagen);
+            this.pck.Image = this.ImagenG.img;
             calcularZoom();
             this.CapturarPantalla();
-            this.Size= new Size(1569, 844);
+            this.Size = new Size(1569, 844);
         }
 
         public frmCaptura(Bitmap Imagen)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            
+
             crearIconos();
 
             //this.onlyEdit = true;
-            this.img = Imagen;
-            this.pck.Image = img;
+            //this.img = Imagen;
+            //this.pck.Image = img;
+            this.ImagenG.img = new Bitmap(Imagen);
+            this.pck.Image = this.ImagenG.img;
             calcularZoom();
-            
+
         }
 
         #endregion
@@ -125,7 +167,8 @@ namespace Utilities.Controls.EditarImagen
             {
                 this.cambiarHerramienta(null, eTools.None);
                 editStart = false;
-                pck.Image = img;
+                //pck.Image = img;
+                pck.Image = ImagenG.img;
                 pck.Refresh();
             }
         }
@@ -146,8 +189,10 @@ namespace Utilities.Controls.EditarImagen
                 }
 
                 // creación del bitmap final y adición de las captiras
-                img = new Bitmap(w, h);
-                using (Graphics g = Graphics.FromImage(img))
+                //img = new Bitmap(w, h);
+                ImagenG.img = new Bitmap(w, h);
+                //using (Graphics g = Graphics.FromImage(img))
+                using (Graphics g = Graphics.FromImage(ImagenG.img))
                 {
                     var x = 0;
                     foreach (var scr in Screen.AllScreens)
@@ -158,10 +203,12 @@ namespace Utilities.Controls.EditarImagen
                 }
 
                 // guardamos la copia origial
-                this.imgOriginal = (Bitmap)img.Clone();
+                //this.imgOriginal = (Bitmap)img.Clone();
+                this.ImagenG.imgOriginal = (Bitmap)ImagenG.img.Clone();
 
                 // establecemos la imagen
-                pck.Image = img;
+                //pck.Image = img;
+                pck.Image = ImagenG.img;
                 pck.Refresh();
 
                 // mostramos la ventana oculta
@@ -181,7 +228,7 @@ namespace Utilities.Controls.EditarImagen
 
         private void ni_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-         
+
 
         }
 
@@ -190,9 +237,10 @@ namespace Utilities.Controls.EditarImagen
         {
             GuardarImagen();
             this.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.imgOriginal.Dispose();
+            //this.imgOriginal.Dispose();
+            this.ImagenG.imgOriginal.Dispose();
             this.Close();
-            
+
         }
 
         private void GuardarImagen()
@@ -216,17 +264,18 @@ namespace Utilities.Controls.EditarImagen
                 }
                 if (sfd.FileName != "")
                 {
-                    ImagenResultado.Save(sfd.FileName, format);
+                    //ImagenResultado.Save(sfd.FileName, format);
+                    ImagenG.ImagenResultado.Save(sfd.FileName, format);
                 }
             }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            
+
             this.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
-            
+
         }
 
 
@@ -339,7 +388,8 @@ namespace Utilities.Controls.EditarImagen
                     imgTmp.Dispose();
                     imgTmp = null;
 
-                    pck.Image = img;
+                    //pck.Image = img;
+                    pck.Image = ImagenG.img;
                     pck.Refresh();
                     calcularZoom();
 
@@ -355,7 +405,7 @@ namespace Utilities.Controls.EditarImagen
 
 
         #region Funciones imagen
-      
+
         /// <summary>Crea los icónos de acciones de los</summary>
         private void crearIconos()
         {
@@ -478,8 +528,8 @@ namespace Utilities.Controls.EditarImagen
         {
             if (tsb == null || tsb.Checked) activeTool = eTools.None;
             else activeTool = newTool;
-            
-            foreach (ToolStripItem b in toolStrip1.Items) 
+
+            foreach (ToolStripItem b in toolStrip1.Items)
             {
                 if (b is ToolStripButton)
                 {
@@ -498,10 +548,11 @@ namespace Utilities.Controls.EditarImagen
             var rec = new Rectangle(Math.Min(pStart.X, pEnd.X), Math.Min(pStart.Y, pEnd.Y),
                         Math.Abs(pStart.X - pEnd.X), Math.Abs(pStart.Y - pEnd.Y));
 
-            if (preview) 
+            if (preview)
             {
                 if (imgTmp != null) imgTmp.Dispose();
-                imgTmp = (Bitmap)img.Clone();
+                //imgTmp = (Bitmap)img.Clone();
+                imgTmp = (Bitmap)ImagenG.img.Clone();
                 using (var g = Graphics.FromImage(imgTmp))
                 {
                     var fb = new SolidBrush(Color.FromArgb(100, Color.White));
@@ -514,17 +565,30 @@ namespace Utilities.Controls.EditarImagen
             }
             else
             {
-                Bitmap bmp = new Bitmap(rec.Width, rec.Height);
-                using (var g = Graphics.FromImage(bmp))
+                if (rec.Height > 0 && rec.Width > 0)
                 {
-                    g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
-                }
-            
-                img = bmp;
+                    ImagenG.limgAnterior.Add( ImagenG.img);
+                    Bitmap bmp = new Bitmap(rec.Width, rec.Height);
+                    using (var g = Graphics.FromImage(bmp))
+                    {
+                        //g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                        g.DrawImage(ImagenG.img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                    }
 
-                this.tsbRecortar.Checked = false;
-                this.activeTool = eTools.None;
+                    //img = bmp;
+                    ImagenG.img = bmp;
+
+                    this.tsbRecortar.Checked = false;
+                    this.activeTool = eTools.None;
+                }
+
+                else
+                {
+                    MessageBox.Show("Mantener el cursor pulsado mientras se hace la seleccion");
+                }
             }
+
+            visibilidadBtMod();
         }
 
         /// <summary>Dibuja un rectanculo (solo bode)</summary>
@@ -539,16 +603,28 @@ namespace Utilities.Controls.EditarImagen
             if (preview)
             {
                 if (imgTmp != null) imgTmp.Dispose();
-                imgTmp = (Bitmap)img.Clone();
+                //imgTmp = (Bitmap)img.Clone();
+                imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
             }
             else
             {
-                i = img;
+                //i = img;
+                i = ImagenG.img;
             }
 
             using (var g = Graphics.FromImage(i)) { g.DrawRectangle(p, rec); }
+            visibilidadBtMod();
+        }
 
+        private void tsbUndo_Click(object sender, EventArgs e)
+        {
+            Undo();
+        }
+
+        private void tsbReedo_Click(object sender, EventArgs e)
+        {
+            Redo();
         }
 
         /// <summary>Dibuja una línea</summary>
@@ -561,12 +637,14 @@ namespace Utilities.Controls.EditarImagen
             if (preview)
             {
                 if (imgTmp != null) imgTmp.Dispose();
-                imgTmp = (Bitmap)img.Clone();
+                //imgTmp = (Bitmap)img.Clone();
+                imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
             }
             else
             {
-                i = img;
+                //i = img;
+                i = ImagenG.img;
             }
 
             using (var g = Graphics.FromImage(i))
@@ -574,7 +652,7 @@ namespace Utilities.Controls.EditarImagen
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.DrawLine(p, pStart, pEnd);
             }
-
+            visibilidadBtMod();
         }
 
         /// <summary>Dibuja una flecha</summary>
@@ -591,12 +669,14 @@ namespace Utilities.Controls.EditarImagen
             if (preview)
             {
                 if (imgTmp != null) imgTmp.Dispose();
-                imgTmp = (Bitmap)img.Clone();
+                //imgTmp = (Bitmap)img.Clone();
+                imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
             }
             else
             {
-                i = img;
+                //i = img;
+                i = ImagenG.img;
             }
 
             using (var g = Graphics.FromImage(i))
@@ -604,9 +684,186 @@ namespace Utilities.Controls.EditarImagen
                 g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
                 g.DrawLine(p, pStart, pEnd);
             }
+            visibilidadBtMod();
+        }
+
+        private void Undo()
+        {
+            if (ImagenG.imgAnterior != null)
+            {
+                ImagenG.limgPosterior.Add(ImagenG.img);
+                ImagenG.img = ImagenG.imgAnterior;
+                ImagenG.Undo();
+                //ImagenG.imgAnterior = getImgAnterior();
+
+
+                var rec = new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height);
+
+                Bitmap bmp = new Bitmap(ImagenG.img.Width, ImagenG.img.Height);
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    //g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                    g.DrawImage(ImagenG.img, new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height), rec, GraphicsUnit.Pixel);
+                }
+
+                //img = bmp;
+                ImagenG.img = bmp;
+
+                pck.Image = ImagenG.img;
+                pck.Refresh();
+
+                this.tsbRecortar.Checked = false;
+                this.activeTool = eTools.None;
+
+                // calculo de variables de zoom 
+                calcularZoom();
+            }
+            visibilidadBtMod();
+        }
+
+        private void UndoPlus(int pos)
+        {
+            if (ImagenG.imgAnterior != null)
+            {
+                if (ImagenG.limgAnterior.Count() > pos)
+                {
+                    for (int i = 0; i < ImagenG.limgAnterior.Count(); i++)
+                    {
+                        if (pos==i)
+                        { }
+                    }
+
+                    ImagenG.limgPosterior.Add(ImagenG.img);
+                    ImagenG.img = ImagenG.imgAnterior;
+                    ImagenG.Undo();
+                    //ImagenG.imgAnterior = getImgAnterior();
+
+
+                    var rec = new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height);
+
+                    Bitmap bmp = new Bitmap(ImagenG.img.Width, ImagenG.img.Height);
+                    using (var g = Graphics.FromImage(bmp))
+                    {
+                        //g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                        g.DrawImage(ImagenG.img, new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height), rec, GraphicsUnit.Pixel);
+                    }
+
+                    //img = bmp;
+                    ImagenG.img = bmp;
+
+                    pck.Image = ImagenG.img;
+                    pck.Refresh();
+
+                    this.tsbRecortar.Checked = false;
+                    this.activeTool = eTools.None;
+
+                    // calculo de variables de zoom 
+                    calcularZoom();
+                }
+            }
+            visibilidadBtMod();
+        }
+
+        private void Redo()
+        {
+            if (ImagenG.imgPosterior != null)
+            {
+                ImagenG.limgAnterior.Add(ImagenG.img);
+                ImagenG.img = ImagenG.imgPosterior;
+                ImagenG.Redo();
+                //ImagenG.imgAnterior = getImgAnterior();
+
+
+                var rec = new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height);
+
+                Bitmap bmp = new Bitmap(ImagenG.img.Width, ImagenG.img.Height);
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    //g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                    g.DrawImage(ImagenG.img, new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height), rec, GraphicsUnit.Pixel);
+                }
+
+                //img = bmp;
+                ImagenG.img = bmp;
+
+                pck.Image = ImagenG.img;
+                pck.Refresh();
+
+                this.tsbRecortar.Checked = false;
+                this.activeTool = eTools.None;
+
+                // calculo de variables de zoom 
+                calcularZoom();
+            }
+            visibilidadBtMod();
+        }
+
+        private void RedoPlus(int pos)
+        {
+            if (ImagenG.imgPosterior != null)
+            {
+                ImagenG.limgAnterior.Add(ImagenG.img);
+                ImagenG.img = ImagenG.imgPosterior;
+                ImagenG.Redo();
+                //ImagenG.imgAnterior = getImgAnterior();
+
+
+                var rec = new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height);
+
+                Bitmap bmp = new Bitmap(ImagenG.img.Width, ImagenG.img.Height);
+                using (var g = Graphics.FromImage(bmp))
+                {
+                    //g.DrawImage(img, new Rectangle(0, 0, rec.Width, rec.Height), rec, GraphicsUnit.Pixel);
+                    g.DrawImage(ImagenG.img, new Rectangle(0, 0, ImagenG.img.Width, ImagenG.img.Height), rec, GraphicsUnit.Pixel);
+                }
+
+                //img = bmp;
+                ImagenG.img = bmp;
+
+                pck.Image = ImagenG.img;
+                pck.Refresh();
+
+                this.tsbRecortar.Checked = false;
+                this.activeTool = eTools.None;
+
+                // calculo de variables de zoom 
+                calcularZoom();
+            }
+            visibilidadBtMod();
+        }
+
+        private void visibilidadBtMod()
+        {
+            tsbUndo.Visible = ImagenG.imgAnterior != null;
+            tsbReedo.Visible = ImagenG.imgPosterior != null;
+
+            toolStripSeparator2.Visible = ImagenG.imgAnterior != null || ImagenG.imgPosterior != null;
+
+
+            tsbddUndo.Visible = ImagenG.imgAnterior != null;
+            tsbddUndo.DropDownItems.Clear();
+            int i = 0;
+            foreach (Bitmap item in ImagenG.limgAnterior)
+            {
+                ToolStripItem tsItem = new ToolStripMenuItem();
+                tsItem.Text = "Modificacion "+(i+1) ;
+                tsItem.Name = string.Format("{0}",i);
+                tsItem.Image = item;
+                //On-Click event
+                tsItem.Click += new EventHandler(tsbddItem_onClick);
+                //Add the submenu to the parent menu
+                tsbddUndo.DropDownItems.Add(tsItem);
+                i++;
+            }
 
         }
-        
+
+        private void tsbddItem_onClick(object sender, EventArgs e)
+        {
+           // throw new NotImplementedException();
+        }
+
+       
         #endregion
 
     }

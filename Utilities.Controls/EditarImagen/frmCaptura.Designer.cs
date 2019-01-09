@@ -32,20 +32,21 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsbRecortar = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pck = new System.Windows.Forms.PictureBox();
+            this.tsbRecortar = new System.Windows.Forms.ToolStripButton();
             this.btnColor = new System.Windows.Forms.ToolStripButton();
             this.tsbLine = new System.Windows.Forms.ToolStripButton();
             this.tsbRect = new System.Windows.Forms.ToolStripButton();
             this.tsbArrow = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbUndo = new System.Windows.Forms.ToolStripButton();
             this.tsbReedo = new System.Windows.Forms.ToolStripButton();
-            this.pck = new System.Windows.Forms.PictureBox();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.tsbddUndo = new System.Windows.Forms.ToolStripDropDownButton();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pck)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pck)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -93,12 +94,49 @@
             this.tsbArrow,
             this.toolStripSeparator2,
             this.tsbUndo,
-            this.tsbReedo});
+            this.tsbReedo,
+            this.tsbddUndo});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(784, 23);
             this.toolStrip1.TabIndex = 13;
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator2.Visible = false;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnCancelar);
+            this.panel2.Controls.Add(this.btnAceptar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 522);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(784, 44);
+            this.panel2.TabIndex = 15;
+            // 
+            // pck
+            // 
+            this.pck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pck.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pck.Location = new System.Drawing.Point(0, 23);
+            this.pck.Name = "pck";
+            this.pck.Size = new System.Drawing.Size(784, 499);
+            this.pck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pck.TabIndex = 12;
+            this.pck.TabStop = false;
+            this.pck.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pck_MouseDown);
+            this.pck.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pck_MouseMove);
+            this.pck.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pck_MouseUp);
+            this.pck.Resize += new System.EventHandler(this.pck_Resize);
             // 
             // tsbRecortar
             // 
@@ -109,11 +147,6 @@
             this.tsbRecortar.Size = new System.Drawing.Size(23, 20);
             this.tsbRecortar.Text = "Recortar";
             this.tsbRecortar.Click += new System.EventHandler(this.tsbRecortar_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 23);
             // 
             // btnColor
             // 
@@ -155,56 +188,36 @@
             this.tsbArrow.Text = "Arrow";
             this.tsbArrow.Click += new System.EventHandler(this.tsbArrow_Click);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
-            this.toolStripSeparator2.Visible = false;
-            // 
             // tsbUndo
             // 
             this.tsbUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbUndo.Image = ((System.Drawing.Image)(resources.GetObject("tsbUndo.Image")));
+            this.tsbUndo.Image = global::Utilities.Controls.Properties.Resources.deshacer;
             this.tsbUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbUndo.Name = "tsbUndo";
             this.tsbUndo.Size = new System.Drawing.Size(23, 20);
             this.tsbUndo.Text = "Deshacer";
             this.tsbUndo.Visible = false;
+            this.tsbUndo.Click += new System.EventHandler(this.tsbUndo_Click);
             // 
             // tsbReedo
             // 
             this.tsbReedo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReedo.Image = ((System.Drawing.Image)(resources.GetObject("tsbReedo.Image")));
+            this.tsbReedo.Image = global::Utilities.Controls.Properties.Resources.deshacer_1_;
             this.tsbReedo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReedo.Name = "tsbReedo";
             this.tsbReedo.Size = new System.Drawing.Size(23, 20);
             this.tsbReedo.Text = "Rehacer";
             this.tsbReedo.Visible = false;
+            this.tsbReedo.Click += new System.EventHandler(this.tsbReedo_Click);
             // 
-            // pck
+            // tsbddUndo
             // 
-            this.pck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pck.Location = new System.Drawing.Point(0, 23);
-            this.pck.Name = "pck";
-            this.pck.Size = new System.Drawing.Size(784, 499);
-            this.pck.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pck.TabIndex = 12;
-            this.pck.TabStop = false;
-            this.pck.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pck_MouseDown);
-            this.pck.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pck_MouseMove);
-            this.pck.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pck_MouseUp);
-            this.pck.Resize += new System.EventHandler(this.pck_Resize);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnCancelar);
-            this.panel2.Controls.Add(this.btnAceptar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 522);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(784, 44);
-            this.panel2.TabIndex = 15;
+            this.tsbddUndo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbddUndo.Image = ((System.Drawing.Image)(resources.GetObject("tsbddUndo.Image")));
+            this.tsbddUndo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbddUndo.Name = "tsbddUndo";
+            this.tsbddUndo.Size = new System.Drawing.Size(29, 20);
+            this.tsbddUndo.Text = "toolStripDropDownButton1";
             // 
             // frmCaptura
             // 
@@ -228,8 +241,8 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmEditarImg_KeyDown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pck)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pck)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +264,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsbUndo;
         private System.Windows.Forms.ToolStripButton tsbReedo;
+        private System.Windows.Forms.ToolStripDropDownButton tsbddUndo;
     }
 }
