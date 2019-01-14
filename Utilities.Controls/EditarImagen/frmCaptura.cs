@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -104,6 +105,14 @@ namespace Utilities.Controls.EditarImagen
                     limgPosterior.RemoveAt(posicion);
                 }
             }
+
+            public void BorrarDatos()
+            {
+                limgAnterior = new List<Bitmap>();
+                limgPosterior = new List<Bitmap>();
+                img = null;
+                imgOriginal = null;
+            }
         }
 
         ImagenGlobal ImagenG = new ImagenGlobal();
@@ -144,7 +153,8 @@ namespace Utilities.Controls.EditarImagen
             this.ImagenG.img = new Bitmap(Imagen);
             this.pck.Image = this.ImagenG.img;
             calcularZoom();
-            this.CapturarPantalla();
+            ///this.CapturarPantallaCompleta();
+            ///this.CapturarPantallaFoco();
             this.Size = new Size(1569, 844);
         }
 
@@ -197,11 +207,14 @@ namespace Utilities.Controls.EditarImagen
             }
         }
 
-        public void CapturarPantalla()
+        /// <summary>Funcion que capturara las pantallas /// </summary>
+        public void CapturarPantallaCompleta()
         {
             // realizar el screenshot de todas las pantallas y unirlas en una sola imagen.
             try
             {
+
+                ImagenG.BorrarDatos();
                 int w = 0; //Screen.PrimaryScreen.Bounds.Width;
                 int h = Screen.PrimaryScreen.Bounds.Height;
 
@@ -243,6 +256,104 @@ namespace Utilities.Controls.EditarImagen
 
                 // calculo de variables de zoom 
                 calcularZoom();
+                visibilidadBtMod();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        /// <summary>Funcion que capturara la pantalla activa donde esta el raton /// </summary>
+        public void CapturarPantallaFoco()
+        {
+            // realizar el screenshot de todas las pantallas y unirlas en una sola imagen.
+            try
+            {
+                ImagenG.BorrarDatos();
+                int w = 0; //Screen.PrimaryScreen.Bounds.Width;
+                int h = Screen.PrimaryScreen.Bounds.Height;
+
+                w += Screen.PrimaryScreen.Bounds.Width;
+                
+                Cursor.Position = new Point(Cursor.Position.X , Cursor.Position.Y);
+                Screen scActual = null;
+                foreach (var scr in Screen.AllScreens)
+                {
+                    if (Cursor.Position.X >= scr.Bounds.X && Cursor.Position.X <= (scr.Bounds.X + scr.Bounds.Width) &&
+                        Cursor.Position.Y >= scr.Bounds.Y && Cursor.Position.Y <= (scr.Bounds.Y + scr.Bounds.Height))
+                    {
+                        //MessageBox.Show(scr.DeviceName);
+                        scActual = scr;
+                    }
+                }
+                if (scActual != null)
+                {
+                    ImagenG.img = new Bitmap(scActual.Bounds.Width, scActual.Bounds.Height);
+                    using (Graphics g = Graphics.FromImage(ImagenG.img))
+                    {
+                        g.CopyFromScreen(scActual.Bounds.Location, new Point(0, 0), scActual.Bounds.Size);
+                    }
+
+                    this.ImagenG.imgOriginal = (Bitmap)ImagenG.img.Clone();
+
+                    pck.Image = ImagenG.img;
+                    pck.Refresh();
+
+                    // mostramos la ventana oculta
+                    this.Visible = true;
+                    this.WindowState = FormWindowState.Normal;
+                    this.ShowInTaskbar = true;
+                    this.Refresh();
+
+                    // calculo de variables de zoom 
+                    calcularZoom();
+                    visibilidadBtMod();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        /// <summary>Funcion que capturara la ventana Activa /// </summary>
+        public void CapturarVentanaActiva()
+        {
+            // realizar el screenshot de todas las pantallas y unirlas en una sola imagen.
+            try
+            {
+
+                ImagenG.BorrarDatos();
+                int w = 0; //Screen.PrimaryScreen.Bounds.Width;
+                int h = Screen.PrimaryScreen.Bounds.Height;
+
+                w += Screen.PrimaryScreen.Bounds.Width;
+                ScreenCapturer sc = new ScreenCapturer();
+                ImagenG.img = sc.Capture(enmScreenCaptureMode.Window);
+
+                this.ImagenG.imgOriginal = sc.Capture(enmScreenCaptureMode.Screen);
+                pck.Image = ImagenG.img;
+
+
+                // guardamos la copia origial
+                //this.imgOriginal = (Bitmap)img.Clone();
+                this.ImagenG.imgOriginal = (Bitmap)ImagenG.img.Clone();
+
+                // establecemos la imagen
+                //pck.Image = img;
+                pck.Image = ImagenG.img;
+                pck.Refresh();
+
+                // mostramos la ventana oculta
+                this.Visible = true;
+                this.WindowState = FormWindowState.Normal;
+                this.ShowInTaskbar = true;
+                this.Refresh();
+
+                // calculo de variables de zoom 
+                calcularZoom();
+                visibilidadBtMod();
             }
             catch (Exception ex)
             {
@@ -931,6 +1042,41 @@ namespace Utilities.Controls.EditarImagen
 
         }
 
+        private void tsbPantallas_Click(object sender, EventArgs e)
+        {
+            if (ImagenG.imgAnterior!=null || ImagenG.imgPosterior != null)
+            {
+                DialogResult dr = MessageBox.Show("Tienes Modificacions, perderas los cambios." + Environment.NewLine + "Quieres continuar ? " + Environment.NewLine + "Guarde primero los cambios.",
+                                            "Modificaciones", MessageBoxButtons.YesNo);
+                if (dr==DialogResult.Yes)
+                {
+                    CapturarPantallaCompleta();
+                }
+            }
+            else
+            {
+                CapturarPantallaCompleta();
+            }
+        }
+
+        private void tsbPantallaUnica_Click(object sender, EventArgs e)
+        {
+            if (ImagenG.imgAnterior != null || ImagenG.imgPosterior != null)
+            {
+                DialogResult dr = MessageBox.Show("Tienes Modificacions, perderas los cambios." + Environment.NewLine + "Quieres continuar ? " + Environment.NewLine + "Guarde primero los cambios.",
+                                            "Modificaciones", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    CapturarPantallaFoco();
+                }
+            }
+            else
+            {
+                CapturarPantallaFoco();
+                
+            }
+        }
+
         private void tsbddUndoItem_onClick(object sender, EventArgs e)
         {
             int pos = 0;
@@ -955,5 +1101,62 @@ namespace Utilities.Controls.EditarImagen
 
         #endregion
 
+        public enum enmScreenCaptureMode
+        {
+            Screen,
+            Window
+        }
+
+        class ScreenCapturer
+        {
+            [DllImport("user32.dll")]
+            private static extern IntPtr GetForegroundWindow();
+
+            [DllImport("user32.dll")]
+            private static extern IntPtr GetWindowRect(IntPtr hWnd, ref Rect rect);
+
+            [StructLayout(LayoutKind.Sequential)]
+            private struct Rect
+            {
+                public int Left;
+                public int Top;
+                public int Right;
+                public int Bottom;
+            }
+
+            public Bitmap Capture(enmScreenCaptureMode screenCaptureMode = enmScreenCaptureMode.Window)
+            {
+                Rectangle bounds;
+
+                if (screenCaptureMode == enmScreenCaptureMode.Screen)
+                {
+                    bounds = Screen.GetBounds(Point.Empty);
+                    CursorPosition = Cursor.Position;
+                }
+                else
+                {
+                    var foregroundWindowsHandle = GetForegroundWindow();
+                    var rect = new Rect();
+                    GetWindowRect(foregroundWindowsHandle, ref rect);
+                    bounds = new Rectangle(rect.Left, rect.Top, rect.Right - rect.Left, rect.Bottom - rect.Top);
+                    CursorPosition = new Point(Cursor.Position.X - rect.Left, Cursor.Position.Y - rect.Top);
+                }
+
+                var result = new Bitmap(bounds.Width, bounds.Height);
+
+                using (var g = Graphics.FromImage(result))
+                {
+                    g.CopyFromScreen(new Point(bounds.Left, bounds.Top), Point.Empty, bounds.Size);
+                }
+
+                return result;
+            }
+
+            public Point CursorPosition
+            {
+                get;
+                protected set;
+            }
+        }
     }
 }

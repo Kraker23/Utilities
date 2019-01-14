@@ -139,6 +139,7 @@
     <Content Include="Iconos\documents_gear.png" />
     <Content Include="Iconos\document_down.png" />
     <Content Include="Iconos\document_exchange.png" />
+    <None Include="Iconos\dos-pantallas-de-ordenador.png" />
     <Content Include="Iconos\earth_network.png" />
     <Content Include="Iconos\environment_network.png" />
     <Content Include="Iconos\folder.png" />
@@ -147,6 +148,7 @@
     <Content Include="Iconos\gears_run.png" />
     <Content Include="Iconos\gear_preferences.png" />
     <Content Include="Iconos\pantalla%281%29.png" />
+    <None Include="Iconos\pantalla-de-ordenador.png" />
     <Content Include="Iconos\pantalla.ico" />
     <Content Include="Iconos\pantalla.png" />
     <Content Include="Iconos\preferences.png" />

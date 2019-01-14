@@ -34,8 +34,9 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.pck = new System.Windows.Forms.PictureBox();
             this.tsbRecortar = new System.Windows.Forms.ToolStripButton();
             this.btnColor = new System.Windows.Forms.ToolStripButton();
@@ -46,6 +47,8 @@
             this.tsbReedo = new System.Windows.Forms.ToolStripButton();
             this.tsbddUndo = new System.Windows.Forms.ToolStripDropDownButton();
             this.tsbddRedo = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsbPantallas = new System.Windows.Forms.ToolStripButton();
+            this.tsbPantallaUnica = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pck)).BeginInit();
@@ -99,7 +102,10 @@
             this.tsbReedo,
             this.toolStripSeparator3,
             this.tsbddUndo,
-            this.tsbddRedo});
+            this.tsbddRedo,
+            this.toolStripSeparator4,
+            this.tsbPantallas,
+            this.tsbPantallaUnica});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -116,6 +122,11 @@
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 23);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnCancelar);
@@ -126,10 +137,10 @@
             this.panel2.Size = new System.Drawing.Size(784, 44);
             this.panel2.TabIndex = 15;
             // 
-            // toolStripSeparator3
+            // toolStripSeparator4
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 23);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 23);
             // 
             // pck
             // 
@@ -238,6 +249,26 @@
             this.tsbddRedo.Size = new System.Drawing.Size(29, 20);
             this.tsbddRedo.Text = "toolStripDropDownButton1";
             // 
+            // tsbPantallas
+            // 
+            this.tsbPantallas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPantallas.Image = global::Utilities.Controls.Properties.Resources.dos_pantallas_de_ordenador;
+            this.tsbPantallas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPantallas.Name = "tsbPantallas";
+            this.tsbPantallas.Size = new System.Drawing.Size(23, 20);
+            this.tsbPantallas.Text = "Capturar todas las Pantallas";
+            this.tsbPantallas.Click += new System.EventHandler(this.tsbPantallas_Click);
+            // 
+            // tsbPantallaUnica
+            // 
+            this.tsbPantallaUnica.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPantallaUnica.Image = global::Utilities.Controls.Properties.Resources.pantalla_de_ordenador;
+            this.tsbPantallaUnica.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPantallaUnica.Name = "tsbPantallaUnica";
+            this.tsbPantallaUnica.Size = new System.Drawing.Size(23, 20);
+            this.tsbPantallaUnica.Text = "Capturar Pantalla Actual";
+            this.tsbPantallaUnica.Click += new System.EventHandler(this.tsbPantallaUnica_Click);
+            // 
             // frmCaptura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,5 +317,8 @@
         private System.Windows.Forms.ToolStripDropDownButton tsbddUndo;
         private System.Windows.Forms.ToolStripDropDownButton tsbddRedo;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton tsbPantallas;
+        private System.Windows.Forms.ToolStripButton tsbPantallaUnica;
     }
 }

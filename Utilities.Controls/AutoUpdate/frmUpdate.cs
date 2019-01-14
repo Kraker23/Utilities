@@ -30,6 +30,8 @@ namespace Utilities.Controls.AutoUpdate
         public string Error;
         public string nombreArchivoConfig;
 
+        private string archivoLog = "LogActualizacacion.txt";
+
         public frmUpdate()
         {
             InitializeComponent();
@@ -611,6 +613,21 @@ namespace Utilities.Controls.AutoUpdate
             if (titulo)
             {
                 lblTitulo.Text = mensaje;
+            }
+            EscribirLog(mensaje);
+        }
+
+        private void EscribirLog(string mensaje)
+        {
+            string rutaLog = Path.Combine(RutaLocal, archivoLog);
+            if (!System.IO.File.Exists(rutaLog))
+            {
+                System.IO.File.Create(rutaLog);
+            }
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(rutaLog, true))
+            {
+                file.WriteLine(mensaje);
+                file.Close();
             }
         }
 

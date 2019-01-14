@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +157,30 @@ namespace Utilities.Test
             ((ToolStripMenuItem)contextMenuStrip1.Items[0]).DropDownItems.Add(item2);
 
             contextMenuStrip1.Items.Add(submenu);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            string archivoLog = "LogActualizacacion.txt";
+            string RutaLocal = System.IO.Directory.GetCurrentDirectory();
+
+            if (!System.IO.File.Exists(Path.Combine(RutaLocal, archivoLog)))
+            {
+                System.IO.File.Create(Path.Combine(RutaLocal, archivoLog));
+            }
+
+            //string txt = null;
+            //using (StreamReader file = new StreamReader(Path.Combine(RutaLocal, archivoLog)))
+            //{
+
+            //    txt = file.ReadToEnd();
+            //}
+           //using (System.IO.StreamWriter file =new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt"))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(Path.Combine(RutaLocal, archivoLog),true))
+            {
+                //file.WriteLine(txt + file.NewLine+"Fourth line");
+                file.WriteLine("five  line");
+            }
         }
     }
 }

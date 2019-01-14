@@ -20,7 +20,7 @@ namespace Utilities.Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
             //Application.Run(new frmEditarImg());
 
            //Application.Run(new frmUpdate("\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase", "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio"));
@@ -29,7 +29,7 @@ namespace Utilities.Test
 
             //Image img = new Bitmap(Screen.AllScreens[0].WorkingArea.Width, Screen.AllScreens[0].WorkingArea.Height);
             //Application.Run(new frmCaptura(new Bitmap(img)));
-            Application.Run(new frmCaptura());
+           // Application.Run(new frmCaptura());
             
 
             //Image img = PortaPapeles.getClipboardImage();

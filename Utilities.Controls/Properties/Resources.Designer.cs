@@ -113,6 +113,16 @@ namespace Utilities.Controls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap dos_pantallas_de_ordenador {
+            get {
+                object obj = ResourceManager.GetObject("dos-pantallas-de-ordenador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap earth_network {
             get {
                 object obj = ResourceManager.GetObject("earth_network", resourceCulture);
@@ -156,6 +166,16 @@ namespace Utilities.Controls.Properties {
         public static System.Drawing.Bitmap form_red {
             get {
                 object obj = ResourceManager.GetObject("form_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pantalla_de_ordenador {
+            get {
+                object obj = ResourceManager.GetObject("pantalla-de-ordenador", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

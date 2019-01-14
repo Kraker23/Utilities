@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
             "prueba"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Red, null);
-            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "prueba 2"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Lime, null);
-            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "p3"}, -1, System.Drawing.Color.Empty, System.Drawing.Color.Yellow, null);
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,10 +47,11 @@
             this.botonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripCheck1 = new Utilities.Controls.Leyenda.ToolStripCheck();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.cProgressBackground = new Utilities.Controls.ProgressBarBackGround.cProgressBackground();
-            this.toolStripCheck1 = new Utilities.Controls.Leyenda.ToolStripCheck();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.toolStripContainer1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -108,9 +109,9 @@
             // 
             this.listView1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem4,
-            listViewItem5,
-            listViewItem6});
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
             this.listView1.Location = new System.Drawing.Point(30, 291);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(204, 73);
@@ -167,6 +168,14 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
             this.toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
+            // toolStripCheck1
+            // 
+            this.toolStripCheck1.ID = 0;
+            this.toolStripCheck1.Name = "toolStripCheck1";
+            this.toolStripCheck1.Size = new System.Drawing.Size(181, 22);
+            this.toolStripCheck1.StarClicked = false;
+            this.toolStripCheck1.Text = "toolStripCheck1";
+            // 
             // toolStripComboBox1
             // 
             this.toolStripComboBox1.Name = "toolStripComboBox1";
@@ -181,14 +190,6 @@
             this.cProgressBackground.TabIndex = 4;
             this.cProgressBackground.Visible = false;
             // 
-            // toolStripCheck1
-            // 
-            this.toolStripCheck1.ID = 0;
-            this.toolStripCheck1.Name = "toolStripCheck1";
-            this.toolStripCheck1.Size = new System.Drawing.Size(181, 22);
-            this.toolStripCheck1.StarClicked = false;
-            this.toolStripCheck1.Text = "toolStripCheck1";
-            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(329, 84);
@@ -199,12 +200,23 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(552, 127);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.toolStripContainer1);
             this.Controls.Add(this.pictureBox1);
@@ -244,6 +256,7 @@
         private Controls.Leyenda.ToolStripCheck toolStripCheck1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
     }
 }
 
