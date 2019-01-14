@@ -153,7 +153,7 @@ namespace Utilities.Controls.EditarImagen
             this.ImagenG.img = new Bitmap(Imagen);
             this.pck.Image = this.ImagenG.img;
             calcularZoom();
-            ///this.CapturarPantallaCompleta();
+            this.CapturarPantallaCompleta();
             ///this.CapturarPantallaFoco();
             this.Size = new Size(1569, 844);
         }
@@ -520,6 +520,7 @@ namespace Utilities.Controls.EditarImagen
                         case eTools.Recortar: this.recortar(false); break;
                         case eTools.Rectangulo: this.rectangulo(false); break;
                     }
+                    
                     if (imgTmp != null)
                     {
                         imgTmp.Dispose();
@@ -742,17 +743,20 @@ namespace Utilities.Controls.EditarImagen
             if (preview)
             {
                 if (imgTmp != null) imgTmp.Dispose();
-                //imgTmp = (Bitmap)img.Clone();
                 imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
+
+                using (var g = Graphics.FromImage(i)) { g.DrawRectangle(p, rec); }
             }
             else
             {
+                ImagenG.limgAnterior.Add(ImagenG.img);
                 //i = img;
-                i = ImagenG.img;
-            }
+                i = (Bitmap)ImagenG.img.Clone();
 
-            using (var g = Graphics.FromImage(i)) { g.DrawRectangle(p, rec); }
+                using (var g = Graphics.FromImage(i)) { g.DrawRectangle(p, rec); }
+                ImagenG.img = i;
+            }
             visibilidadBtMod();
         }
 
@@ -779,18 +783,30 @@ namespace Utilities.Controls.EditarImagen
                 //imgTmp = (Bitmap)img.Clone();
                 imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
+                using (var g = Graphics.FromImage(i))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLine(p, pStart, pEnd);
+                }
             }
             else
             {
+                ImagenG.limgAnterior.Add(ImagenG.img);
                 //i = img;
-                i = ImagenG.img;
+                //i = ImagenG.img;
+
+                i = (Bitmap)ImagenG.img.Clone();
+                //i = img;
+                //i = ImagenG.img;
+                using (var g = Graphics.FromImage(i))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLine(p, pStart, pEnd);
+                }
+                ImagenG.img = i;
             }
 
-            using (var g = Graphics.FromImage(i))
-            {
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.DrawLine(p, pStart, pEnd);
-            }
+            
             visibilidadBtMod();
         }
 
@@ -811,18 +827,31 @@ namespace Utilities.Controls.EditarImagen
                 //imgTmp = (Bitmap)img.Clone();
                 imgTmp = (Bitmap)ImagenG.img.Clone();
                 i = imgTmp;
+                using (var g = Graphics.FromImage(i))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLine(p, pStart, pEnd);
+                }
+
             }
             else
             {
+                ImagenG.limgAnterior.Add(ImagenG.img);
                 //i = img;
-                i = ImagenG.img;
+                //i = ImagenG.img;
+
+                i = (Bitmap)ImagenG.img.Clone();
+                //i = img;
+                //*i = ImagenG.img;
+                using (var g = Graphics.FromImage(i))
+                {
+                    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                    g.DrawLine(p, pStart, pEnd);
+                }
+                ImagenG.img = i;
             }
 
-            using (var g = Graphics.FromImage(i))
-            {
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.DrawLine(p, pStart, pEnd);
-            }
+            
             visibilidadBtMod();
         }
 
