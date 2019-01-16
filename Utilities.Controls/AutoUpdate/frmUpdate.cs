@@ -135,6 +135,7 @@ namespace Utilities.Controls.AutoUpdate
         
         private void ExisteNuevaVersion()
         {
+            EscribirLog("Comprobar Actualizacion");
             bool acceso=AccesoRutas();
             if (acceso)
             {
@@ -203,6 +204,7 @@ namespace Utilities.Controls.AutoUpdate
             else
             {
                 Error = "No hay Acceso a la Rutas";
+                Accion("No hay Acceso a la Rutas", true);
                 MessageBoxTemporal.Show("No hay Acceso a la Rutas", "Comprobar Actualizacion", 2);
                 this.DialogResult = DialogResult.Ignore;
                 this.Close();
@@ -626,7 +628,8 @@ namespace Utilities.Controls.AutoUpdate
             }
             using (System.IO.StreamWriter file = new System.IO.StreamWriter(rutaLog, true))
             {
-                file.WriteLine(mensaje);
+                string fecha = DateTime.Now.ToString();
+                file.WriteLine(fecha +"->"+ mensaje);
                 file.Close();
             }
         }
