@@ -136,7 +136,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\delete2.png" />
+    <None Include="Iconos\add-folder.png" />
     <Content Include="Iconos\add2.png" />
+    <None Include="Iconos\binoculares.png" />
+    <None Include="Iconos\binoculares%281%29.png" />
+    <None Include="Iconos\avion-de-papel%283%29.png" />
     <Content Include="Iconos\bookmark_add.png" />
     <Content Include="Iconos\checks.png" />
     <Content Include="Iconos\delete2.png" />
@@ -150,12 +155,14 @@
     <Content Include="Iconos\document_exchange.png" />
     <None Include="Iconos\dos-pantallas-de-ordenador.png" />
     <Content Include="Iconos\earth_network.png" />
+    <None Include="Iconos\email%281%29.png" />
     <Content Include="Iconos\environment_network.png" />
     <Content Include="Iconos\folder.png" />
     <Content Include="Iconos\form_green.png" />
     <Content Include="Iconos\form_red.png" />
     <Content Include="Iconos\gears_run.png" />
     <Content Include="Iconos\gear_preferences.png" />
+    <None Include="Iconos\imagen%281%29.png" />
     <Content Include="Iconos\pantalla%281%29.png" />
     <None Include="Iconos\pantalla-de-ordenador.png" />
     <Content Include="Iconos\pantalla.ico" />
