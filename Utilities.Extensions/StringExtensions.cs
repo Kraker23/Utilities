@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
-using Utilities.Clases.Vectores;
+using Utilities.Extensions.Vectores;
 using System.Web;
 
 namespace Utilities.Extensions
@@ -171,7 +171,7 @@ namespace Utilities.Extensions
         /// </summary>
         /// <param name="email">Correo </param>
         /// <returns></returns>
-        public static string obternerUsuarioCorreo(this string email)
+        public static string getrUsuarioCorreo(this string email)
         {
             string res = string.Empty;
             if (!string.IsNullOrEmpty(email))
@@ -185,6 +185,24 @@ namespace Utilities.Extensions
             return res;
         }
 
+        /// <summary>
+        /// Obtener el Dominio de un correo
+        /// </summary>
+        /// <param name="email">Correo </param>
+        /// <returns></returns>
+        public static string getDominioCorreo(this string email)
+        {
+            string res = string.Empty;
+            if (!string.IsNullOrEmpty(email))
+            {
+                if (email.Contains("@"))
+                {
+                    int pos = email.IndexOf("@");
+                    res = email.Substring(pos + 1, email.Length - pos - 1);
+                }
+            }
+            return res;
+        }
 
 
         /// <summary> Añadir un String a otro, seprandolo por un separador si se requiere </summary>
@@ -314,7 +332,7 @@ namespace Utilities.Extensions
         /// </summary>
         /// <param name="email">Correo a comprobar</param>
         /// <returns></returns>
-        public static bool correoFormato(this string email)
+        public static bool FormatoCorreoValido(this string email)
         {
             String expresion;
             expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
@@ -335,7 +353,6 @@ namespace Utilities.Extensions
             }
 
         }
-
 
         #region AndresC.
 
@@ -457,7 +474,7 @@ namespace Utilities.Extensions
                 using (MemoryStream oOutStream = new MemoryStream())
                 {
                     CryptoStream oCryptoStream =
-                        new CryptoStream(oOutStream, oTripleDESC.CreateEncryptor(Vectores.bClave, Vectores.bVector), CryptoStreamMode.Write);
+                        new CryptoStream(oOutStream, oTripleDESC.CreateEncryptor(Vectores.Vectores.bClave, Vectores.Vectores.bVector), CryptoStreamMode.Write);
 
                     oCryptoStream.Write(bIN, 0, bIN.Length);
                     oCryptoStream.FlushFinalBlock();
@@ -492,7 +509,7 @@ namespace Utilities.Extensions
                 using (MemoryStream oOutStream = new MemoryStream())
                 {
                     CryptoStream oCryptoStream =
-                        new CryptoStream(oOutStream, oTripleDESC.CreateDecryptor(Vectores.bClave, Vectores.bVector), CryptoStreamMode.Write);
+                        new CryptoStream(oOutStream, oTripleDESC.CreateDecryptor(Vectores.Vectores.bClave, Vectores.Vectores.bVector), CryptoStreamMode.Write);
 
                     oCryptoStream.Write(bIN, 0, bIN.Length);
                     oCryptoStream.FlushFinalBlock();
@@ -526,7 +543,7 @@ namespace Utilities.Extensions
                 using (MemoryStream oOutStream = new MemoryStream())
                 {
                     CryptoStream oCryptoStream =
-                        new CryptoStream(oOutStream, oTripleDESC.CreateEncryptor(Vectores.bClave, Vectores.bVector), CryptoStreamMode.Write);
+                        new CryptoStream(oOutStream, oTripleDESC.CreateEncryptor(Vectores.Vectores.bClave, Vectores.Vectores.bVector), CryptoStreamMode.Write);
 
                     oCryptoStream.Write(bIN, 0, bIN.Length);
                     oCryptoStream.FlushFinalBlock();
@@ -562,7 +579,7 @@ namespace Utilities.Extensions
                 using (MemoryStream oOutStream = new MemoryStream())
                 {
                     CryptoStream oCryptoStream =
-                        new CryptoStream(oOutStream, oTripleDESC.CreateDecryptor(Vectores.bClave, Vectores.bVector), CryptoStreamMode.Write);
+                        new CryptoStream(oOutStream, oTripleDESC.CreateDecryptor(Vectores.Vectores.bClave, Vectores.Vectores.bVector), CryptoStreamMode.Write);
 
                     oCryptoStream.Write(bIN, 0, bIN.Length);
                     oCryptoStream.FlushFinalBlock();

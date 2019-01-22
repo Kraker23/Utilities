@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Clases.MessageTemporal;
+using Utilities.Controls.Correo;
 using static Utilities.Controls.Leyenda.DropDownLeyenda;
 using static Utilities.Controls.Leyenda.Menu;
 
@@ -28,7 +29,11 @@ namespace Utilities.Test
         public Form1()
         {
             InitializeComponent();
-            crearDD();
+            cNewCorreo correo = new cNewCorreo("c.ramirez@eskape.es", "Eskpe1234");
+            correo.Dock = DockStyle.Fill;
+            this.Controls.Clear();
+            this.Controls.Add(correo);
+            // crearDD();
         }
 
         private void crearDD()

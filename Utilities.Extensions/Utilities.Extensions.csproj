@@ -49,11 +49,5 @@
     <Compile Include="StringExtensions.cs" />
     <Compile Include="Vectores\Vectores.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Utilities.Clases\Utilities.Clases.csproj">
-      <Project>{8cc40881-1b13-4cb8-81ef-884cae939acb}</Project>
-      <Name>Utilities.Clases</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Correo\GestorCorreo.cs" />
     <Compile Include="PortaPapeles\PortaPapeles.cs" />
     <Compile Include="Correo\Correo.cs" />
     <Compile Include="Error\Error.cs" />
@@ -63,6 +64,12 @@
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities.Extensions\Utilities.Extensions.csproj">
+      <Project>{61bd46c9-4a2d-47f6-a89a-0c9bbc0b3f07}</Project>
+      <Name>Utilities.Extensions</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

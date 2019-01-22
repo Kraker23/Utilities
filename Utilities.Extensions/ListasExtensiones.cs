@@ -27,6 +27,26 @@ namespace Utilities.Extensions
             return resultado;
         }
 
+        public static string getListaToString<T>(this List<T> source,string separador)
+        {
+            string resultado = string.Empty;
+            if (source != null && source.Count > 0)
+            {
+                foreach (var item in source)
+                {
+                    if (string.IsNullOrEmpty(resultado))
+                    {
+                        resultado = item.ToString();
+                    }
+                    else
+                    {
+                        resultado += resultado + separador + item.ToString();
+                    }
+                }
+            }
+            return resultado;
+        }
+
         //public static bool ContieneString<T>(this List<T> source,string str)
         //{
         //    bool resultado = false;

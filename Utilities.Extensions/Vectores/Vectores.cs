@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Utilities.Clases.Vectores
+namespace Utilities.Extensions.Vectores
 {
     internal class Vectores
     {

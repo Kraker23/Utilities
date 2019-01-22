@@ -50,6 +50,12 @@
     <Compile Include="AutoUpdate\frmUpdate.Designer.cs">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Correo\cNewCorreo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Correo\cNewCorreo.Designer.cs">
+      <DependentUpon>cNewCorreo.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditarImagen\frmCaptura.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AutoUpdate\frmUpdate.resx">
       <DependentUpon>frmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correo\cNewCorreo.resx">
+      <DependentUpon>cNewCorreo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditarImagen\frmCaptura.resx">
       <DependentUpon>frmCaptura.cs</DependentUpon>
