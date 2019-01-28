@@ -34,6 +34,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -42,6 +43,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoUpdate\frmUpdate.cs">
@@ -73,6 +76,12 @@
     </Compile>
     <Compile Include="Encriptar\frmStrEncrypt.Designer.cs">
       <DependentUpon>frmStrEncrypt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxPerso\cGroupBoxExpandable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupBoxPerso\cGroupBoxExpandable.Designer.cs">
+      <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
     </Compile>
     <Compile Include="IntroducirTexto\frmIntroducirTexto.cs">
       <SubType>Form</SubType>
@@ -114,12 +123,16 @@
     <EmbeddedResource Include="Encriptar\frmStrEncrypt.resx">
       <DependentUpon>frmStrEncrypt.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupBoxPerso\cGroupBoxExpandable.resx">
+      <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IntroducirTexto\frmIntroducirTexto.resx">
       <DependentUpon>frmIntroducirTexto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBarBackGround\cProgressBackground.resx">
       <DependentUpon>cProgressBackground.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

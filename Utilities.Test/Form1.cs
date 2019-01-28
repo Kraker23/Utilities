@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Clases.MessageTemporal;
+using Utilities.Controls;
 using Utilities.Controls.Correo;
+using Utilities.Controls.GroupBoxPerso;
 using static Utilities.Controls.Leyenda.DropDownLeyenda;
 using static Utilities.Controls.Leyenda.Menu;
 
@@ -29,11 +31,26 @@ namespace Utilities.Test
         public Form1()
         {
             InitializeComponent();
-            cNewCorreo correo = new cNewCorreo("c.ramirez@eskape.es", "Eskpe1234");
-            correo.Dock = DockStyle.Fill;
-            this.Controls.Clear();
-            this.Controls.Add(correo);
+            //cNewCorreo correo = new cNewCorreo("c.ramirez@eskape.es", "Eskpe1234");
+            //correo.Dock = DockStyle.Fill;
+            //this.Controls.Clear();
+            //this.Controls.Add(correo);
             // crearDD();
+
+            //cGroupBox gb = new cGroupBox("grupo!");
+            //gb.Dock = DockStyle.Fill;
+            //this.Controls.Clear();
+            //this.Controls.Add(gb);
+
+            //UserControl1 gb = new UserControl1();
+            //gb.Dock = DockStyle.Fill;
+            //this.Controls.Clear();
+            //this.Controls.Add(gb);
+
+            cGroupBoxExpandable gb = new cGroupBoxExpandable();
+            gb.Dock = DockStyle.Top;
+            this.Controls.Clear();
+            this.Controls.Add(gb);
         }
 
         private void crearDD()
