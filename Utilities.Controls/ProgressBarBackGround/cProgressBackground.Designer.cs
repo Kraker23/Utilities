@@ -45,11 +45,12 @@
             // 
             // progressBar
             // 
-            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar.Location = new System.Drawing.Point(114, 6);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(126, 23);
+            this.progressBar.Size = new System.Drawing.Size(128, 22);
             this.progressBar.TabIndex = 1;
             // 
             // backgroundWorker
@@ -76,7 +77,7 @@
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.lbl);
             this.Name = "cProgressBackground";
-            this.Size = new System.Drawing.Size(243, 36);
+            this.Size = new System.Drawing.Size(245, 35);
             this.ResumeLayout(false);
             this.PerformLayout();
 

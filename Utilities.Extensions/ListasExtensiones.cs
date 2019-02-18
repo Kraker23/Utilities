@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -84,5 +87,88 @@ namespace Utilities.Extensions
         {
             return source.GetRange(0, source.Count > primeros ? primeros : source.Count);
         }
+
+        //public DataTable ConvertToDataTable<T>(IList<T> data)
+        public static DataTable ConvertToDataTable<T>(this List<T> data)
+        {
+            PropertyDescriptorCollection propiedades = TypeDescriptor.GetProperties(typeof(T));
+            DataTable table = new DataTable();
+
+            foreach (PropertyDescriptor prop in propiedades)
+            {
+                table.Columns.Add(prop.Name, Nullable.GetUnderlyingType(prop.PropertyType) ?? prop.PropertyType);
+            }
+            foreach (T item in data)
+            {
+                DataRow row = table.NewRow();
+                foreach (PropertyDescriptor prop in propiedades)
+                {
+                    row[prop.Name] = prop.GetValue(item) ?? DBNull.Value;
+                }
+                table.Rows.Add(row);
+            }
+            return table;
+
+        }
+
+        public static DataTable ConvertirListaToDataTable(this List<object> items, string nameService)
+        {
+            // Instancia del objeto a devolver
+            var returnValue = new DataTable();
+            // Información del tipo de datos de los elementos del List
+            Type itemsType = items.First().GetType();
+            /*Se Recorren las propiedades para crear las columnas del datatable y
+            pregunta si el objeto tiene estrcutra.Si tiene entra.*/
+            if (itemsType.GetProperties().Any())
+            {
+                foreach (PropertyInfo prop in itemsType.GetProperties())
+                {
+                    //Se Crea y agrega una columna por cada propiedad de la entidad
+                    var column = new DataColumn(prop.Name);
+
+                    var propType = Nullable.GetUnderlyingType(prop.PropertyType)
+                      ?? prop.PropertyType;
+
+                    column.DataType = propType;
+                    returnValue.Columns.Add(column);
+                }
+                int j;
+                /* Se recorre la colección para guardar los datos
+                 en el DataTable*/
+                foreach (var item in items)
+                {
+                    j = 0;
+                    object[] newRow = new object[returnValue.Columns.Count];
+                    /* Se vuelve a recorrer las propiedades de cada item para
+                     obtener su valor y guardarlo en la fila de la tabla*/
+                    foreach (PropertyInfo prop in itemsType.GetProperties())
+                    {
+                        newRow[j] = prop.GetValue(item, null);
+                        j++;
+                    }
+                    returnValue.Rows.Add(newRow);
+                }
+            }
+            //si el objeto no tiene estructura, se arma una.
+            else
+            {
+                var newRow = new object[items.Count];
+                for (int i = 0; i < items.Count; i++)
+                {
+                    var colName = nameService + i;
+                    var column = new DataColumn(colName);
+                    column.DataType = typeof(string);
+                    returnValue.Columns.Add(column);
+                }
+                for (int i = 0; i < items.Count; i++)
+                {
+                    newRow[i] = items[i].ToString();
+                }
+                returnValue.Rows.Add(newRow);
+            }
+            // devolución del DataTable
+            return returnValue;
+        }
+
     }
 }

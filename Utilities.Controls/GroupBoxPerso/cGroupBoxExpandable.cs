@@ -16,6 +16,12 @@ namespace Utilities.Controls.GroupBoxPerso
         int height = 200;
         int width = 0;
 
+        public cGroupBoxExpandable()
+        {
+            InitializeComponent();
+            chk.Text = "Activar";
+        }
+
         public cGroupBoxExpandable(string NombreChek="Activar")
         {
             InitializeComponent();
@@ -97,6 +103,23 @@ namespace Utilities.Controls.GroupBoxPerso
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             ManageCheckGroupBox(chk, group);
+        }
+
+        private void group_SizeChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void GroupFill()
+        {
+            group.Dock = DockStyle.Fill;
+            panel1.Dock = DockStyle.Fill;
+        }
+
+        private void group_DockChanged(object sender, EventArgs e)
+        {
+            group.Dock = DockStyle.Fill;
+            panel1.Dock = DockStyle.Fill;
         }
     }
 }

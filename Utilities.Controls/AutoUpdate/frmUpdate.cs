@@ -143,12 +143,12 @@ namespace Utilities.Controls.AutoUpdate
                 DateTime fLocal = buscarUltimaFechaModificado(RutaLocal);
                 bool Temp = System.IO.Directory.Exists(RutaTemporal) ?true : false;
 
-                if ((fServidor > fLocal) ||(Temp) )
+                if ((fServidor > fLocal) || (Temp))
                 {
                     ExisteAcutalizacion = true;
                     CheckForIllegalCrossThreadCalls = false;
                     cProgress.Start();
-                    Accion("Existe una nueva version",true);
+                    Accion("Existe una nueva version", true);
                     Task.Factory.StartNew(() =>
                     {
                         CargarListas();
@@ -188,15 +188,17 @@ namespace Utilities.Controls.AutoUpdate
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }, TaskScheduler.FromCurrentSynchronizationContext());
-                    
+
                     //CheckForIllegalCrossThreadCalls = true;
+
                 }
+
                 else
                 {
-                    
+
                     CompletadaActualizacion = true;
                     Accion("No existe una nueva version", true);
-                    MessageBoxTemporal.Show("No existe una nueva version","Comprobar Actualizacion",1);
+                    MessageBoxTemporal.Show("No existe una nueva version", "Comprobar Actualizacion", 1);
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
