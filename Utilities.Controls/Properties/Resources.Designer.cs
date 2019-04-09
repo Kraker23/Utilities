@@ -113,6 +113,26 @@ namespace Utilities.Controls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap copy {
+            get {
+                object obj = ResourceManager.GetObject("copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap copy1 {
+            get {
+                object obj = ResourceManager.GetObject("copy1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap delete2 {
             get {
                 object obj = ResourceManager.GetObject("delete2", resourceCulture);
@@ -226,6 +246,16 @@ namespace Utilities.Controls.Properties {
         public static System.Drawing.Bitmap form_red {
             get {
                 object obj = ResourceManager.GetObject("form_red", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap goma_de_borrar {
+            get {
+                object obj = ResourceManager.GetObject("goma-de-borrar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

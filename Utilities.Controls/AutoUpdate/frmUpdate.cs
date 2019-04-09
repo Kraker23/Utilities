@@ -274,10 +274,13 @@ namespace Utilities.Controls.AutoUpdate
             {
                 if (System.IO.File.Exists(pathArchivo))
                 {
-                    DateTime fechaArchivo = System.IO.File.GetLastWriteTime(pathArchivo);
-                    if (fecha < fechaArchivo)
+                    if (!pathArchivo.Contains("LogActualizacacion"))
                     {
-                        fecha = fechaArchivo;
+                        DateTime fechaArchivo = System.IO.File.GetLastWriteTime(pathArchivo);
+                        if (fecha < fechaArchivo)
+                        {
+                            fecha = fechaArchivo;
+                        }
                     }
                 }
             }
@@ -624,11 +627,12 @@ namespace Utilities.Controls.AutoUpdate
         private void EscribirLog(string mensaje)
         {
             string rutaLog = Path.Combine(RutaLocal, archivoLog);
-            if (!System.IO.File.Exists(rutaLog))
-            {
-                System.IO.File.Create(rutaLog);
-            }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(rutaLog, true))
+            //No hace falta porque la linea del StreamWriter ya crea el archivo
+            //if (!System.IO.File.Exists(rutaLog))
+            //{
+            //    System.IO.File.Create(rutaLog);
+            //}
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(rutaLog, true))  //se crea el archivo
             {
                 string fecha = DateTime.Now.ToString();
                 file.WriteLine(fecha +"->"+ mensaje);

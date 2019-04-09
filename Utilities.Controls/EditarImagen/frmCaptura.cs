@@ -153,7 +153,7 @@ namespace Utilities.Controls.EditarImagen
             this.ImagenG.img = new Bitmap(Imagen);
             this.pck.Image = this.ImagenG.img;
             calcularZoom();
-            this.CapturarPantallaCompleta();
+            //this.CapturarPantallaCompleta();
             ///this.CapturarPantallaFoco();
             this.Size = new Size(1569, 844);
         }

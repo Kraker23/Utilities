@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Correo\GestorCorreo.cs" />
     <Compile Include="GestorConexionSQL\gestorConexion.cs" />
+    <Compile Include="Globales\Global.cs" />
     <Compile Include="PortaPapeles\PortaPapeles.cs" />
     <Compile Include="Correo\Correo.cs" />
     <Compile Include="Error\Error.cs" />

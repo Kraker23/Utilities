@@ -27,22 +27,24 @@ namespace Utilities.Controls.Leyenda
         public ToolStripCheck(string text, Image image, EventHandler onClick) : base(text, image, onClick) { }
         public ToolStripCheck(string text, Image image, int id) : base(text, image) { this.ID = id; }
         public ToolStripCheck(string text, Image image, int id, EventHandler onClick) : base(text, image, onClick) { this.ID = id; }
+        public ToolStripCheck(string text, Image image, int id, EventHandler onClick ,bool estadoInicial) : base(text, image, onClick) { this.ID = id; this.Checked = estadoInicial; }
 
         private bool allButtonSelect = true;
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
+            
             if (base.Checked == false)
             {
                 Rectangle rect = new Rectangle(this.Width - 20, 1, 20, 20);
-                e.Graphics.DrawImage(global::Utilities.Controls.Properties.Resources.check2, rect);//imagen del checkeo a la derecha
+                e.Graphics.DrawImage(global::Utilities.Controls.Properties.Resources.error, rect);//imagen del checkeo a la derecha
 
             }
             else
             {
                 Rectangle rect = new Rectangle(this.Width - 20, 1, 20, 20);
-                e.Graphics.DrawImage(global::Utilities.Controls.Properties.Resources.error, rect);
+                e.Graphics.DrawImage(global::Utilities.Controls.Properties.Resources.check2, rect);
             }
         }
         public int ID { get; set; }
@@ -56,7 +58,7 @@ namespace Utilities.Controls.Leyenda
             //Hasta aqui
             if (allButtonSelect)
             {
-                this.Checked = this.Checked == true ? false : true;
+                base.Checked = base.Checked == true ? false : true;
                 base.OnMouseDown(e); //base.OnClick(e);
             }
             else
@@ -64,7 +66,7 @@ namespace Utilities.Controls.Leyenda
                 StarClicked = e.X > (this.Width - 20);
                 if (StarClicked)
                 {
-                    this.Checked = this.Checked == true ? false : true;
+                    base.Checked = base.Checked == true ? false : true;
                 }
                 else
                 {

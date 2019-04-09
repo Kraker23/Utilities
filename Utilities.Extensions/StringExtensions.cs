@@ -258,6 +258,68 @@ namespace Utilities.Extensions
             return res;
         }
 
+        /// <summary> Añadir un String a otro, seprandolo por un separador si se requiere </summary>
+        /// <param name="value">Valor del string Principal</param>
+        /// <param name="segundoString">Valor del string a incluir en el primero</param>
+        /// <param name="separador">Separador si es requerido, sino null</param>
+        /// <returns></returns>
+        public static string añadirString(this string value, string segundoString, string separador = ",")
+        {
+            string res = string.Empty;
+            if (!string.IsNullOrEmpty(segundoString))
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    if (!string.IsNullOrEmpty(separador))
+                    {
+                        res = segundoString + separador;
+                    }
+                    else
+                    {
+                        res = segundoString;
+                    }
+                }
+                else
+                {
+                    if (!string.IsNullOrEmpty(separador))
+                    {
+                        if (value.EndsWith(separador.ToString()))
+                        {
+                            res = value + segundoString;
+                        }
+                        else if (value.Substring(value.Length - 1).Equals(separador))
+                        {
+                            res = value + segundoString;
+                        }
+                        else
+                        {
+                            res = value + separador + segundoString;
+                        }
+                    }
+                    else
+                    {
+                        res = value + segundoString;
+                    }
+                }
+
+                value = res;
+            }
+            else
+            {
+                res = value;
+            }
+            return res;
+        }
+
+        /// <summary>Spliter por otro string</summary>
+        /// <param name="str"></param>
+        /// <param name="splitter"></param>
+        /// <returns></returns>
+        public static string[] Split(this string str, string splitter)
+        {
+            return str.Split(new[] { splitter }, StringSplitOptions.None);
+        }
+
         /// <summary> Obtener el numero de apariciones de un texto en un texto mas grande</summary>
         /// <param name="texto">Texto en donde buscar</param>
         /// <param name="textoBuscar">Texto a buscar</param>

@@ -83,6 +83,12 @@
     <Compile Include="GroupBoxPerso\cGroupBoxExpandable.Designer.cs">
       <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
     </Compile>
+    <Compile Include="HerramientaTextos\SeparadorTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\SeparadorTexto.Designer.cs">
+      <DependentUpon>SeparadorTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="IntroducirTexto\frmIntroducirTexto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <EmbeddedResource Include="GroupBoxPerso\cGroupBoxExpandable.resx">
       <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\SeparadorTexto.resx">
+      <DependentUpon>SeparadorTexto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IntroducirTexto\frmIntroducirTexto.resx">
       <DependentUpon>frmIntroducirTexto.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +158,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\goma-de-borrar.png" />
+    <None Include="Resources\copy1.png" />
+    <None Include="Resources\copy.png" />
     <None Include="Resources\delete2.png" />
     <None Include="Iconos\add-folder.png" />
     <Content Include="Iconos\add2.png" />
