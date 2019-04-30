@@ -263,9 +263,39 @@ namespace Utilities.Controls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap goma_de_borrar1 {
+            get {
+                object obj = ResourceManager.GetObject("goma-de-borrar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap imagen_1_ {
             get {
                 object obj = ResourceManager.GetObject("imagen(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ocultar_1_ {
+            get {
+                object obj = ResourceManager.GetObject("ocultar(1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ocultar_2_ {
+            get {
+                object obj = ResourceManager.GetObject("ocultar(2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -316,6 +346,16 @@ namespace Utilities.Controls.Properties {
         public static System.Drawing.Bitmap text_marked {
             get {
                 object obj = ResourceManager.GetObject("text_marked", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap visibilidad_1_ {
+            get {
+                object obj = ResourceManager.GetObject("visibilidad(1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -118,38 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="form_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\form_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="goma-de-borrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goma-de-borrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deshacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\deshacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="email(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Iconos\email(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="binoculares(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\binoculares(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="avion-de-papel(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\avion-de-papel(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="earth_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\earth_network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scroll_replace" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\scroll_replace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="text_binary1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\text_binary1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="deshacerMultiple(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\deshacerMultiple(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\add-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="form_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\form_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="text_marked" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Iconos\text_marked.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="scroll_run" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\scroll_run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pantalla-de-ordenador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\pantalla-de-ordenador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dos-pantallas-de-ordenador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\dos-pantallas-de-ordenador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="imagen(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\imagen(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avion-de-papel(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\avion-de-papel(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deshacerMultiple(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\deshacerMultiple(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="visibilidad(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\visibilidad(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="binoculares" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\binoculares.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ocultar(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ocultar(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\copy1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ocultar(2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ocultar(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scroll_replace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\scroll_replace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="environment_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Iconos\environment_network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,43 +181,31 @@
   <data name="deshacerMultiple(3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Iconos\deshacerMultiple(3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="earth_network" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\earth_network.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="form_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\form_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copy1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="binoculares(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\binoculares(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deshacer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\deshacer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="imagen(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\imagen(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="binoculares" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\binoculares.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="text_binary1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\text_binary1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deshacer(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\deshacer(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pantalla-de-ordenador" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Iconos\pantalla-de-ordenador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="dos-pantallas-de-ordenador" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\dos-pantallas-de-ordenador.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="goma-de-borrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\goma-de-borrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="form_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\form_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add-folder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\add-folder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="scroll_run" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\scroll_run.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="deshacer(1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Iconos\deshacer(1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="goma-de-borrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\goma-de-borrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

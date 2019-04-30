@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Controls.HerramientaTextos;
+using Utilities.Controls.IntroducirTexto;
 
 namespace Utilities.Test
 {
@@ -20,7 +21,11 @@ namespace Utilities.Test
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            SeparadorTexto st = new SeparadorTexto();
+            //SeparadorTexto st = new SeparadorTexto();
+            //st.Dock = DockStyle.Fill;
+            ////this.Controls.Add(st);
+
+            cEncriptarDesencriptarTexto st = new cEncriptarDesencriptarTexto();
             st.Dock = DockStyle.Fill;
             this.Controls.Add(st);
         }

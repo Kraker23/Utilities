@@ -83,6 +83,12 @@
     <Compile Include="GroupBoxPerso\cGroupBoxExpandable.Designer.cs">
       <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
     </Compile>
+    <Compile Include="HerramientaTextos\cEncriptarDesencriptarTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\cEncriptarDesencriptarTexto.Designer.cs">
+      <DependentUpon>cEncriptarDesencriptarTexto.cs</DependentUpon>
+    </Compile>
     <Compile Include="HerramientaTextos\SeparadorTexto.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     <EmbeddedResource Include="GroupBoxPerso\cGroupBoxExpandable.resx">
       <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\cEncriptarDesencriptarTexto.resx">
+      <DependentUpon>cEncriptarDesencriptarTexto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HerramientaTextos\SeparadorTexto.resx">
       <DependentUpon>SeparadorTexto.cs</DependentUpon>
     </EmbeddedResource>
@@ -158,6 +167,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\goma-de-borrar1.png" />
+    <None Include="Resources\ocultar%282%29.png" />
+    <None Include="Resources\ocultar%281%29.png" />
+    <None Include="Resources\visibilidad%281%29.png" />
     <None Include="Resources\goma-de-borrar.png" />
     <None Include="Resources\copy1.png" />
     <None Include="Resources\copy.png" />
