@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccesoCarpeta\Acceso.cs" />
     <Compile Include="Correo\GestorCorreo.cs" />
     <Compile Include="GestorConexionSQL\gestorConexion.cs" />
     <Compile Include="Globales\Global.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="MessageTemporal\uMessageBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendimiento\Rendimiento.cs" />
+    <Compile Include="XML\Ejemplo_Clase_XML.cs" />
     <Compile Include="XML\SerializerXML.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -66,6 +68,7 @@
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="XML\Ejemplo_XML_Archivo.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utilities.Extensions\Utilities.Extensions.csproj">

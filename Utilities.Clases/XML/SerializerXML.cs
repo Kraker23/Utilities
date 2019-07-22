@@ -243,5 +243,74 @@ namespace Utilities.Clases.XML
             return System.Text.RegularExpressions.Regex.Replace(HTMLCode, "<[^>]*>", "");
         }
 
+
+
+        //NUEVO
+
+        /// <summary>
+        /// Convertir un XML en un objecto cuando es una lista de objectos (Opcion 1)
+        /// </summary>
+        /// <typeparam name="T">Objecto a Conseguir</typeparam>
+        /// <param name="xml">XMl del archivo</param>
+        /// <returns></returns>
+        public static T Deserialize_Opcion1<T>(string xml) where T : class
+        {
+            System.Xml.Serialization.XmlSerializer ser = new System.Xml.Serialization.XmlSerializer(typeof(T));
+
+            using (StringReader sr = new StringReader(xml))
+            {
+                return (T)ser.Deserialize(sr);
+            }
+        }
+
+        /// <summary>
+        /// Convertir un XML en un objecto cuando es una lista de objectos (Opcion 2)
+        /// </summary>
+        /// <typeparam name="T">Objecto a Conseguir</typeparam>
+        /// <param name="rutaArchivo">Ruta del archivo para leer lo</param>
+        /// <returns></returns>
+        public static T Deserialize_Opcion2<T>(string rutaArchivo) where T : class
+        {
+            System.Xml.Serialization.XmlSerializer reader2 = new System.Xml.Serialization.XmlSerializer(typeof(T));
+            System.IO.StreamReader file = new System.IO.StreamReader(rutaArchivo);
+            //Proyectos overview = (Proyectos)reader2.Deserialize(file);
+            //file.Close();
+            return (T)reader2.Deserialize(file);
+        }
+
+        /// <summary>
+        /// Convertir un XML en un objecto cuando es una lista de objectos (Opcion 3)
+        /// </summary>
+        /// <typeparam name="T">Objecto a Conseguir</typeparam>
+        /// <param name="xml">XMl del archivo</param>
+        /// <returns></returns>
+        public static T Deserialize_Opcion3<T>(string xml) where T : class
+        {
+            T result;
+            XmlSerializer serializer = new XmlSerializer(typeof(T));
+            using (TextReader reader = new StringReader(xml))
+            {
+                result = (T)serializer.Deserialize(reader);
+            }
+            return result;
+        }
+
+       /* 
+        * ///EJEMPLO DE COMO DESERIALIZAR
+        * public static void EjemploDeserializar()
+        {
+            //Proyectos = new List<Proyecto>();
+            string  NombreArchivo = ConfigurationManager.AppSettings["ArchivoConfig"].ToString();
+
+            string rutaArchivo = string.Format("{0}\\{1}", System.Windows.Forms.Application.StartupPath.ToString(), NombreArchivo);
+
+            string xml = SerializerXML.getXMLFile(rutaArchivo);
+
+            
+            Proyectos p1 = SerializerXML.Deserialize_Opcion1<Proyectos>(xml);
+
+
+        }
+        */
     }
 }
