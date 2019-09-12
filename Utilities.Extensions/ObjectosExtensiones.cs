@@ -8,6 +8,13 @@ namespace Utilities.Extensions
 {
     public static class ObjectosExtensiones
     {
+        /// <summary>
+        /// Funciona para pasar datos de un objeto a otro, con las mismas propiedades
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="origen"></param>
+        /// <returns></returns>
         public static T ObjectToObject<T, T2>(T2 origen) where T : new()
         {
             T res = new T();
