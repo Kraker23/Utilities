@@ -78,6 +78,16 @@ namespace Utilities.Extensions
             }
             return resultado;
         }
+
+        public static T[] FindAll<T>(this T[] array, Predicate<T> match)
+        {
+            return Array.FindAll(array, match);
+        }
+
+        public static List<T> FindAllToList<T>(this T[] array, Predicate<T> match)
+        {
+            return Array.FindAll(array, match).ToList<T>();
+        }
     }
 
 }
