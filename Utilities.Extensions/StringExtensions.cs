@@ -517,6 +517,31 @@ namespace Utilities.Extensions
             return ToInteger(cadena, 0);
         }
 
+        public static bool SePuedeParsear(this string str)
+        {
+            if (!string.IsNullOrEmpty(str))
+            {
+                if (str.Contains("[a-zA-Z]+") == false)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static int Parsear(string str)
+        {
+            if (str.SePuedeParsear())
+            {
+                int entero;
+                if (int.TryParse(str, out entero))
+                {
+                    return entero;
+                }
+            }
+
+            return 0;
+        }
 
         /// <summary>
         /// Encripta una cadena de texto.
