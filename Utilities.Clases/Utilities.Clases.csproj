@@ -66,6 +66,7 @@
     <Compile Include="MessageTemporal\uMessageBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendimiento\Rendimiento.cs" />
+    <Compile Include="Tareas\PeriodicTaskFactory.cs" />
     <Compile Include="XML\Ejemplo_Clase_XML.cs" />
     <Compile Include="XML\SerializerXML.cs" />
   </ItemGroup>
