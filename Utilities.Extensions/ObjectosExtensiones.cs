@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,22 @@ namespace Utilities.Extensions
             }
 
             return res;
+        }
+
+        /// <summary> Para recuperar el nombre del Objeto, uso --> objeto.GetName()</summary>
+        /// <param name="obj">Objeto a recuperar el nombre</param>
+        /// <returns></returns>
+        public static string GetName(this object obj)
+        {
+            return ((MemberExpression)obj).Member.Name;
+        }
+
+        /// <summary> Para recuperar el nombre del Objeto por Expressiones, uso --> GetName(()=>objeto1)</summary>
+        /// <param name="obj">Objeto a recuperar el nombre</param>
+        /// <returns></returns>
+        public static string GetName<T>(Expression<Func<T>> obj)
+        {
+            return ((MemberExpression)obj.Body).Member.Name;
         }
     }
 }

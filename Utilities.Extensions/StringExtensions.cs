@@ -517,6 +517,9 @@ namespace Utilities.Extensions
             return ToInteger(cadena, 0);
         }
 
+        /// <summary> Comprueba si un String se puede parsear, porque no contiene Letras</summary>
+        /// <param name="str">String a comprobar si se puede parsear</param>
+        /// <returns>Valor si es posible Convertir el string</returns>
         public static bool SePuedeParsear(this string str)
         {
             if (!string.IsNullOrEmpty(str))
@@ -529,6 +532,9 @@ namespace Utilities.Extensions
             return false;
         }
 
+        /// <summary> Convierte un String en Int si es posible, sino devuelve un 0 </summary>
+        /// <param name="str">String a parsear</param>
+        /// <returns>Valor en Int, si es posible, sino devuelve un 0 por defecto</returns>
         public static int Parsear(string str)
         {
             if (str.SePuedeParsear())

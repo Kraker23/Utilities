@@ -67,6 +67,7 @@
     <Reference Include="UIAutomationTypes" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Encriptacion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

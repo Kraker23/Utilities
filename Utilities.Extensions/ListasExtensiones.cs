@@ -24,7 +24,7 @@ namespace Utilities.Extensions
             {
                 foreach (var item in source)
                 {
-                    resultado += resultado + ", " + item.ToString();
+                    resultado = resultado + ", " + item.ToString();
                 }
             }
             return resultado;
@@ -43,7 +43,7 @@ namespace Utilities.Extensions
                     }
                     else
                     {
-                        resultado += resultado + separador + item.ToString();
+                        resultado = resultado + separador + item.ToString();
                     }
                 }
             }

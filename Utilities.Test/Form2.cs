@@ -350,6 +350,25 @@ namespace Utilities.Test
             salida = Resultado;
             Clipboard.SetText(Resultado);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //Encriptacion.DesEncripta();
+            
+            string Desarrollo = Encriptacion.DesEncripta("9qHRz/Ux3u8ZYGqaxPLU8kHcheQkQYTUCDD51kTXNg5hph3uHkUArYOlu14cnq7g0uifWQxifiTyUPMhVAUYdo2itMvXYVCr08hs7laL0EBu/iUOyX0oIjnc5mVX8EAm");
+            string Produccion=Encriptacion.DesEncripta("1IPHOqCPFnZH6qabZUhmY/rCSy/tyEzFsMSLFQytYRjiT7kSlJ/shGlH7hg6n/KpdccPIghMt84sTyYoV/La8pKvCnZHKO5TRbZfP6RTKB0=");
+            string XCHProduccion=Encriptacion.DesEncripta("1IPHOqCPFnZH6qabZUhmY/rCSy/tyEzFsMSLFQytYRjiT7kSlJ/shGlH7hg6n/KpdccPIghMt84sTyYoV/La8pKvCnZHKO5TRbZfP6RTKB0=");
+            string XCHDesarrollo=Encriptacion.DesEncripta("T0muW39J58PSKdeqrk+6OqcoxbLEaRXWcoAIGcScgpF7cEZmSHx+JgNqu/eTPs+CAsjuHkWG82ft+dUoC8TLi1rFQ59dzVUIJI3XJxMf1Nw+5djWHyqrr9VDa4OF0zex");
+            string DataMart=Encriptacion.DesEncripta("Tgeq6Y2xHP0tBmE2Bl0nPy9NfKX4ql0ljInPMLgLRn1QhtFf3VVnQPumke0wprsNRL5W0dVZErmV6Vq04IotHlcu9cYSjn+Ozvfq/zcg4WLcUDAN5ZQYIYavE2dGQemQ+51jaaenvCVfwBq15wsgUyKS4cgvucrE/ihP7PRPA7E=");
+
+            Desarrollo = Encriptacion.Encripta(Desarrollo);
+            Produccion = Encriptacion.Encripta(Produccion);
+            XCHProduccion = Encriptacion.Encripta(XCHProduccion);
+            XCHDesarrollo = Encriptacion.Encripta(XCHDesarrollo);
+            DataMart = Encriptacion.Encripta(DataMart);
+
+
+        }
     }
 
     public class Info

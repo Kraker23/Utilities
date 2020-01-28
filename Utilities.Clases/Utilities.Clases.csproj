@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="Eventos\EventoCSharp.txt" />
     <Content Include="Eventos\EventoVB.txt" />
+    <Content Include="TextFile1.txt" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -83,6 +84,9 @@
       <Project>{61bd46c9-4a2d-47f6-a89a-0c9bbc0b3f07}</Project>
       <Name>Utilities.Extensions</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="json1.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

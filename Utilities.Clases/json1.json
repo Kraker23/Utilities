@@ -1,0 +1,561 @@
+﻿{
+  "swagger": "2.0",
+  "info": {
+    "title": "API Entities",
+    "description": "Entidades generales que intervienen en los procesos comerciales.",
+    "version": "1.0.0",
+    "termsOfService": "https://portal.publiesp.es/tos.html",
+    "contact": {
+      "name": "Ingeniería de software",
+      "url": "https://www.mediaset.es",
+      "email": "desarrolloestrategico@publiesp.es"
+    }
+  },
+  "host": "api.mediaset.es",
+  "basePath": "/entities/v1",
+  "schemes": [ "https" ],
+  "consumes": [ "application/json" ],
+  "produces": [ "application/json" ],
+  "paths": {
+    "/advertisers": {
+      "get": {
+        "summary": "Anunciantes disponibles.",
+        "description": "Todos los anunciantes disponibles para las operaciones comerciales, sean o no utilizables, o bien los utilizables por una agencia dada.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" },
+          {
+            "name": "agency",
+            "in": "query",
+            "required": false,
+            "description": "Identificador de la agencia de la que se requieren los anunciantes. Referencia obtenida con el API 'entities/vX/agencies'.",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Advertisers" }
+          },
+          "204": { "description": "No se han encontrado anunciantes para la agencia dada." },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/brands": {
+      "get": {
+        "summary": "Marcas por anunciante.",
+        "description": "Todos las marcas de un anunciante disponibles para las operaciones comerciales, sean o no utilizables.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" },
+          {
+            "name": "advertiser",
+            "in": "query",
+            "required": true,
+            "description": "Identificador del anunciante del que se requieren las marcas. Referencia obtenida con el API 'entities/vX/advertisers'.",
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Brands" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/channels": {
+      "get": {
+        "summary": "Cadenas disponibles.",
+        "description": "Todas las cadenas disponibles para las operaciones comerciales.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Channels" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/agencies": {
+      "get": {
+        "summary": "Centrales disponibles.",
+        "description": "Todas las centrales disponibles para las operaciones comerciales.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Agencies" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/circuits": {
+      "get": {
+        "summary": "Circuitos disponibles.",
+        "description": "Todos los circuitos (conexiones) disponibles para las operaciones comerciales. Casi siempre un circuito corresponde a una cadena.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Circuits" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/targets": {
+      "get": {
+        "summary": "Targets publicitarios disponibles.",
+        "description": "Todos los targets publicitarios disponibles para las operaciones comerciales.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/Targets" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    },
+    "/advertising-types": {
+      "get": {
+        "summary": "Tipologías de publicidad.",
+        "description": "Tipos de publicidad desiponibles para televisión, convencional e iniciativas especiales.",
+        "parameters": [
+          { "$ref": "#/parameters/ClientId" },
+          { "$ref": "#/parameters/ClientSecret" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operación OK. Resultado adjunto.",
+            "schema": { "$ref": "#/definitions/AdvertisingTypes" }
+          },
+          "400": {
+            "description": "Petición incorrecta.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          },
+          "500": {
+            "description": "Error interno en el servidor.",
+            "schema": { "$ref": "#/definitions/Messages" }
+          }
+        }
+      }
+    }
+  },
+  "parameters": {
+    "ClientId": {
+      "name": "client_id",
+      "in": "header",
+      "required": true,
+      "description": "Identificador de cliente.",
+      "type": "string",
+      "format": "uuid"
+    },
+    "ClientSecret": {
+      "name": "client_secret",
+      "in": "header",
+      "required": true,
+      "description": "Clave de cliente.",
+      "type": "string"
+    }
+  },
+  "definitions": {
+    "Messages": {
+      "description": "Conjunto de mensajes aportados por el servicio.",
+      "type": "array",
+      "items": {
+        "title": "Message",
+        "description": "Mensaje individual.",
+        "type": "object",
+        "required": [ "severity", "in", "alias", "message" ],
+        "properties": {
+          "severity": {
+            "description": "Severidad del mensaje.",
+            "type": "string",
+            "enum": [ "INFO", "WARNING", "ERROR" ]
+          },
+          "in": {
+            "description": "Lugar en que se produce el fallo. Útil para diagnóstico.\n  GWY - Producido en el Gateway.\n  SRV - Producido en el proceso del servidor (RestEasy).\n  ADD - Producido en procesos adicionales (generalmente preproceso).\n  IMP - Producido en la implementación del método.\n",
+            "type": "string",
+            "enum": [ "GWY", "SRV", "ADD", "IMP" ]
+          },
+          "alias": {
+            "description": "Nombre corto del mensaje. Se puede usar como código. Todo mensaje de un tipo dado tiene un mismo alias.",
+            "type": "string"
+          },
+          "throwableClass": {
+            "description": "Si el fallo está causado por una excepción, clase de la excepción.",
+            "type": "string"
+          },
+          "message": {
+            "description": "Texto del mensaje.",
+            "type": "string"
+          },
+          "details": {
+            "description": "Conjunto de detalles del mensaje.",
+            "type": "array",
+            "items": {
+              "description": "Detalle del mensaje. Normalmente se refiere a una condición concreta, a un parámetro, etc.",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "example": [
+        {
+          "severity": "ERROR",
+          "in": "ADD",
+          "alias": "BadRequest",
+          "throwableClass": "java.text.ParseException",
+          "message": "Not a RFC 3339 full-date: 2018-14-21"
+        },
+        {
+          "severity": "ERROR",
+          "in": "IMP",
+          "alias": "MissingParams",
+          "message": "Request is missing required parameters",
+          "details": [ "param1", "param2" ]
+        },
+        {
+          "severity": "ERROR",
+          "in": "IMP",
+          "alias": "InvalidParams",
+          "message": "Request parameters fail to comply with restrictions",
+          "details": [ "month ≥ 1 ^ ≤ 12" ]
+        }
+      ]
+    },
+    "Advertisers": {
+      "description": "Lista de los anunciantes disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Advertiser",
+        "description": "Datos simples de un anunciante.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador del anunciante.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre del anunciante.",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Indica si el anunciante está habilitado. Un anunciante no habilitado solo sirve para fines históricos y no se puede utilizar en una operación comercial.",
+            "type": "boolean"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 111111,
+          "name": "YAMAHA CORPORATION",
+          "enabled": true
+        },
+        {
+          "id": 222222,
+          "name": "VODAFONE ESPAÑA",
+          "enabled": true
+        },
+        {
+          "id": 333333,
+          "name": "KELVINATOR",
+          "enabled": false
+        }
+      ]
+    },
+    "Brands": {
+      "description": "Lista de marcas disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Brand",
+        "description": "Datos simples de una marca.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador de la marca.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre de la marca.",
+            "type": "string"
+          },
+          "enabled": {
+            "description": "Indica si la marca está habilitada. Una marca no habilitada solo sirve para fines históricos y no se puede utilizar en una operación comercial.",
+            "type": "boolean"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 49858,
+          "name": "EMPRESAS",
+          "enabled": true
+        },
+        {
+          "id": 72663,
+          "name": "FIBRA ACELERADOR",
+          "enabled": true
+        },
+        {
+          "id": 83658,
+          "name": "SM VOZ Y DATOS",
+          "enabled": false
+        }
+      ]
+    },
+    "Channels": {
+      "description": "Lista de las cadenas disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Channel",
+        "description": "Datos simples de una cadena.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador de la cadena.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre de la cadena.",
+            "type": "string"
+          },
+          "marketerId": {
+            "description": "Identificador de la empresa comercializadora del canal.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "marketerName": {
+            "description": "Nombre de la empresa comercializadora del canal.",
+            "type": "string"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 5,
+          "name": "TeleCinco"
+        },
+        {
+          "id": 7,
+          "name": "LASIETE"
+        },
+        {
+          "id": 4,
+          "name": "CUATRO"
+        }
+      ]
+    },
+    "Agencies": {
+      "description": "Lista de las agencias de medios disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Agency",
+        "description": "Datos simples de una gencia de medios.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador de la agencia de medios.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre de la agencia de medios.",
+            "type": "string"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 111,
+          "name": "AGENCIA 111"
+        },
+        {
+          "id": 222,
+          "name": "AGENCIA 222"
+        }
+      ]
+    },
+    "Circuits": {
+      "description": "Lista de los circuitos disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Circuit",
+        "description": "Datos simples de un circuito.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador del circuito.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre del circuito.",
+            "type": "string"
+          },
+          "channelId": {
+            "description": "Identificador de la cadena a la que pertenece el circuito.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "multiChannel": {
+            "description": "Indica si el circuito adminte venta multicanal.",
+            "type": "boolean"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 5,
+          "name": "TeleCinco"
+        },
+        {
+          "id": 51,
+          "name": "Canarias"
+        },
+        {
+          "id": 7,
+          "name": "LASIETE"
+        },
+        {
+          "id": 4,
+          "name": "CUATRO"
+        }
+      ]
+    },
+    "Targets": {
+      "description": "Lista de los targets disponibles.",
+      "type": "array",
+      "items": {
+        "title": "Target",
+        "description": "Datos simples de un target publicitario.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador del target.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre del target.",
+            "type": "string"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 3345,
+          "name": "INDIVIDUOS+4"
+        },
+        {
+          "id": 7305,
+          "name": "AMAS DE CASA"
+        },
+        {
+          "id": 2839,
+          "name": "ADULTOS + 16"
+        },
+        {
+          "id": 2756,
+          "name": "MUJ 16-54 A-MB +50"
+        }
+      ]
+    },
+    "AdvertisingTypes": {
+      "description": "Lista de los tipos de publicidad.",
+      "type": "array",
+      "items": {
+        "title": "AdType",
+        "description": "Tipo de publicidad.",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identificador del tipo de publicidad.",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Nombre del tipo de publicidad.",
+            "type": "string"
+          },
+          "businessLine": {
+            "description": "Línea de negocio:\n  IE - Iniciativas especiales.\n  PC - Publicidad convencional.\n",
+            "type": "string",
+            "enum": [ "IE", "PC" ]
+          },
+          "needsFilm": {
+            "description": "Indica si el tipo lleva asociado un filmado.",
+            "type": "boolean"
+          }
+        }
+      },
+      "example": [
+        {
+          "id": 330,
+          "name": "MOMENTO INTERNO",
+          "businessLine": "IE",
+          "needsFilm": false
+        },
+        {
+          "id": 1,
+          "name": "SPOT",
+          "businessLine": "PC",
+          "needsFilm": true
+        },
+        {
+          "id": 999,
+          "name": "PATROCINIO",
+          "businessLine": "IE",
+          "needsFilm": true
+        },
+        {
+          "id": 1679,
+          "name": "MENCION CONVENCIONAL",
+          "businessLine": "PC",
+          "needsFilm": false
+        }
+      ]
+    }
+  }
+}
