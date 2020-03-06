@@ -53,6 +53,9 @@
     <Compile Include="AutoUpdate\frmUpdate.Designer.cs">
       <DependentUpon>frmUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComboBoxCustom\ComboBoxCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Correo\cNewCorreo.cs">
       <SubType>UserControl</SubType>
     </Compile>
