@@ -1,0 +1,914 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Analysis signature="4B9AB398" user_id="8" user_name="Cargas8" creation="20140929" creation_time="09:08:01" wm_notes="" last_change="20200219" version="4.19.9.1209" country="34" hash="41" crosstabs_indent="0">
+  <Dependencies>
+    <File name="DR1_20200209_[0114][08]_2020-02-19 181519.787.isr" type="0" />
+  </Dependencies>
+  <Dimensions>
+    <Outputs visible="1" default="0" viewing_filter_bydp_prg="0" viewing_filter_bydp_spt="0" linear_nonlinear_extraction_prg="0" linear_nonlinear_extraction_spt="0">
+      <Options>
+        <SortAccByOutput SortAccByOutput="5" />
+        <TotalRow value="1" />
+        <HideItemCombinations />
+      </Options>
+      <Selection>
+        <Item code="1:14" name="Ficha técnica" ver="1" />
+        <Item code="1:3" name="Anuncios" ver="1" />
+      </Selection>
+      <Output id="0" type="1" name="Plantilla" idx_dumbcalc="-1" idx_tab="0" print="0" grid_style="Vista" index_header="0" height_header="1400" pos_dims="" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0" />
+      <Output id="1" type="12" grid_style="Vista" index_header="0" height_header="1400" pos_dims="0*7,2,0*28" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0">
+        <PropDim pos_hvc="0" cat_by_level="0" masknew="261" codes_attr="100~101,412,205,10265,12503,3002,3001,203~204,207,213~215,243~245,206,222,218,216,221,219,208,220,217,6,415,3010~3011,3013,235,110~111,3006,300,13001,13003,13005,13007,13009,13011,13013~13018,224,24,12036~12037,12505,13019~13021,13026,12020,12536,48501,48503~48507,48550,48601" visibles_attr="1,0*66" orders_attr="0~66" widths_attr="30*2,40,7,17*2,10,9~10,10*2,13,26*2,13,26*2,7,26,13,15,8~9,9,6,17,9,21,14,18,12,15,30*2,9,13,11,19,17,15,17*2,11,13,9,30*3,17,9,30,40,30,3*2,4,18,25,10,20*8" aligns_attr="0*26,2,0*8,2,0*7,2*2,0*4,2,0*3,2*3,0*11" suptype_attr="0*67" />
+      </Output>
+      <Output id="2" type="13" grid_style="Vista" index_header="0" height_header="1400" pos_dims="0*7,2,0*28" show_row_number="1" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0">
+        <PropDim pos_hvc="0" cat_by_level="0" init_completed="1" visibles_elem="1*80" hidden_elem="" orders_elem="0~36,46~76,37~45,77~79" level_state_elem="0*80" masknew="514" codes_attr="703,805~806,800~802,804,820,705,765,16502,3002,3001,701,706,502,537,709,722~724,738,749,708,515,512,516,513,517,514,100~101,103,105,213,243,729~731,3010~3011,3013,748,547,3006,740~744,16000~16001,18006,503,721,518,544,12504,217,16020,207,214~215,222,413,30003,30104,34100,35000,35100,48501,48503~48507,48550,48601" visibles_attr="1,0*77" orders_attr="0~77" widths_attr="30,21*2,30*2,34,30,13,9,17*2,10,9~10,9*3,10,25,30,15,25,6,9~10,12,10,12,10,12,30*4,13*2,18*3,14,18,12,6,20,9*6,30,40,25,9,17,9*2,30,17,25,10,26*3,21,9,21*2,10,21,20*8" aligns_attr="0*13,2*4,0*7,2*6,0*23,2,0,2*2,0*8,2,0*2,2,0*9" suptype_attr="1*78" />
+      </Output>
+      <Output id="3" type="40" grid_style="Vista" index_header="0" height_header="1400" pos_dims="0*7,2,0*28" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0">
+        <PropDim pos_hvc="0" cat_by_level="0" masknew="16384" codes_attr="100~101,213~214,243,222,218,216~217,415,412,207,244~245,235,215" visibles_attr="1,0*15" orders_attr="0~15" widths_attr="30*2,13,26,13,26,13,15,17,21,40,10,26*2,15,26" aligns_attr="0*16" suptype_attr="14*16" />
+      </Output>
+      <Output id="4" type="41" grid_style="Vista" index_header="0" height_header="1400" pos_dims="0*7,2,0*28" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0">
+        <PropDim pos_hvc="0" cat_by_level="0" masknew="32768" codes_attr="703,805~806,800~802,804,820,604,706,503,35000,35100" visibles_attr="1,0*12" orders_attr="0~12" widths_attr="30,21*2,30*2,34,30,13,9*3,10,21" aligns_attr="0*8,2*4,0" suptype_attr="15*13" />
+      </Output>
+      <Output id="7" type="14" name="Ficha tecnica" idx_dumbcalc="-1" idx_tab="1" grid_style="Vista" width_data="1420" index_header="0" height_header="284" pos_dims="0*36" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0">
+        <TechCard show_univers="1" target_x_sector="1" show_warnings="0" show_panel_date="0" auto_adjust_cols="0" can_show_weather_info="0" show_by_cat_factor_value="0" cols_width="-1*65000" />
+      </Output>
+      <Output id="5" type="3" name="Anuncios" idx_tab="2" grid_style="Vista" width_data="994" height_data="1200" index_header="0" height_header="1136" pos_dims="2,1,0*3,-2~-1,4,3,0*27" grid_conf_visib="0" grid_conf_tab_attr_visib="0" visib_colrow_invalid_values="0" show_invalid__acc_units="1" idx_calctab_totalrow="100">
+        <PropDim pos_hvc="0" cat_by_level="0" init_completed="1" visibles_elem="1*80" hidden_elem="" orders_elem="0~36,46~76,37~45,77~79" level_state_elem="0*80" masknew="514" codes_attr="703,805~806,800~802,804,820,705,765,16502,3002,3001,701,706,502,537,709,722~724,738,749,708,515,512,516,513,517,514,100~101,103,105,213,243,729~731,3010~3011,3013,748,547,3006,740~744,16000~16001,18006,503,721,518,544,12504,217,16020,207,214~215,222,413,30003,30104,34100,35000,35100,48501,48503~48507,48550,48601" visibles_attr="1*58,0*20" orders_attr="0~21,52,22~51,53~77" widths_attr="30,21*2,30*2,34,30,13,9,17*2,10,9~10,9*3,10,25,30,15,25,6,9~10,12,10,12,10,12,30*4,13*2,18*3,14,18,12,6,20,9,26*2,9*3,30,40,25,9,17,9*2,30,17,25,10,26*3,21,9,21*2,10,21,20*8" aligns_attr="0*13,2*4,0*7,2*6,0*23,2,0,2*2,0*8,2,0*2,2,0*9" suptype_attr="1*78" />
+        <PropDim pos_hvc="1" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="" orders_elem="0" levels_elem="0" level_state_elem="0" codes_attr="0,48503~48507,48501,48550,48601" visibles_attr="1,0*8" orders_attr="0~8" widths_attr="13*9" aligns_attr="0*9" suptype_attr="0">
+          <Codes>-1:0,-1:0</Codes>
+        </PropDim>
+        <PropDim pos_hvc="2" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="0" orders_elem="0" levels_elem="0" level_state_elem="0" codes_attr="0,48508~48509,48517" visibles_attr="1,0*3" orders_attr="0~3" widths_attr="13*4" aligns_attr="0*4" suptype_attr="">
+          <Codes>8:114</Codes>
+        </PropDim>
+        <PropDim pos_hvc="3" cat_by_level="0" init_completed="1" visibles_elem="1*16" hidden_elem="" orders_elem="0~15" level_state_elem="0*16">
+          <Codes>1:9,1:1,1:2,1:3,1:4,1:5,1:6,1:11,1:8,1:7,1:12,1:14,1:13,1:15,1:16,1:10</Codes>
+        </PropDim>
+        <PropDim pos_hvc="4" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="" orders_elem="0" level_state_elem="0">
+          <Codes>-1:0</Codes>
+        </PropDim>
+        <PropDim pos_hvc="5" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="0" orders_elem="0" level_state_elem="0">
+          <Codes>1:1</Codes>
+        </PropDim>
+        <PropDim pos_hvc="6" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="0" orders_elem="0" level_state_elem="0" codes_attr="0,48510~48512" visibles_attr="1,0*3" orders_attr="0~3" widths_attr="13*4" aligns_attr="0*4" suptype_attr="">
+          <Codes>1:9</Codes>
+        </PropDim>
+        <PropDim pos_hvc="7" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="" orders_elem="0" level_state_elem="0">
+          <Codes>-1:0</Codes>
+        </PropDim>
+        <PropDim pos_hvc="8" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="" orders_elem="0" level_state_elem="0">
+          <Codes>-1:0</Codes>
+        </PropDim>
+        <PropDim pos_hvc="9" cat_by_level="0" init_completed="1" visibles_elem="1" hidden_elem="0" orders_elem="0" level_state_elem="0" codes_elem="1021" codes_attr="0,48520~48522,48600" visibles_attr="1,0*4" orders_attr="0~4" widths_attr="13*5" aligns_attr="0*5" suptype_attr="">
+          <Codes>1:1021</Codes>
+        </PropDim>
+      </Output>
+    </Outputs>
+    <Units visible="1" default="0">
+      <Options>
+        <ReachCond>
+          <ReachCondition rch_cond_type="1" />
+        </ReachCond>
+        <EffectiveReach eff_reach_type="0" eff_reach="1*11" />
+        <MaintainSMGTgts />
+        <NetValue value="0" />
+      </Options>
+      <Selection>
+        <Item code="1:1021" name="GRP" ver="1" />
+      </Selection>
+      <UnitParamList>
+        <UnitParam unit="1021" decimals="9">
+          <Gradient color2="16742610" />
+        </UnitParam>
+      </UnitParamList>
+    </Units>
+    <Targets visible="1" default="0">
+      <Options>
+        <TgtVentilationArray />
+        <ShortNameVent />
+        <TotalVentilation />
+        <CategorizeByLevel value="0" />
+        <RefTargetInd />
+        <RefTargetHH />
+      </Options>
+      <Selection>
+        <Item code="8:114" name="Ind 4+" ver="4" />
+      </Selection>
+    </Targets>
+    <Dates visible="1" default="0">
+      <Options>
+        <DatesDiv splitBy="" />
+        <DatesPeriodsDiv splitBy="" show_empty_divisions="1" />
+        <DatesSlide slide_days="2" slide_months="2" slide_years="2" />
+        <NetValue value="0" />
+        <Average value="1" />
+        <Difference value="0" />
+        <CategorizeByLevel value="0" />
+      </Options>
+      <Temporary>
+        <CTempIngrDate name="09/02/2020 a 09/02/2020" auto_name="1" Version="1" flags="0" dates="20200209" />
+      </Temporary>
+      <Selection>
+        <Temp code="0" />
+      </Selection>
+      <DateParamList>
+        <DateParam splitBy="" slide_days="2" slide_months="2" slide_years="2" average="1" />
+      </DateParamList>
+    </Dates>
+    <Platforms visible="1" default="0" />
+    <Channels visible="1" default="0">
+      <Options>
+        <RefChannel code="1:10000" />
+        <RestOfChannels />
+        <SplitByContents />
+        <AddGroupDescription />
+        <AddTotal />
+        <AllPeriodAvg />
+        <AddToFinal />
+        <GroupBy />
+        <ShowAttrName />
+        <ShowEmptyGroups />
+        <CategorizeByLevel value="0" />
+      </Options>
+      <Selection>
+        <Item code="1:1" name="La1" ver="1" />
+        <Item code="1:2" name="La2" ver="1" />
+        <Item code="1:3" name="T5" ver="1" />
+        <Item code="1:4" name="A3" ver="1" />
+        <Item code="1:5" name="CANAL+ 1" ver="1" />
+        <Item code="1:6" name="C.SUR" ver="1" />
+        <Item code="1:8" name="TV3" ver="1" />
+        <Item code="1:9" name="33" ver="1" />
+        <Item code="1:10" name="C9" ver="1" />
+        <Item code="1:11" name="ETB1" ver="1" />
+        <Item code="1:12" name="ETB2" ver="1" />
+        <Item code="1:13" name="TVG" ver="1" />
+        <Item code="1:14" name="TELEMADRID" ver="1" />
+        <Item code="1:15" name="NOUDOS" ver="1" />
+        <Item code="1:16" name="CS2" ver="1" />
+        <Item code="1:17" name="TVCAN2" ver="1" />
+        <Item code="1:18" name="CSUR-AND" ver="1" />
+        <Item code="1:19" name="ARAGON SAT" ver="1" />
+        <Item code="1:20" name="TVCAN SAT" ver="1" />
+        <Item code="1:21" name="GALICIA TV" ver="1" />
+        <Item code="1:22" name="TV3CAT" ver="1" />
+        <Item code="1:23" name="TVCAN" ver="1" />
+        <Item code="1:24" name="TELEMADRID SAT" ver="1" />
+        <Item code="1:25" name="NOU INTERNACIONAL" ver="1" />
+        <Item code="1:26" name="ETB4" ver="1" />
+        <Item code="1:110" name="CMM" ver="1" />
+        <Item code="1:111" name="CMT2" ver="1" />
+        <Item code="1:121" name="8TV" ver="1" />
+        <Item code="1:234" name="CUATRO" ver="1" />
+        <Item code="1:235" name="ETB3" ver="1" />
+        <Item code="1:236" name="NOU24" ver="1" />
+        <Item code="1:239" name="LA 10" ver="1" />
+        <Item code="1:240" name="LA SEXTA" ver="1" />
+        <Item code="1:244" name="LAOTRA" ver="1" />
+        <Item code="1:245" name="TPA2" ver="1" />
+        <Item code="1:246" name="ARAGON TV" ver="1" />
+        <Item code="1:247" name="TPA" ver="1" />
+        <Item code="1:248" name="IB3" ver="1" />
+        <Item code="1:250" name="CANAL EXTREMADURA TV" ver="1" />
+        <Item code="1:251" name="EXTREMADURA TV" ver="1" />
+        <Item code="1:275" name="TVG2" ver="1" />
+        <Item code="1:277" name="V TELEVISION" ver="1" />
+        <Item code="1:278" name="NUEVE TV" ver="1" />
+        <Item code="1:279" name="La 7" ver="1" />
+        <Item code="1:280" name="La 8" ver="1" />
+        <Item code="1:281" name="IB3 SAT" ver="1" />
+        <Item code="1:282" name="SUPER3/33" ver="1" />
+        <Item code="1:401" name="PLAY" ver="1" />
+        <Item code="1:403" name="OTR" ver="3" />
+        <Item code="1:404" name="OTROS CONSUMOS" ver="1" />
+        <Item code="1:405" name="VOSDAL" ver="1" />
+        <Item code="1:500" name="RESTO LOCAL" ver="1" />
+        <Item code="1:502" name="BTV beteve" ver="1" />
+        <Item code="1:504" name="C7M" ver="1" />
+        <Item code="1:505" name="LAS ARENAS" ver="1" />
+        <Item code="1:506" name="TEIDEVISION" ver="1" />
+        <Item code="1:517" name="8MADRID" ver="1" />
+        <Item code="1:5000" name="RES TEM" ver="1" />
+        <Item code="1:5001" name="24H" ver="1" />
+        <Item code="1:5002" name="3/24" ver="1" />
+        <Item code="1:5005" name="40 LATINO" ver="1" />
+        <Item code="1:5006" name="40 TV" ver="1" />
+        <Item code="1:5008" name="NEOX" ver="1" />
+        <Item code="1:5009" name="NOVA" ver="1" />
+        <Item code="1:5010" name="AXN" ver="1" />
+        <Item code="1:5011" name="BARÇA TV" ver="1" />
+        <Item code="1:5013" name="BLAZE" ver="1" />
+        <Item code="1:5014" name="BLOOMBERG" ver="1" />
+        <Item code="1:5015" name="CARTOONITO" ver="1" />
+        <Item code="1:5016" name="CARTOONITO +1" ver="1" />
+        <Item code="1:5017" name="BUZZ" ver="1" />
+        <Item code="1:5019" name="HISTORIA" ver="1" />
+        <Item code="1:5021" name="CANAL+ 2" ver="1" />
+        <Item code="1:5022" name="CANAL+ 1 ...30" ver="1" />
+        <Item code="1:5023" name="MOVISTAR ACCION" ver="1" />
+        <Item code="1:5024" name="CANAL+ ACCION …30" ver="1" />
+        <Item code="1:5029" name="MOVISTAR COMEDIA" ver="1" />
+        <Item code="1:5030" name="C+ COMEDIA…30" ver="1" />
+        <Item code="1:5031" name="MOVISTAR DRAMA" ver="1" />
+        <Item code="1:5035" name="MOVISTAR DEPORTES" ver="1" />
+        <Item code="1:5037" name="MOVISTAR FUTBOL" ver="1" />
+        <Item code="1:5039" name="CALLE 13" ver="1" />
+        <Item code="1:5043" name="CANAL COCINA" ver="1" />
+        <Item code="1:5044" name="CANAL ESTRELLAS" ver="1" />
+        <Item code="1:5045" name="CANAL HOLLYWOOD" ver="1" />
+        <Item code="1:5047" name="CANAL VIDENCIA" ver="1" />
+        <Item code="1:5048" name="CARTOON NETWORK" ver="1" />
+        <Item code="1:5049" name="CARTOON NETWORK +1" ver="1" />
+        <Item code="1:5050" name="CAZA Y PESCA" ver="1" />
+        <Item code="1:5051" name="CINCOSHOP" ver="1" />
+        <Item code="1:5059" name="ANIMAX" ver="1" />
+        <Item code="1:5061" name="SUNDANCE TV" ver="1" />
+        <Item code="1:5062" name="CINESTAR" ver="1" />
+        <Item code="1:5063" name="CINESTAR +1" ver="1" />
+        <Item code="1:5064" name="CIUDAD AHORA" ver="1" />
+        <Item code="1:5065" name="CLAN" ver="1" />
+        <Item code="1:5068" name="CNN+" ver="1" />
+        <Item code="1:5069" name="COSMOPOLITAN" ver="1" />
+        <Item code="1:5071" name="DARK" ver="1" />
+        <Item code="1:5072" name="MOVISTAR CINE ESPAÑOL" ver="1" />
+        <Item code="1:5074" name="DECASA" ver="1" />
+        <Item code="1:5075" name="DISCOVERY" ver="1" />
+        <Item code="1:5076" name="DISNEY CH +1" ver="1" />
+        <Item code="1:5077" name="DISNEY CHANNEL" ver="1" />
+        <Item code="1:5083" name="ESTILO" ver="1" />
+        <Item code="1:5084" name="EURONEWS" ver="1" />
+        <Item code="1:5085" name="EUROSPORT" ver="1" />
+        <Item code="1:5088" name="XTRM" ver="1" />
+        <Item code="1:5092" name="FDF" ver="1" />
+        <Item code="1:5094" name="FOX" ver="1" />
+        <Item code="1:5096" name="FOX NEWS" ver="1" />
+        <Item code="1:5099" name="MOVISTAR GOLF" ver="1" />
+        <Item code="1:5100" name="GRAN HERMANO" ver="1" />
+        <Item code="1:5107" name="INTERECONOMIA" ver="1" />
+        <Item code="1:5108" name="JETIX" ver="1" />
+        <Item code="1:5109" name="JETIX +1" ver="1" />
+        <Item code="1:5110" name="SUPER3" ver="1" />
+        <Item code="1:5111" name="KIDSCO" ver="1" />
+        <Item code="1:5113" name="INFOMETEO" ver="1" />
+        <Item code="1:5115" name="MGM" ver="1" />
+        <Item code="1:5117" name="MTV ESP" ver="1" />
+        <Item code="1:5118" name="NATIONAL GEOGRAPHIC" ver="1" />
+        <Item code="1:5119" name="NATURA" ver="1" />
+        <Item code="1:5121" name="NICKELODEON" ver="1" />
+        <Item code="1:5123" name="NOSTALGIA" ver="1" />
+        <Item code="1:5124" name="ODISEA" ver="1" />
+        <Item code="1:5126" name="PACHA TV" ver="1" />
+        <Item code="1:5127" name="PANDA" ver="1" />
+        <Item code="1:5128" name="COMEDY CENTRAL" ver="1" />
+        <Item code="1:5129" name="PEOPLE+ARTS" ver="1" />
+        <Item code="1:5130" name="PLAYBOY" ver="1" />
+        <Item code="1:5131" name="DISNEY JUNIOR" ver="1" />
+        <Item code="1:5132" name="REAL MADRID TV" ver="1" />
+        <Item code="1:5133" name="SYFY" ver="1" />
+        <Item code="1:5134" name="SONY TV" ver="1" />
+        <Item code="1:5135" name="SOL MÚSICA" ver="1" />
+        <Item code="1:5136" name="SOMOS" ver="1" />
+        <Item code="1:5137" name="SPORTMANÍA" ver="1" />
+        <Item code="1:5140" name="LASIETE" ver="1" />
+        <Item code="1:5141" name="TCM" ver="1" />
+        <Item code="1:5142" name="TCM AUTOR" ver="1" />
+        <Item code="1:5143" name="TELECORAZON" ver="1" />
+        <Item code="1:5144" name="TELEDEPORTE" ver="1" />
+        <Item code="1:5145" name="TELENOVELAS" ver="1" />
+        <Item code="1:5146" name="TNT" ver="1" />
+        <Item code="1:5148" name="TVE INTERNACIONAL" ver="1" />
+        <Item code="1:5150" name="VEO7" ver="1" />
+        <Item code="1:5151" name="VH1" ver="1" />
+        <Item code="1:5153" name="VIAJAR" ver="1" />
+        <Item code="1:5154" name="LA TIENDA EN VEO" ver="1" />
+        <Item code="1:5155" name="APRENDE INGLES" ver="1" />
+        <Item code="1:5157" name="SUPERMODELO" ver="1" />
+        <Item code="1:5158" name="RAC105" ver="1" />
+        <Item code="1:5159" name="BABYFIRST" ver="1" />
+        <Item code="1:5162" name="HOGAR UTIL" ver="1" />
+        <Item code="1:5163" name="MTV2" ver="1" />
+        <Item code="1:5164" name="POPULAR TV" ver="1" />
+        <Item code="1:5165" name="CANAL+ LIGA" ver="1" />
+        <Item code="1:5166" name="GOL T" ver="1" />
+        <Item code="1:5167" name="DISNEY XD" ver="1" />
+        <Item code="1:5168" name="DISNEY XD +1" ver="1" />
+        <Item code="1:5170" name="INTERECONOMIA B" ver="1" />
+        <Item code="1:5171" name="FOX CRIME" ver="1" />
+        <Item code="1:5172" name="DISNEY CINEMAGIC" ver="1" />
+        <Item code="1:5173" name="ESTIL9" ver="1" />
+        <Item code="1:5174" name="NITRO" ver="1" />
+        <Item code="1:5175" name="MARCA TV" ver="1" />
+        <Item code="1:5176" name="BOING" ver="1" />
+        <Item code="1:5177" name="MOVISTAR CINEDOC&amp;ROLL" ver="1" />
+        <Item code="1:5178" name="CANAL HOLLYWOOD +1" ver="1" />
+        <Item code="1:5179" name="LA SEXTA 2" ver="1" />
+        <Item code="1:5180" name="MTV" ver="1" />
+        <Item code="1:5181" name="LA SEXTA 3" ver="1" />
+        <Item code="1:5182" name="TRECE" ver="1" />
+        <Item code="1:5183" name="ESPORT3" ver="1" />
+        <Item code="1:5184" name="NICK JR" ver="1" />
+        <Item code="1:5185" name="CRIMEN + INVESTIGACION" ver="1" />
+        <Item code="1:5186" name="NGC WILD" ver="1" />
+        <Item code="1:5187" name="DIVINITY" ver="1" />
+        <Item code="1:5188" name="CANAL CLUB" ver="1" />
+        <Item code="1:5189" name="TOROS TV" ver="1" />
+        <Item code="1:5190" name="CANAL+ LIGA MULTI" ver="1" />
+        <Item code="1:5191" name="BABYTV" ver="1" />
+        <Item code="1:5192" name="MTV ROCKS" ver="1" />
+        <Item code="1:5193" name="ENERGY" ver="1" />
+        <Item code="1:5194" name="DMAX" ver="1" />
+        <Item code="1:5195" name="EL GARAJE TV" ver="1" />
+        <Item code="1:5196" name="PARAMOUNT NETWORK" ver="1" />
+        <Item code="1:5197" name="XPLORA" ver="1" />
+        <Item code="1:5198" name="AXN WHITE" ver="1" />
+        <Item code="1:5199" name="MOTORS TV" ver="1" />
+        <Item code="1:5200" name="CANAL+ LIGA CAMPEONES" ver="1" />
+        <Item code="1:5201" name="NUEVE" ver="1" />
+        <Item code="1:5202" name="A3 PREMIUM" ver="1" />
+        <Item code="1:5203" name="TRACE SPORTS" ver="1" />
+        <Item code="1:5204" name="MOVISTAR SERIES" ver="1" />
+        <Item code="1:6102" name="CADENAS NO REPORTADAS" ver="1" />
+        <Item code="1:6202" name="NO IDENTIFICADO" ver="1" />
+        <Item code="1:7001" name="A3 Grupo" ver="1" />
+        <Item code="1:7002" name="Atres Advertising" ver="1" />
+        <Item code="1:7003" name="Publiespaña" ver="1" />
+        <Item code="1:7004" name="Telemadrid Grupo" ver="1" />
+        <Item code="1:7005" name="NSF" ver="1" />
+        <Item code="1:7006" name="Grupo Cuatro" ver="1" />
+        <Item code="1:7007" name="Atres Cobertura" ver="1" />
+        <Item code="1:7008" name="Atres Afinidad" ver="1" />
+        <Item code="1:7010" name="Forta Comercial" ver="1" />
+        <Item code="1:7011" name="Pulsa Media" ver="1" />
+        <Item code="1:9001" name="RED LOCALIA" ver="1" />
+        <Item code="1:9002" name="RED LOCALMEDIA" ver="1" />
+        <Item code="1:9003" name="RED PUNTO TV" ver="1" />
+        <Item code="1:9004" name="RED XTVL" ver="1" />
+        <Item code="1:10000" name="TTV" ver="2" />
+        <Item code="1:10001" name="AUT" ver="1" />
+        <Item code="1:10002" name="AUT PRIV" ver="1" />
+        <Item code="1:10003" name="TEMATICAS" ver="3" />
+        <Item code="1:10004" name="TV LOCAL" ver="1" />
+        <Item code="1:10005" name="TEMATICAS CONC. TDT" ver="2" />
+        <Item code="1:10006" name="TEMATICAS PAGO" ver="2" />
+        <Item code="1:10007" name="OTRAS" ver="1" />
+        <Item code="1:10008" name="RESTO TEMATICAS CONC. TDT" ver="1" />
+        <Item code="1:10009" name="RESTO TEMATICAS PAGO" ver="1" />
+        <Item code="1:10010" name="RESTO TEMATICAS" ver="1" />
+        <Item code="1:10011" name="TTV por Regla" ver="3" />
+        <Item code="1:283" name="TV MEDITERRANEO" ver="1" />
+        <Item code="1:5205" name="MEXICO TRAVEL" ver="1" />
+        <Item code="1:7501" name="La1 simultáneo" ver="1" />
+        <Item code="1:5206" name="TCM +1" ver="1" />
+        <Item code="1:406" name="TIMESHIFT" ver="1" />
+        <Item code="1:5207" name="FOX LIFE" ver="1" />
+        <Item code="1:5208" name="AMC" ver="1" />
+        <Item code="1:284" name="CSUR HD" ver="1" />
+        <Item code="1:5209" name="MOVISTAR DEPORTES 2" ver="1" />
+        <Item code="1:7012" name="Televisio de Catalunya" ver="1" />
+        <Item code="1:7502" name="TV3 Simultani" ver="1" />
+        <Item code="1:5210" name="MEGA" ver="1" />
+        <Item code="1:5218" name="MOVISTAR PARTIDAZO" ver="1" />
+        <Item code="1:5219" name="CANAL+ LIGA 2" ver="1" />
+        <Item code="1:5221" name="EUROSPORT 2" ver="1" />
+        <Item code="1:5224" name="ATRESERIES" ver="1" />
+        <Item code="1:285" name="AND-TV" ver="1" />
+        <Item code="1:5211" name="MOVISTAR MOTO GP" ver="1" />
+        <Item code="1:5212" name="NON STOP PEOPLE" ver="1" />
+        <Item code="1:5213" name="MOVISTAR F1" ver="1" />
+        <Item code="1:5214" name="ORBE 21" ver="1" />
+        <Item code="1:5215" name="MOVISTAR ESTRENOS" ver="1" />
+        <Item code="1:5216" name="CANAL+" ver="1" />
+        <Item code="1:5217" name="MOVISTAR SERIESMANIA" ver="1" />
+        <Item code="1:252" name="LA 7TV" ver="1" />
+        <Item code="1:5227" name="TEN" ver="1" />
+        <Item code="1:5228" name="REAL MADRID HD" ver="1" />
+        <Item code="1:286" name="IB3 GLOBAL" ver="1" />
+        <Item code="1:5229" name="DKISS" ver="1" />
+        <Item code="1:5230" name="GOL" ver="1" />
+        <Item code="1:5232" name="BEIN SPORTS" ver="1" />
+        <Item code="1:5233" name="BEIN MAX1" ver="1" />
+        <Item code="1:5234" name="BEIN MAX2" ver="1" />
+        <Item code="1:5235" name="BEIN LIGA" ver="1" />
+        <Item code="1:5236" name="BEIN LIGA1" ver="1" />
+        <Item code="1:9000" name="DISNEY/DISNEY+1" ver="1" />
+        <Item code="1:5231" name="LALIGA 1|2|3TV" ver="1" />
+        <Item code="1:5237" name="LALIGA 1|2|3TV MULTI 1" ver="1" />
+        <Item code="1:5238" name="LALIGA 1|2|3TV MULTI 2" ver="1" />
+        <Item code="1:5239" name="LALIGA 1|2|3TV MULTI 3" ver="1" />
+        <Item code="1:5240" name="LALIGA 1|2|3TV MULTI 4" ver="1" />
+        <Item code="1:5241" name="HIT TV" ver="1" />
+        <Item code="1:5242" name="MOVISTAR ESPORTS" ver="1" />
+        <Item code="1:7013" name="Movistar Comercial" ver="1" />
+        <Item code="1:7503" name="Telecinco simultaneo" ver="1" />
+        <Item code="1:7504" name="Antena 3 simultaneo" ver="1" />
+        <Item code="1:7505" name="Telemadrid simultaneo" ver="1" />
+        <Item code="1:5243" name="BETIS TV" ver="1" />
+        <Item code="1:5244" name="BOM Cine" ver="1" />
+        <Item code="1:5245" name="MOVISTAR DISNEY" ver="1" />
+        <Item code="1:5246" name="MOVISTAR FAMA 24H" ver="1" />
+        <Item code="1:5247" name="MOVISTAR LIGA DE CAMPEONES" ver="1" />
+        <Item code="1:5248" name="MOVISTAR LIGA DE CAMPEONES 2" ver="1" />
+        <Item code="1:5249" name="MOVISTAR LIGA DE CAMPEONES 1" ver="1" />
+        <Item code="1:5250" name="#VAMOS" ver="1" />
+        <Item code="1:287" name="A PUNT" ver="1" />
+        <Item code="1:5225" name="#0" ver="1" />
+        <Item code="1:5226" name="BEMADtv" ver="1" />
+        <Item code="1:7014" name="Multi" ver="1" />
+        <Item code="1:7506" name="La2 simultáneo" ver="1" />
+        <Item code="1:407" name="INTERNET" ver="1" />
+        <Item code="1:10012" name="CONSUMO NO TTV" ver="1" />
+        <Item code="1:5251" name="MOVISTAR DEPORTES 1" ver="1" />
+        <Item code="1:5252" name="MOVISTAR LALIGA" ver="1" />
+        <Item code="1:5253" name="MOVISTAR LALIGA1" ver="1" />
+        <Item code="1:5254" name="MOVISTAR LALIGA2" ver="1" />
+        <Item code="1:5255" name="MOVISTAR LALIGA3" ver="1" />
+      </Selection>
+      <DisabledSelection>
+        <item user="1" code="249" name="7RM" ver="1" />
+        <item user="1" code="276" name="A3 CANARIAS" ver="1" />
+        <item user="1" code="5003" name="300" ver="1" />
+        <item user="1" code="5004" name="33/ESPORTS" ver="1" />
+        <item user="1" code="5093" name="FLYMUSIC" ver="1" />
+        <item user="1" code="5106" name="HOGAR 10" ver="1" />
+        <item user="1" code="5120" name="NET TV" ver="1" />
+        <item user="1" code="5138" name="T5 ESTRELLAS" ver="1" />
+        <item user="1" code="5139" name="T5 SPORT" ver="1" />
+        <item user="1" code="5007" name="A3 NOTICIAS" ver="1" />
+        <item user="1" code="5223" name="ABONO FUTBOL" ver="1" />
+        <item user="1" code="5222" name="ABONO FUTBOL 1" ver="1" />
+        <item user="1" code="5156" name="ALUCINE" ver="1" />
+        <item user="1" code="5012" name="BECA" ver="1" />
+        <item user="1" code="5018" name="C. CLÁSICO" ver="1" />
+        <item user="1" code="5020" name="C.STAR" ver="1" />
+        <item user="1" code="5025" name="C+ AZUL" ver="1" />
+        <item user="1" code="5026" name="C+ CINE 1" ver="1" />
+        <item user="1" code="5027" name="C+ CINE 2" ver="1" />
+        <item user="1" code="5028" name="C+ CINE 3" ver="1" />
+        <item user="1" code="5032" name="C+ DEPORTE 1" ver="1" />
+        <item user="1" code="5033" name="C+ DEPORTE 2" ver="1" />
+        <item user="1" code="5034" name="C+ DEPORTE 3" ver="1" />
+        <item user="1" code="5036" name="C+ EVENTOS" ver="1" />
+        <item user="1" code="5038" name="C+ ROJO" ver="1" />
+        <item user="1" code="5040" name="CANAL BARÇA" ver="1" />
+        <item user="1" code="5041" name="CANAL C" ver="1" />
+        <item user="1" code="5042" name="CANAL CANARIAS" ver="1" />
+        <item user="1" code="5046" name="CANAL PALOMITAS" ver="1" />
+        <item user="1" code="5052" name="CINE 600" ver="1" />
+        <item user="1" code="5053" name="CINECLASSICS" ver="1" />
+        <item user="1" code="5054" name="CINEMANÍA" ver="1" />
+        <item user="1" code="5055" name="CINEMANÍA 2" ver="1" />
+        <item user="1" code="5056" name="CINEMANÍA 30" ver="1" />
+        <item user="1" code="5057" name="CINEMANÍA AZUL" ver="1" />
+        <item user="1" code="5058" name="CINEMANÍA CLÁSICO" ver="1" />
+        <item user="1" code="5060" name="CINEMANÍA ROJO" ver="1" />
+        <item user="1" code="5161" name="CIRCUS 24H" ver="1" />
+        <item user="1" code="5067" name="CNN INT" ver="1" />
+        <item user="1" code="5070" name="CRISIS" ver="1" />
+        <item user="1" code="5078" name="CULTURAL.ES" ver="1" />
+        <item user="1" code="5073" name="DCINE STUDIO" ver="1" />
+        <item user="1" code="5079" name="DOCUMANÍA" ver="1" />
+        <item user="1" code="5080" name="E.ACTORES" ver="1" />
+        <item user="1" code="5081" name="EL BUS" ver="1" />
+        <item user="1" code="5082" name="ELLA" ver="1" />
+        <item user="1" code="5086" name="EUROSPORTNEWS" ver="1" />
+        <item user="1" code="5087" name="EXPANSIÓN TV" ver="1" />
+        <item user="1" code="5089" name="FAMA 24H" ver="1" />
+        <item user="1" code="5090" name="FASHION TV" ver="1" />
+        <item user="1" code="5091" name="FDF" ver="1" />
+        <item user="1" code="5095" name="FOX KIDS" ver="1" />
+        <item user="1" code="5097" name="FUTBOL TOTAL" ver="1" />
+        <item user="1" code="5098" name="GEOPLANETA" ver="1" />
+        <item user="1" code="5101" name="GRAN VÍA" ver="1" />
+        <item user="1" code="5102" name="GRAN VÍA 2" ver="1" />
+        <item user="1" code="5103" name="GRAN VÍA 3" ver="1" />
+        <item user="1" code="5104" name="GRAN VÍA CINE" ver="1" />
+        <item user="1" code="5105" name="HALLMARK" ver="1" />
+        <item user="1" code="5112" name="MEGATRIX" ver="1" />
+        <item user="1" code="5114" name="MEZZO" ver="1" />
+        <item user="1" code="5116" name="MOSAICO" ver="1" />
+        <item user="1" code="5160" name="NICK +1" ver="1" />
+        <item user="1" code="5122" name="NICK-PARAMOUNT" ver="1" />
+        <item user="1" code="5125" name="OP.TRIUNFO" ver="1" />
+        <item user="1" code="5066" name="SUPER 3" ver="1" />
+        <item user="1" code="5147" name="TOON DISNEY" ver="1" />
+        <item user="1" code="5149" name="UNIVERSO GH" ver="1" />
+        <item user="1" code="5152" name="VIA MUNDIAL1" ver="1" />
+        <item user="1" code="501" name="AZUL TV" ver="1" />
+        <item user="1" code="503" name="C6GC" ver="1" />
+        <item user="1" code="9005" name="RED UNE" ver="1" />
+        <item user="1" code="7009" name="Atres Canarias" ver="1" />
+        <item user="1" code="402" name="QUIERO TV" ver="1" />
+      </DisabledSelection>
+      <ChannelParamList>
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+        <ChannelParam split_by_contents_add_to_end="0" />
+      </ChannelParamList>
+    </Channels>
+    <Timebands visible="1" default="0">
+      <Options>
+        <TimebandDiv splitBy="" />
+        <NetValue value="0" />
+        <Average value="1" />
+        <CategorizeByLevel value="0" />
+      </Options>
+    </Timebands>
+    <supports_spt visible="1" default="1">
+      <InfoFilterArray>
+        <InfoFilter_0>
+          <InfoFilter>
+            <InfoAttr code="703" check="3" inverted="0">
+              <AttrString>
+                <Literals1 value="CITROEN/C3-(DIAS C)" />
+                <Literals2 value="" />
+                <Condition1 value="0" />
+                <Condition2 value="0" />
+                <Exclude value="0" />
+              </AttrString>
+            </InfoAttr>
+            <InfoAttr code="711" check="1" inverted="0" />
+            <InfoAttr code="413" check="1" inverted="0" />
+          </InfoFilter>
+        </InfoFilter_0>
+      </InfoFilterArray>
+      <PropDim cat_by_level="0" init_completed="1" visibles_elem="1*80" hidden_elem="" orders_elem="0~36,46~76,37~45,77~79" level_state_elem="0*80" masknew="514" codes_attr="703,805~806,800~802,804,820,705,765,16502,3002,3001,701,706,502,537,709,722~724,738,749,708,515,512,516,513,517,514,100~101,103,105,213,243,729~731,3010~3011,3013,748,547,3006,740~744,16000~16001,18006,503,721,518,544,12504,217,16020,207,214~215,222,413,30003,30104,34100,35000,35100,48501,48503~48507,48550,48601" visibles_attr="1,0*77" orders_attr="0~77" widths_attr="30,21*2,30*2,34,30,13,9,17*2,10,9~10,9*3,10,25,30,15,25,6,9~10,12,10,12,10,12,30*4,13*2,18*3,14,18,12,6,20,9*6,30,40,25,9,17,9*2,30,17,25,10,26*3,21,9,21*2,10,21,20*8" aligns_attr="0*13,2*4,0*7,2*6,0*23,2,0,2*2,0*8,2,0*2,2,0*9" suptype_attr="1*78" />
+    </supports_spt>
+    <RateCards visible="1" default="0">
+      <Options>
+        <RatecardRef />
+      </Options>
+    </RateCards>
+    <supports_prg visible="1" default="0">
+      <InfoFilterArray>
+        <InfoFilter_0>
+          <InfoFilter>
+            <InfoAttr code="413" check="1" inverted="0" />
+          </InfoFilter>
+        </InfoFilter_0>
+      </InfoFilterArray>
+      <PropDim cat_by_level="0" masknew="261" codes_attr="100~101,412,205,10265,12503,3002,3001,203~204,207,213~215,243~245,206,222,218,216,221,219,208,220,217,6,415,3010~3011,3013,235,110~111,3006,300,13001,13003,13005,13007,13009,13011,13013~13018,224,24,12036~12037,12505,13019~13021,13026,12020,12536,48501,48503~48507,48550,48601" visibles_attr="1,0*66" orders_attr="0~66" widths_attr="30*2,40,7,17*2,10,9~10,10*2,13,26*2,13,26*2,7,26,13,15,8~9,9,6,17,9,21,14,18,12,15,30*2,9,13,11,19,17,15,17*2,11,13,9,30*3,17,9,30,40,30,3*2,4,18,25,10,20*8" aligns_attr="0*26,2,0*8,2,0*7,2*2,0*4,2,0*3,2*3,0*11" suptype_attr="0*67" />
+    </supports_prg>
+    <Sectors visible="1" default="0">
+      <Options>
+        <Overlaps value="0" />
+        <FirstHome />
+        <FirstAndSecondHome />
+        <AudienceInSector />
+      </Options>
+      <Selection>
+        <Item code="1:9" name="PyB" ver="1" />
+        <Item code="1:1" name="AND" ver="1" />
+        <Item code="1:2" name="CAT" ver="1" />
+        <Item code="1:3" name="EUS" ver="1" />
+        <Item code="1:4" name="GAL" ver="1" />
+        <Item code="1:5" name="MAD" ver="1" />
+        <Item code="1:6" name="VAL" ver="1" />
+        <Item code="1:11" name="CLM" ver="1" />
+        <Item code="1:8" name="CAN" ver="1" />
+        <Item code="1:7" name="RES" ver="1" />
+        <Item code="1:12" name="ARA" ver="1" />
+        <Item code="1:14" name="BAL" ver="1" />
+        <Item code="1:13" name="AST" ver="1" />
+        <Item code="1:15" name="MUR" ver="1" />
+        <Item code="1:16" name="CYL" ver="1" />
+        <Item code="1:10" name="ESPAÑA" ver="1" />
+      </Selection>
+    </Sectors>
+    <CrossTabs visible="0" default="0" />
+    <Activities visible="1" default="0" />
+    <EvDetailUnits>
+      <Options>
+        <ReachCond />
+        <EffectiveReach eff_reach_type="0" />
+        <MaintainSMGTgts />
+        <NetValue />
+      </Options>
+    </EvDetailUnits>
+    <CSuppUnitsOfEvDetail>
+      <Options>
+        <ReachCond />
+        <EffectiveReach eff_reach_type="0" />
+        <MaintainSMGTgts />
+        <NetValue />
+      </Options>
+    </CSuppUnitsOfEvDetail>
+  </Dimensions>
+  <Print orientation="0" scale="0" page_order="0" first_page="1" hours_per_page="12" curves_per_page="8" margins="0,0~1,0,0,0" centrado="0,0" header_contents="#L#;;;;;;" header_options="0,0,0" footer_contents="#D# #T#;;;;;;" footer_options="0,0,0">
+    <PrinterConf sSelPrinterName="" sSelPrinterLocation="" sSelPrinterPort="" />
+  </Print>
+  <Export>
+    <ExportTxt valid_file="1" file="\\madssau01101\DatosInfosys\Export_txt\Aud_reales\datos_anuncio\DR1_20200209_[0114][08]_2020-02-19 181519.787.txt" export_options="3~6,8,12,17" export_values="0~1,0*2,1,0,45">
+      <ExportItem id_output="7" />
+      <ExportItem id_output="5" />
+    </ExportTxt>
+    <ExportExcel valid_file="0" file="" export_options="" export_values="" />
+    <ExportHtml valid_file="0" file="" export_options="" export_values="" />
+    <ExportXml valid_file="0" file="" export_options="" export_values="" />
+    <ExportPdf valid_file="0" file="" export_options="" export_values="" />
+    <ExportImg valid_file="0" file="" export_options="" export_values="" />
+    <ExportExcelAttr valid_file="0" file="" export_options="" export_values="" />
+    <ExportHTMLEmail valid_file="0" file="" export_options="" export_values="">
+      <ExportItem id_output="0" />
+      <ExportItem id_output="7" />
+      <ExportItem id_output="5" />
+    </ExportHTMLEmail>
+    <ExportJSON valid_file="0" file="" export_options="" export_values="" />
+    <ExportCSV valid_file="0" file="" export_options="" export_values="" />
+  </Export>
+  <ContentGroupingAttribs nonlinear_option="0" linear_option="0" mixed_single="0">
+    <NonLinear></NonLinear>
+    <All></All>
+  </ContentGroupingAttribs>
+  <SpotsGroupingAttribs nonlinear_option="0" linear_option="0">
+    <NonLinear></NonLinear>
+    <All></All>
+  </SpotsGroupingAttribs>
+  <Calcs>
+    <Calc id="0" />
+  </Calcs>
+</Analysis>
