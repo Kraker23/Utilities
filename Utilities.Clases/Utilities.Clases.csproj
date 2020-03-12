@@ -73,8 +73,8 @@
   <ItemGroup>
     <Content Include="Eventos\EventoCSharp.txt" />
     <Content Include="Eventos\EventoVB.txt" />
-    <Content Include="FormatoArchivos\TextFile1.txt" />
-    <Content Include="FormatoArchivos\XMLFile1.xml" />
+    <Content Include="FormatearArchivos\TextFile1.txt" />
+    <Content Include="FormatearArchivos\XMLFile1.xml" />
     <Content Include="TextFile1.txt" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
@@ -86,10 +86,6 @@
       <Project>{61bd46c9-4a2d-47f6-a89a-0c9bbc0b3f07}</Project>
       <Name>Utilities.Extensions</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="FormatoArchivos\json1.json" />
-    <None Include="json1.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
