@@ -27,5 +27,41 @@ namespace Utilities.Extensions
                 return (input > desde && input < hasta);
             }
         }
+
+        /// <summary>
+        /// Devolver Año + Quincena en formato string del año
+        /// </summary>
+        /// <param name="input">fecha a calcular quincena</param>
+        /// <returns>Resultado de Año+Quincena</returns>
+        public static string Quincena(this DateTime fecha)
+        {
+            if (fecha != null)
+            {
+                string resultado = fecha.Year.ToString();
+                int mes = 0;
+                int quincena = 0;
+                if (fecha.Month == 1)
+                {
+                    mes = 0;
+                }
+                else
+                {
+                    mes = ((fecha.Month) - 1) * 2;
+                }
+                if (fecha.Day <= 15)
+                {
+                    quincena = 1;
+                }
+                else
+                {
+                    quincena = 2;
+                }
+                int suma = mes + quincena;
+
+                resultado = resultado + String.Format("{0, 0:D2}", suma);
+                return resultado;
+            }
+            return null;
+        }
     }
 }
