@@ -460,6 +460,12 @@ private MsgBox()
                 width = 700;
                 height += (int)(size.Height + 10) * lines;
             }
+
+            if (height > Screen.PrimaryScreen.WorkingArea.Height)
+            {
+                height = Screen.PrimaryScreen.WorkingArea.Height;
+            }
+
             return new Size(width, height);
         }
 
