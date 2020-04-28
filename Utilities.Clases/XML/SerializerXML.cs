@@ -10,6 +10,24 @@ using System.Xml.Serialization;
 
 namespace Utilities.Clases.XML
 {
+    public sealed class ExtentedStringWriter : StringWriter
+    {
+        private readonly Encoding stringWriterEncoding;
+        public ExtentedStringWriter(StringBuilder builder, Encoding desiredEncoding)
+            : base(builder)
+        {
+            this.stringWriterEncoding = desiredEncoding;
+        }
+
+        public override Encoding Encoding
+        {
+            get
+            {
+                return this.stringWriterEncoding;
+            }
+        }
+    }
+
     /// <summary> Clase para agrupar funciones de serialización de cadenas </summary>
     public static class SerializerXML
     {
@@ -67,6 +85,37 @@ namespace Utilities.Clases.XML
                 byte[] unicodeBytes = xml.GetBytes(sRes);
 
                 return encoding.GetString(unicodeBytes);
+            }
+            catch (Exception e)
+            {
+                //– Gestor de errores
+                throw e;
+            }
+        }
+
+
+
+        /// <summary>
+        /// Recibe un objeto y lo serializa en XML
+        /// </summary>
+        /// <param name=”_oObjetoToSerialize”>Objeto que será serializado</param>
+        /// <returns>String con la información del objeto en formato XML</returns>
+        public static string getObjectSerializedUTF8(object _oObjetoToSerialize)
+        {
+            string sRes = string.Empty;
+
+            try
+            {
+                Encoding xml = Encoding.UTF8;
+                StringBuilder sbStringBuilder = new StringBuilder();
+
+                using (ExtentedStringWriter swStringWriter = new ExtentedStringWriter(sbStringBuilder,xml))
+                {
+                    XmlSerializer oXmlSerializer = new XmlSerializer(_oObjetoToSerialize.GetType());
+                    oXmlSerializer.Serialize(swStringWriter, _oObjetoToSerialize);
+                    sRes = swStringWriter.ToString();
+                }
+                return sRes;
             }
             catch (Exception e)
             {
