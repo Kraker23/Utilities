@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -368,6 +369,30 @@ namespace Utilities.Test
             DataMart = Encriptacion.Encripta(DataMart);
 
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            StackTrace st = new StackTrace(true);
+
+            //StackFrame sframe = st.GetFrame(0);
+            //string Method= sframe.GetMethod().ToString();
+            //string File= sframe.GetFileName();
+            //string LineNumber= sframe.GetFileLineNumber().ToString();
+
+
+            string stackIndent = "  ";
+            for (int i = 0; i < st.FrameCount; i++)
+            {
+                // Note that high up the call stack, there is only
+                // one stack frame.
+                StackFrame sf = st.GetFrame(i);
+                Console.WriteLine();
+                string Method = sf.GetMethod().ToString();
+                string File = sf.GetFileName();
+                string LineNumber = sf.GetFileLineNumber().ToString();
+                MessageBox.Show(Method + " --> " + File + " --> " + LineNumber);
+            }
         }
     }
 
