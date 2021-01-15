@@ -45,6 +45,7 @@
     <Compile Include="ArraysExtensiones.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="IntExtensiones.cs" />
+    <Compile Include="LINQExtension.cs" />
     <Compile Include="ListasExtensiones.cs" />
     <Compile Include="ObjectosExtensiones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

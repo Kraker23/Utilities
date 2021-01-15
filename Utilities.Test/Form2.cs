@@ -391,8 +391,10 @@ namespace Utilities.Test
                 string Method = sf.GetMethod().ToString();
                 string File = sf.GetFileName();
                 string LineNumber = sf.GetFileLineNumber().ToString();
-                MessageBox.Show(Method + " --> " + File + " --> " + LineNumber);
+                stackIndent = stackIndent + Environment.NewLine + Method + " --> (" + File + ") --> [" + LineNumber + "]";
+                //MessageBox.Show(Method + " --> " + File + " --> " + LineNumber);
             }
+            MessageBox.Show(stackIndent);
         }
     }
 

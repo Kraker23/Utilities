@@ -48,5 +48,12 @@ namespace Utilities.Extensions
         {
             return ((MemberExpression)obj.Body).Member.Name;
         }
+
+        // public static T ObjectToObject<T, T2>(T2 origen) where T : new()
+
+        public static object IsNull(this object source, object objetoAlternativo)
+        {
+            return source == null ? objetoAlternativo : source;
+        }
     }
 }
