@@ -4,6 +4,8 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
 
 namespace Utilities.Extensions
 {
@@ -54,6 +56,19 @@ namespace Utilities.Extensions
         public static object IsNull(this object source, object objetoAlternativo)
         {
             return source == null ? objetoAlternativo : source;
+        }
+
+        /// <summary>
+        /// Indica si el contexto tiene objetos con cambios
+        /// </summary>
+        /// <param name="oc"></param>
+        /// <returns></returns>
+        public static bool HasChanges(this ObjectContext oc)
+        {
+            int count = oc.ObjectStateManager.GetObjectStateEntries(EntityState.Added |
+                                                                    EntityState.Deleted |
+                                                                    EntityState.Modified).Count();
+            return (count > 0);
         }
     }
 }
