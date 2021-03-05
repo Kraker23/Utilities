@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -54,6 +55,92 @@ namespace Utilities.Extensions
             }
 
             return controls;
+        }
+
+
+        public static void Filtrar(this System.Windows.Forms.DataGridView grid, string texto, bool marcarCeldas)
+        {
+            grid.CurrentCell = null;
+
+            if (string.IsNullOrEmpty(texto))
+            {
+                foreach (System.Windows.Forms.DataGridViewRow row in grid.Rows)
+                {
+                    row.Visible = true;
+                    foreach (System.Windows.Forms.DataGridViewCell cell in row.Cells)
+                    {
+                        cell.Style.BackColor = Color.Empty;
+                    }
+                }
+            }
+            else
+            {
+                //DataGridViewRow row;
+                //for(int i = grdTabla.Rows.Count-1; i>=0; i--)
+                //{
+                foreach (System.Windows.Forms.DataGridViewRow row in grid.Rows)
+                {
+                    if (!row.IsNewRow)
+                    {
+                        //row = grdTabla.Rows[i];
+                        int numeroCeldas = 0;
+
+                        foreach (System.Windows.Forms.DataGridViewCell cell in row.Cells)
+                        {
+                            cell.Style.BackColor = Color.Empty;
+
+                            if (cell.Value != null && cell.Value.ToString().Contains(texto))
+                            {
+                                if (marcarCeldas) { cell.Style.BackColor = Color.Coral; }
+                                numeroCeldas++;
+                            }
+
+                        }
+
+
+
+                        if (numeroCeldas > 0)
+                        {
+                            row.Visible = true;
+                        }
+                        else
+                        {
+                            row.Visible = false;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+
+        public static void SetImageFilters(this OpenFileDialog ofd)
+        {
+            ofd.Filter = "Archivos de imagenes|*.jpg;*.jpeg;*.bmp;*.png;*.gif|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif|BMP Files (*.bmp)|*.bmp";
+            ofd.FilterIndex = 0;
+        }
+
+
+        /// <summary>Crea una imagen en memoria del control en el estado actual</summary>
+        /// <param name="self">Control a realizar la imagen</param>
+        /// <returns>Imagen</returns>
+        public static System.Drawing.Bitmap ToImage(this Control self, string path = null)
+        {
+            System.Drawing.Bitmap bmp = new System.Drawing.Bitmap(self.Width, self.Height);
+            self.DrawToBitmap(bmp, new Rectangle(new Point(0, 0), self.Size));
+
+            if (path != null)
+            {
+                string lowpath = path.ToLower();
+                if (lowpath.EndsWith(".bmp")) bmp.Save(path, System.Drawing.Imaging.ImageFormat.Bmp);
+                else if (lowpath.EndsWith(".png")) bmp.Save(path, System.Drawing.Imaging.ImageFormat.Png);
+                else if (lowpath.EndsWith(".jpg")) bmp.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+                else if (lowpath.EndsWith(".jpeg")) bmp.Save(path, System.Drawing.Imaging.ImageFormat.Jpeg);
+                else if (lowpath.EndsWith(".gif")) bmp.Save(path, System.Drawing.Imaging.ImageFormat.Gif);
+            }
+
+            return bmp;
         }
     }
 }

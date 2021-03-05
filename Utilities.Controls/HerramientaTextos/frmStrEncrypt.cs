@@ -9,7 +9,7 @@ using System.Web;
 using System.Windows.Forms;
 using Utilities.Extensions;
 
-namespace Utilities.Controls
+namespace Utilities.Controls.HerramientaTextos
 {
     public partial class frmStrEncrypt : Form
     {

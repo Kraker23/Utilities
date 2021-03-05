@@ -1,6 +1,6 @@
 ﻿namespace Utilities.Controls.HerramientaTextos
 {
-    partial class SeparadorTexto
+    partial class cSeparadorTexto
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Utilities.Clases.MessageTemporal
+namespace Utilities.Clases.MessageBoxPerso
 {
     public class MessageBoxTemporal
     {

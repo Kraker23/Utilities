@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CSharp.cs" />
     <Compile Include="Fechas.cs" />
+    <Compile Include="FileRename.cs" />
     <Compile Include="Imagen.cs" />
     <Compile Include="Math.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

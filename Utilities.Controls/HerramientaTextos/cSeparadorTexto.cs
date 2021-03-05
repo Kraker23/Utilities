@@ -11,12 +11,12 @@ using Utilities.Extensions;
 
 namespace Utilities.Controls.HerramientaTextos
 {
-    public partial class SeparadorTexto : UserControl
+    public partial class cSeparadorTexto : UserControl
     {
         public string SeparadorDefecto = ",";
         public string TextoRemplazr = "\r\n";
 
-        public SeparadorTexto()
+        public cSeparadorTexto()
         {
             InitializeComponent();
         }

@@ -1,4 +1,4 @@
-﻿namespace Utilities.Controls
+﻿namespace Utilities.Controls.HerramientaTextos
 {
     partial class frmStrEncrypt
     {
@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tbbEncrypt = new System.Windows.Forms.ToolStripButton();
+            this.tbbDecrypt = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbEncryptAES = new System.Windows.Forms.ToolStripButton();
+            this.tbbDecryptAES = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbEncryptURL = new System.Windows.Forms.ToolStripButton();
+            this.tbbDecryptUrl = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tbbToUrlEncoding = new System.Windows.Forms.ToolStripButton();
             this.tbbToUrlDecoding = new System.Windows.Forms.ToolStripButton();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtOrigin = new System.Windows.Forms.TextBox();
             this.Result = new System.Windows.Forms.Label();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbbEncrypt = new System.Windows.Forms.ToolStripButton();
-            this.tbbDecrypt = new System.Windows.Forms.ToolStripButton();
-            this.tbbEncryptAES = new System.Windows.Forms.ToolStripButton();
-            this.tbbDecryptAES = new System.Windows.Forms.ToolStripButton();
-            this.tbbEncryptURL = new System.Windows.Forms.ToolStripButton();
-            this.tbbDecryptUrl = new System.Windows.Forms.ToolStripButton();
-            this.tbbToUrlEncoding = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -72,20 +72,90 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // tbbEncrypt
+            // 
+            this.tbbEncrypt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbEncrypt.Image = global::Utilities.Controls.Properties.Resources.text_marked;
+            this.tbbEncrypt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbEncrypt.Name = "tbbEncrypt";
+            this.tbbEncrypt.Size = new System.Drawing.Size(23, 22);
+            this.tbbEncrypt.Text = "Encrypt text";
+            this.tbbEncrypt.Click += new System.EventHandler(this.tbbEncrypt_Click);
+            // 
+            // tbbDecrypt
+            // 
+            this.tbbDecrypt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbDecrypt.Image = global::Utilities.Controls.Properties.Resources.text_binary1;
+            this.tbbDecrypt.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbDecrypt.Name = "tbbDecrypt";
+            this.tbbDecrypt.Size = new System.Drawing.Size(23, 22);
+            this.tbbDecrypt.Text = "Decrypt text";
+            this.tbbDecrypt.Click += new System.EventHandler(this.tbbDecrypt_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tbbEncryptAES
+            // 
+            this.tbbEncryptAES.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbEncryptAES.Image = global::Utilities.Controls.Properties.Resources.scroll_run;
+            this.tbbEncryptAES.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbEncryptAES.Name = "tbbEncryptAES";
+            this.tbbEncryptAES.Size = new System.Drawing.Size(23, 22);
+            this.tbbEncryptAES.Text = "toolStripButton2";
+            this.tbbEncryptAES.Click += new System.EventHandler(this.tbbEncryptAES_Click);
+            // 
+            // tbbDecryptAES
+            // 
+            this.tbbDecryptAES.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbDecryptAES.Image = global::Utilities.Controls.Properties.Resources.scroll_replace;
+            this.tbbDecryptAES.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbDecryptAES.Name = "tbbDecryptAES";
+            this.tbbDecryptAES.Size = new System.Drawing.Size(23, 22);
+            this.tbbDecryptAES.Text = "toolStripButton1";
+            this.tbbDecryptAES.Click += new System.EventHandler(this.tbbDecryptAES_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
+            // tbbEncryptURL
+            // 
+            this.tbbEncryptURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbEncryptURL.Image = global::Utilities.Controls.Properties.Resources.form_red;
+            this.tbbEncryptURL.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbEncryptURL.Name = "tbbEncryptURL";
+            this.tbbEncryptURL.Size = new System.Drawing.Size(23, 22);
+            this.tbbEncryptURL.Text = "Encrypt text for url";
+            this.tbbEncryptURL.Click += new System.EventHandler(this.tbbEncryptURL_Click);
+            // 
+            // tbbDecryptUrl
+            // 
+            this.tbbDecryptUrl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbDecryptUrl.Image = global::Utilities.Controls.Properties.Resources.form_green;
+            this.tbbDecryptUrl.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbDecryptUrl.Name = "tbbDecryptUrl";
+            this.tbbDecryptUrl.Size = new System.Drawing.Size(23, 22);
+            this.tbbDecryptUrl.Text = "Decrypt text from url";
+            this.tbbDecryptUrl.Click += new System.EventHandler(this.tbbDecryptUrl_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // tbbToUrlEncoding
+            // 
+            this.tbbToUrlEncoding.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tbbToUrlEncoding.Image = global::Utilities.Controls.Properties.Resources.earth_network;
+            this.tbbToUrlEncoding.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tbbToUrlEncoding.Name = "tbbToUrlEncoding";
+            this.tbbToUrlEncoding.Size = new System.Drawing.Size(23, 22);
+            this.tbbToUrlEncoding.Text = "Encrypt to Url";
+            this.tbbToUrlEncoding.Click += new System.EventHandler(this.tbbToUrlEncoding_Click);
             // 
             // tbbToUrlDecoding
             // 
@@ -161,76 +231,6 @@
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Result";
-            // 
-            // tbbEncrypt
-            // 
-            this.tbbEncrypt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbEncrypt.Image = global::Utilities.Controls.Properties.Resources.text_marked;
-            this.tbbEncrypt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbEncrypt.Name = "tbbEncrypt";
-            this.tbbEncrypt.Size = new System.Drawing.Size(23, 22);
-            this.tbbEncrypt.Text = "Encrypt text";
-            this.tbbEncrypt.Click += new System.EventHandler(this.tbbEncrypt_Click);
-            // 
-            // tbbDecrypt
-            // 
-            this.tbbDecrypt.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbDecrypt.Image = global::Utilities.Controls.Properties.Resources.text_binary1;
-            this.tbbDecrypt.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbDecrypt.Name = "tbbDecrypt";
-            this.tbbDecrypt.Size = new System.Drawing.Size(23, 22);
-            this.tbbDecrypt.Text = "Decrypt text";
-            this.tbbDecrypt.Click += new System.EventHandler(this.tbbDecrypt_Click);
-            // 
-            // tbbEncryptAES
-            // 
-            this.tbbEncryptAES.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbEncryptAES.Image = global::Utilities.Controls.Properties.Resources.scroll_run;
-            this.tbbEncryptAES.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbEncryptAES.Name = "tbbEncryptAES";
-            this.tbbEncryptAES.Size = new System.Drawing.Size(23, 22);
-            this.tbbEncryptAES.Text = "toolStripButton2";
-            this.tbbEncryptAES.Click += new System.EventHandler(this.tbbEncryptAES_Click);
-            // 
-            // tbbDecryptAES
-            // 
-            this.tbbDecryptAES.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbDecryptAES.Image = global::Utilities.Controls.Properties.Resources.scroll_replace;
-            this.tbbDecryptAES.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbDecryptAES.Name = "tbbDecryptAES";
-            this.tbbDecryptAES.Size = new System.Drawing.Size(23, 22);
-            this.tbbDecryptAES.Text = "toolStripButton1";
-            this.tbbDecryptAES.Click += new System.EventHandler(this.tbbDecryptAES_Click);
-            // 
-            // tbbEncryptURL
-            // 
-            this.tbbEncryptURL.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbEncryptURL.Image = global::Utilities.Controls.Properties.Resources.form_red;
-            this.tbbEncryptURL.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbEncryptURL.Name = "tbbEncryptURL";
-            this.tbbEncryptURL.Size = new System.Drawing.Size(23, 22);
-            this.tbbEncryptURL.Text = "Encrypt text for url";
-            this.tbbEncryptURL.Click += new System.EventHandler(this.tbbEncryptURL_Click);
-            // 
-            // tbbDecryptUrl
-            // 
-            this.tbbDecryptUrl.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbDecryptUrl.Image = global::Utilities.Controls.Properties.Resources.form_green;
-            this.tbbDecryptUrl.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbDecryptUrl.Name = "tbbDecryptUrl";
-            this.tbbDecryptUrl.Size = new System.Drawing.Size(23, 22);
-            this.tbbDecryptUrl.Text = "Decrypt text from url";
-            this.tbbDecryptUrl.Click += new System.EventHandler(this.tbbDecryptUrl_Click);
-            // 
-            // tbbToUrlEncoding
-            // 
-            this.tbbToUrlEncoding.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tbbToUrlEncoding.Image = global::Utilities.Controls.Properties.Resources.earth_network;
-            this.tbbToUrlEncoding.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tbbToUrlEncoding.Name = "tbbToUrlEncoding";
-            this.tbbToUrlEncoding.Size = new System.Drawing.Size(23, 22);
-            this.tbbToUrlEncoding.Text = "Encrypt to Url";
-            this.tbbToUrlEncoding.Click += new System.EventHandler(this.tbbToUrlEncoding_Click);
             // 
             // frmStrEncrypt
             // 

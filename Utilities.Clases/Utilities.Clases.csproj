@@ -76,8 +76,8 @@
     <Compile Include="PortaPapeles\PortaPapeles.cs" />
     <Compile Include="Correo\Correo.cs" />
     <Compile Include="Error\Error.cs" />
-    <Compile Include="MessageTemporal\MessageBoxTemporal.cs" />
-    <Compile Include="MessageTemporal\uMessageBox.cs" />
+    <Compile Include="MessageBoxPerso\MessageBoxTemporal.cs" />
+    <Compile Include="MessageBoxPerso\uMessageBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rendimiento\Rendimiento.cs" />
     <Compile Include="Tareas\PeriodicTaskFactory.cs" />

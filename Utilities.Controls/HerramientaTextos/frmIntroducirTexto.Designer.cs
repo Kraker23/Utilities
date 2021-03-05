@@ -1,4 +1,4 @@
-﻿namespace Utilities.Controls.IntroducirTexto
+﻿namespace Utilities.Controls.HerramientaTextos
 {
     partial class frmIntroducirTexto
     {
