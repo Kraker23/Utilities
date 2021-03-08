@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
-using Utilities.Clases.MessageTemporal;
+using Utilities.Clases.MessageBoxPerso;
 
 namespace Utilities.Controls.AutoUpdate
 {

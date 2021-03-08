@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilities.Clases.AccesoCarpeta;
 using Utilities.Controls.HerramientaTextos;
-using Utilities.Controls.IntroducirTexto;
 using Utilities.Extensions;
 
 namespace Utilities.Test

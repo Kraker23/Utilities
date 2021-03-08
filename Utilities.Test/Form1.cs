@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Utilities.Clases.MessageTemporal;
+using Utilities.Clases.MessageBoxPerso;
 using Utilities.Controls;
 using Utilities.Controls.Correo;
 using Utilities.Controls.GroupBoxPerso;

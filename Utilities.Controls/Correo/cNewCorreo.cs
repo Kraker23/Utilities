@@ -14,7 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using Utilities.Clases.Correo;
 using Utilities.Extensions;
 using System.IO;
-using Utilities.Clases.MessageTemporal;
+using Utilities.Clases.MessageBoxPerso;
 
 namespace Utilities.Controls.Correo
 {
@@ -112,7 +112,7 @@ namespace Utilities.Controls.Correo
                 if (!emails.Exists(x => x.correo == lVcorreos.SelectedItems[0].Text && x.principal == true))
                 {
                     Email eAux = emails.First(x => x.correo == lVcorreos.SelectedItems[0].Text);
-                    Utilities.Controls.IntroducirTexto.frmIntroducirTexto frm = new Utilities.Controls.IntroducirTexto.frmIntroducirTexto("Correo a Modificar", "Modificar Correo");
+                    Utilities.Controls.HerramientaTextos.frmIntroducirTexto frm = new Utilities.Controls.HerramientaTextos.frmIntroducirTexto("Correo a Modificar", "Modificar Correo");
                     frm.txt.Text = eAux.correo;
                     DialogResult d = frm.ShowDialog();
                     if (d == DialogResult.OK)
