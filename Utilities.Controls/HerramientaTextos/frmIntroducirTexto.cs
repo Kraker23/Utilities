@@ -15,6 +15,9 @@ namespace Utilities.Controls.HerramientaTextos
         public string resultado;
         private bool contrasenaVisible = false;
 
+        //TODO : mejoras -> hacer que puedas darle un tamaño maximo de caracteres al escribir
+        //TODO : Mejoras -> que los componentes no se puedan modificar desde fuera, pero que puedas modificar propiedades, desde un constructor o metodo
+        //TODO : Mejoras -> contolar que el texto cuando pulsas el boton de OK, que el texto no sea vacio
         public frmIntroducirTexto(string lbl,string tituloVentana,bool esPassword=false)
         {
             InitializeComponent();
