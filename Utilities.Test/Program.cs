@@ -21,7 +21,8 @@ namespace Utilities.Test
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            // Application.Run(new Form1());
-            Application.Run(new Form2());
+            //Application.Run(new Form2());
+            Application.Run(new frmMain());
             //Application.Run(new frmEditarImg());
 
             //Application.Run(new frmUpdate("\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase", "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio"));
