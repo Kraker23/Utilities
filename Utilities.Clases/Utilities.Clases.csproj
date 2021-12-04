@@ -70,15 +70,30 @@
     <Compile Include="BindingList\MyBindingList.cs" />
     <Compile Include="BindingList\MyBindingListDBContext.cs" />
     <Compile Include="BuscarFicheros\BuscarArchivos.cs" />
+    <Compile Include="ConversorImagenes\ConvertirImagen.cs" />
     <Compile Include="Correo\GestorCorreo.cs" />
     <Compile Include="GestorConexionSQL\gestorConexion.cs" />
     <Compile Include="Globales\Global.cs" />
+    <Compile Include="MessageBoxPerso\Diseños\Ejemplo1\MyMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageBoxPerso\Diseños\Ejemplo1\MyMessageBox.Designer.cs">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageBoxPerso\Diseños\Ejemplo2\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PortaPapeles\PortaPapeles.cs" />
     <Compile Include="Correo\Correo.cs" />
     <Compile Include="Error\Error.cs" />
     <Compile Include="MessageBoxPerso\MessageBoxTemporal.cs" />
     <Compile Include="MessageBoxPerso\uMessageBox.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Rendimiento\Rendimiento.cs" />
     <Compile Include="Tareas\PeriodicTaskFactory.cs" />
     <Compile Include="TCPStringTransferAsinc\TcpStringTransferAsinc.cs" />
@@ -105,6 +120,7 @@
     <Content Include="Eventos\EventoVB.txt" />
     <Content Include="FormatearArchivos\TextFile1.txt" />
     <Content Include="FormatearArchivos\XMLFile1.xml" />
+    <None Include="Resources\title_bar.png" />
     <Content Include="TextFile1.txt" />
     <Content Include="XMLFile1.xml">
       <SubType>Designer</SubType>
@@ -117,11 +133,23 @@
       <Name>Utilities.Extensions</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="MessageBoxPerso\Diseños\Ejemplo1\MyMessageBox.resx">
+      <DependentUpon>MyMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageBoxPerso\Diseños\Ejemplo2\MsgBox.resx">
+      <DependentUpon>MsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

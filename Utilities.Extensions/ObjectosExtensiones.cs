@@ -13,11 +13,12 @@ namespace Utilities.Extensions
     {
         /// <summary>
         /// Funciona para pasar datos de un objeto a otro, con las mismas propiedades
+        /// Crea y traspasa los datos de las propiedades con el mismo nombre y tipo
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <typeparam name="T2"></typeparam>
-        /// <param name="origen"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">Tipo destino</typeparam>
+        /// <typeparam name="T2">Tipo origen</typeparam>
+        /// <param name="origen">Objeto de donde se trasparán los datos</param>
+        /// <returns>Nuevo objeto de tipo "T2" con los valores del origen</returns>
         public static T ObjectToObject<T, T2>(T2 origen) where T : new()
         {
             T res = new T();
@@ -70,5 +71,23 @@ namespace Utilities.Extensions
                                                                     EntityState.Modified).Count();
             return (count > 0);
         }
+
+        public static bool CompareAllSameProperties<T, T2>(T a, T2 b)
+        {
+            bool res = true;
+            var tipoA = typeof(T);
+            var tipoB = typeof(T2);
+            var props = tipoA.GetProperties().FindAllToList(x => tipoB.GetProperties().Any(y => y.Name == x.Name && y.PropertyType == x.PropertyType));
+            foreach (var p in props)
+            {
+                var valA = tipoA.GetProperty(p.Name).GetValue(a);
+                var valB = tipoB.GetProperty(p.Name).GetValue(b);
+                res = (valA == valB);
+                if (!res) break;
+            }
+            return res;
+        }
+
+        
     }
 }
