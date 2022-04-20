@@ -63,5 +63,17 @@ namespace Utilities.Extensions
             }
             return null;
         }
+
+        public static int GetSemanaDelAnyo(this DateTime fecha)
+        {
+            CultureInfo cultureInfo = new CultureInfo("es-ES");
+            Calendar calendar = cultureInfo.Calendar;
+
+            CalendarWeekRule calendarWeekRule = cultureInfo.DateTimeFormat.CalendarWeekRule;
+            DayOfWeek dayOfWeek = cultureInfo.DateTimeFormat.FirstDayOfWeek;
+
+            int week = calendar.GetWeekOfYear(fecha, calendarWeekRule, dayOfWeek);
+            return week;
+        }
     }
 }
