@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Utilities.Extensions;
 
 namespace Utilities.Funciones
 {
@@ -44,7 +44,7 @@ namespace Utilities.Funciones
                     {
                         if (nombresSplit.Length > i)
                         {
-                            nombresNulos = Concatenar(nombresNulos, nombresSplit[i]);
+                            nombresNulos = nombresNulos.añadirString( nombresSplit[i],", ");
                         }
                     }
                 }
@@ -55,7 +55,7 @@ namespace Utilities.Funciones
                 mensaje = "Existen Variables con Nulos";
                 if (!string.IsNullOrEmpty(nombresNulos))
                 {
-                    mensaje = Concatenar(mensaje, nombresNulos, " : ");
+                    mensaje = mensaje.añadirString(nombresNulos, " : ");
                 }
                 return true;
             }
