@@ -21,6 +21,7 @@ namespace Utilities.Funciones
             }
             return false;
         }
+
         ///Comprobacion de Si existen nulos
         public static bool  TieneNulos(string nombres, out string mensaje, params object[] args)//
         {
