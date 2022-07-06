@@ -3,8 +3,7 @@ using System.Globalization;
 
 namespace Utilities.Funciones
 {
-    public partial class Fechas
-    {
+    
        
 
         public class DiaSemana
@@ -26,5 +25,5 @@ namespace Utilities.Funciones
             }
         }
 
-    }
+    
 }
