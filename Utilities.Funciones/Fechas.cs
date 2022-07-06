@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -293,6 +294,23 @@ namespace Utilities.Funciones
 
                 return fecha.Date;
             }
+
+            public static List<DiaSemana> getDiasSemana(CultureInfo cultureInfo =null)
+        {
+            List<DiaSemana> dias = new List<DiaSemana>();
+           
+            dias.Add(new DiaSemana(DayOfWeek.Monday   ,cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Tuesday  ,cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Wednesday,cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Thursday ,cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Friday   , cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Saturday, cultureInfo));
+            dias.Add(new DiaSemana(DayOfWeek.Sunday, cultureInfo));
+
+            return dias;
+        }
+
+       
 
         #endregion
 

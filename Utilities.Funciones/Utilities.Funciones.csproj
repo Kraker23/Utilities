@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CSharp.cs" />
+    <Compile Include="DiaSemana.cs" />
     <Compile Include="Fechas.cs" />
     <Compile Include="FileRename.cs" />
     <Compile Include="Imagen.cs" />
