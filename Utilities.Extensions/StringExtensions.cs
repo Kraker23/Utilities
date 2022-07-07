@@ -416,6 +416,30 @@ namespace Utilities.Extensions
 
         }
 
+        /// <summary>
+        /// Comprueba si todos los caracteres son numeros
+        /// </summary>
+        public static bool contieneSoloNumeros(this string texto)
+        {
+            return texto.ToCharArray().All(char.IsDigit);
+        }
+
+        /// <summary>
+        /// Comprueba si todos los caracteres son Letras
+        /// </summary>
+        public static bool contieneLetras(this string texto)
+        {
+            return texto.ToCharArray().All(char.IsLetter);
+        }
+
+        /// <summary>
+        /// Comprueba si todos los caracteres son Letras o numeros
+        /// </summary>
+        public static bool contieneLetrasNumeros(this string texto)
+        {
+            return texto.ToCharArray().All(char.IsLetterOrDigit);
+        }
+
         #region AndresC.
 
         /// <summary xml:lang="es">

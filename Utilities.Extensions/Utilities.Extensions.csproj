@@ -65,6 +65,7 @@
     <Compile Include="DatasetExtenders.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="DbContextExtenders.cs" />
+    <Compile Include="EnumExtensions.cs" />
     <Compile Include="ExceptionExtensiones.cs" />
     <Compile Include="getFilas.cs" />
     <Compile Include="ImageExtenders.cs" />
