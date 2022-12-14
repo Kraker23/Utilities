@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,45 @@ namespace Utilities.Extensions
         {
             return (TEnum)Enum.Parse(typeof(TEnum), valor, ignorarCaseSensitive);
         }
-        
+
+
+
+        public static int GetValor<T>(this T t)where T : struct
+        {
+            var tipo = typeof(T);
+            if (!tipo.IsEnum)
+                return default(int);
+            try
+            {
+                return (int)(object)t;
+            }
+            catch
+            {
+                return default(int);
+            }
+        }
+
+        public static string GetTexto<T>(this T tp)where T : struct
+        {
+            try
+            {
+                var tipo = tp.GetType();
+                if (!tipo.IsEnum)
+                    return "Error de tipo de enumeración";
+                var campos = tipo.GetFields().FirstOrDefault(t => t.Name == tp + "");
+                if (campos != null)
+                {
+                    var descripcion = campos.GetCustomAttributes(true).FirstOrDefault(t => (t as DescriptionAttribute) != null);
+                    if (descripcion != null)
+                        return ((DescriptionAttribute)descripcion).Description;
+                    return campos.Name;
+                }
+                return "Error de enumeración";
+            }
+            catch
+            {
+                return "Excepción de enumeración";
+            }
+        }
     }
 }
