@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using Utilities.Clases.PortaPapeles;
 using Utilities.Controls.AutoUpdate;
 using Utilities.Controls.EditarImagen;
-using Utilities.Musica;
 
 namespace Utilities.Test
 {
@@ -25,9 +24,10 @@ namespace Utilities.Test
             //Application.Run(new Form2());
             //Application.Run(new Utilities.Controls.HerramientaTextos.frmStrEncrypt());
             //Application.Run(new frmEditarImg());
-            Application.Run(new Utilities.Controls.TCP.frmTCPServer());
-            Application.Run(new Utilities.Controls.TCP.frmTCPClient());
+            //Application.Run(new Utilities.Controls.TCP.frmTCPServer());
+            //Application.Run(new Utilities.Controls.TCP.frmTCPClient());
 
+            Application.Run(new frmQRCodigoBarras());
 
             //Application.Run(new frmUpdate("\\\\172.18.2.159\\Software\\AutoUpdate\\AppBase", "\\\\172.18.2.159\\Software\\AutoUpdate\\AppRepositorio"));
             //Application.Run(new frmUpdate("C:\\Users\\Andres\\Desktop\\Gestor utilidades", "\\\\172.18.2.159\\Software\\Programacion\\Cristian\\MiniGestorCodigo"));
