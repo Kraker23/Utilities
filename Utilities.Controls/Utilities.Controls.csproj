@@ -140,6 +140,18 @@
     <Compile Include="Leyenda\ToolStripCheck.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="MergeObjects\cProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MergeObjects\cProperty.Designer.cs">
+      <DependentUpon>cProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MergeObjects\frmMergeObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MergeObjects\frmMergeObjects.Designer.cs">
+      <DependentUpon>frmMergeObjects.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBarBackGround\cProgressBackground.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -216,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HerramientaTextos\frmTextReplace.resx">
       <DependentUpon>frmTextReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeObjects\cProperty.resx">
+      <DependentUpon>cProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeObjects\frmMergeObjects.resx">
+      <DependentUpon>frmMergeObjects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressBarBackGround\cProgressBackground.resx">
       <DependentUpon>cProgressBackground.cs</DependentUpon>

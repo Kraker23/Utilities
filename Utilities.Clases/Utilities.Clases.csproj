@@ -82,6 +82,11 @@
     <Compile Include="Correo\GestorCorreo.cs" />
     <Compile Include="GestorConexionSQL\gestorConexion.cs" />
     <Compile Include="Globales\Global.cs" />
+    <Compile Include="MergeObjects\IObjectMerger.cs" />
+    <Compile Include="MergeObjects\MergeOptions.cs" />
+    <Compile Include="MergeObjects\ObjectMerger.cs" />
+    <Compile Include="MergeObjects\PropMerge.cs" />
+    <Compile Include="MergeObjects\PropMergeSelection.cs" />
     <Compile Include="MessageBoxPerso\Diseños\Ejemplo1\MyMessageBox.cs">
       <SubType>Form</SubType>
     </Compile>
