@@ -24,7 +24,7 @@ namespace Utilities.Test
         {
             if (!string.IsNullOrEmpty(txtQR.Text))
             {
-                Image img = QR.GenerarQR(txtQR.Text);
+                Image img = QR.GenerarQr(txtQR.Text);
                 if (img != null)
                 {
                     pbQR.Image = img;
@@ -99,6 +99,29 @@ namespace Utilities.Test
 
         #endregion
 
+        #region QrImagen
+
+        private void btGenerarQrImagen_Click(object sender, EventArgs e)
+        {
+            GenerarQrImagen();
+        }
+
+        private void GenerarQrImagen()
+        {
+            if (!string.IsNullOrEmpty(txtMatricula.Text))
+            {
+                string txt = QR.GenerarTexto(txtMatricula.Text, txtCodigoAnulacion.Text);
+                txtQR.Text = txt;
+                //pbQrImagen.Image = QR_New.GenerarQRImagen(txtQR.Text, 200);
+                pbQrImagen.Image = QR.GenerarQRImagen(txt, (int)nTamanyo.Value);
+            }
+            else
+            {
+                MessageBox.Show("El texto del Matricula  no puede estar vacio");
+            }
+        }
+
+        #endregion
     }
-            
+
 }
