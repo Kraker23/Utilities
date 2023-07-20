@@ -62,6 +62,25 @@ namespace Utilities.Funciones
             }
             return false;
         }
+
+        ///Funcion que recorre un Objeto Recursivamente, y setea los strings.
+        public static voir RecorrerPropiedadesRecursivo(object objeto, ref int contador)
+        {
+            PropertyInfo[] lst = objeto.GetType().GetProperties();
+            foreach (PropertyInfo oProperty in lst)
+            {
+                string NombreAtributo = oProperty.Name;
+                if (oProperty.PropertyType == typeof(string))
+                {
+                    oProperty.SetValue(objeto, contador.ToString());
+                    contador = contador + 1;
+                }
+                else if (oProperty.PropertyType.BaseType == typeof(object))
+                {
+                    RecorrerPropiedades(oProperty.GetValue(objeto), ref contador);
+                }
+            }
+        }
        
     }
 }
