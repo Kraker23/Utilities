@@ -142,5 +142,28 @@ namespace Utilities.Extensions
 
             return bmp;
         }
+
+
+
+
+        /// <summary> Proceso para actuar sobre el control dentro de un subproceso 
+        /// Ejemplo de Uso :
+        ///    textBox.InvokeIfRequired(c => { c.Visible = true; c.Text=""; });
+        /// </summary>
+        /// <param name="control">Control en el que se quiere hacer una accion</param>
+        /// <param name="action">la accion que se quiere efectuar</param>
+        public static void InvokeIfRequired(this Control control, Action<Control> action)
+        {
+            if (control.InvokeRequired)
+            {
+                control.Invoke(new Action(() => action(control)));
+            }
+            else
+            {
+                action(c);
+            }
+        }
+
+
     }
 }
