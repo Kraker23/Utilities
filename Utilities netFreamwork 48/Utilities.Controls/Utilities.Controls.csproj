@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A0DA2EA-F24F-4218-B3A7-B8D10DB87335}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Utilities.Controls</RootNamespace>
+    <AssemblyName>Utilities.Controls</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\dllsComunes\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoUpdate\frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoUpdate\frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboBoxCustom\ComboBoxCustom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Correo\cNewCorreo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Correo\cNewCorreo.Designer.cs">
+      <DependentUpon>cNewCorreo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarImagen\frmCaptura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarImagen\frmCaptura.Designer.cs">
+      <DependentUpon>frmCaptura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarImagen\frmEditarImgAndres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarImagen\frmEditarImgAndres.Designer.cs">
+      <DependentUpon>frmEditarImgAndres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmBuscarRemplazar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmBuscarRemplazar.Designer.cs">
+      <DependentUpon>frmBuscarRemplazar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmRegExpr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmRegExpr.Designer.cs">
+      <DependentUpon>frmRegExpr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmStrEncrypt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmStrEncrypt.Designer.cs">
+      <DependentUpon>frmStrEncrypt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileProgress\FtpUIFileProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FileProgress\FtpUIFileProgress.Designer.cs">
+      <DependentUpon>FtpUIFileProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxPerso\cGroupBoxExpandable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GroupBoxPerso\cGroupBoxExpandable.Designer.cs">
+      <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\cEncriptarDesencriptarTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\cEncriptarDesencriptarTexto.Designer.cs">
+      <DependentUpon>cEncriptarDesencriptarTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\cReemplazarTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\cReemplazarTexto.Designer.cs">
+      <DependentUpon>cReemplazarTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\cSeparadorTexto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\cSeparadorTexto.Designer.cs">
+      <DependentUpon>cSeparadorTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmIntroducirTexto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmIntroducirTexto.Designer.cs">
+      <DependentUpon>frmIntroducirTexto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmTextReplace.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HerramientaTextos\frmTextReplace.Designer.cs">
+      <DependentUpon>frmTextReplace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Leyenda\DropDownLeyenda.cs" />
+    <Compile Include="Leyenda\Menu.cs" />
+    <Compile Include="Leyenda\ToolStripCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MergeObjects\cProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MergeObjects\cProperty.Designer.cs">
+      <DependentUpon>cProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MergeObjects\frmMergeObjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MergeObjects\frmMergeObjects.Designer.cs">
+      <DependentUpon>frmMergeObjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProgressBarBackGround\cProgressBackground.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProgressBarBackGround\cProgressBackground.Designer.cs">
+      <DependentUpon>cProgressBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SqlExecMultiple\frmSqlExecMultiple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SqlExecMultiple\frmSqlExecMultiple.Designer.cs">
+      <DependentUpon>frmSqlExecMultiple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TCP\frmTCPClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TCP\frmTCPClient.Designer.cs">
+      <DependentUpon>frmTCPClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TCP\frmTCPServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TCP\frmTCPServer.Designer.cs">
+      <DependentUpon>frmTCPServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userMessageBox\MsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutoUpdate\frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correo\cNewCorreo.resx">
+      <DependentUpon>cNewCorreo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarImagen\frmCaptura.resx">
+      <DependentUpon>frmCaptura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarImagen\frmEditarImgAndres.resx">
+      <DependentUpon>frmEditarImgAndres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\frmBuscarRemplazar.resx">
+      <DependentUpon>frmBuscarRemplazar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\frmRegExpr.resx">
+      <DependentUpon>frmRegExpr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\frmStrEncrypt.resx">
+      <DependentUpon>frmStrEncrypt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileProgress\FtpUIFileProgress.resx">
+      <DependentUpon>FtpUIFileProgress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupBoxPerso\cGroupBoxExpandable.resx">
+      <DependentUpon>cGroupBoxExpandable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\cEncriptarDesencriptarTexto.resx">
+      <DependentUpon>cEncriptarDesencriptarTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\cReemplazarTexto.resx">
+      <DependentUpon>cReemplazarTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\cSeparadorTexto.resx">
+      <DependentUpon>cSeparadorTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\frmIntroducirTexto.resx">
+      <DependentUpon>frmIntroducirTexto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HerramientaTextos\frmTextReplace.resx">
+      <DependentUpon>frmTextReplace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeObjects\cProperty.resx">
+      <DependentUpon>cProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MergeObjects\frmMergeObjects.resx">
+      <DependentUpon>frmMergeObjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProgressBarBackGround\cProgressBackground.resx">
+      <DependentUpon>cProgressBackground.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlExecMultiple\frmSqlExecMultiple.resx">
+      <DependentUpon>frmSqlExecMultiple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TCP\frmTCPClient.resx">
+      <DependentUpon>frmTCPClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TCP\frmTCPServer.resx">
+      <DependentUpon>frmTCPServer.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilities.Clases\Utilities.Clases.csproj">
+      <Project>{8CC40881-1B13-4CB8-81EF-884CAE939ACB}</Project>
+      <Name>Utilities.Clases</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities.Extensions\Utilities.Extensions.csproj">
+      <Project>{61BD46C9-4A2D-47F6-A89A-0C9BBC0B3F07}</Project>
+      <Name>Utilities.Extensions</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\text_marked.png" />
+    <None Include="Resources\text_binary1.png" />
+    <None Include="Resources\text_binary.png" />
+    <None Include="Resources\text_align_justified.png" />
+    <None Include="Resources\text_align_center.png" />
+    <None Include="Resources\text.png" />
+    <None Include="Resources\scroll_run.png" />
+    <None Include="Resources\scroll_replace.png" />
+    <None Include="Resources\scroll_ok.png" />
+    <None Include="Resources\scroll.png" />
+    <None Include="Resources\preferences.png" />
+    <None Include="Resources\gears_run.png" />
+    <None Include="Resources\gear_preferences.png" />
+    <None Include="Resources\form_red.png" />
+    <None Include="Resources\form_green.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\environment_network.png" />
+    <None Include="Resources\earth_network.png" />
+    <None Include="Resources\documents_gear.png" />
+    <None Include="Resources\document_exchange.png" />
+    <None Include="Resources\document_down.png" />
+    <None Include="Resources\delete211.png" />
+    <None Include="Resources\delete22.png" />
+    <None Include="Resources\checks.png" />
+    <None Include="Resources\bookmark_add.png" />
+    <None Include="Resources\add2.png" />
+    <None Include="Resources\gear.png" />
+    <None Include="Resources\delete21.png" />
+    <None Include="Resources\check21.png" />
+    <None Include="Resources\ajax-loader.gif" />
+    <None Include="Resources\goma-de-borrar1.png" />
+    <None Include="Resources\ocultar%282%29.png" />
+    <None Include="Resources\ocultar%281%29.png" />
+    <None Include="Resources\visibilidad%281%29.png" />
+    <None Include="Resources\goma-de-borrar.png" />
+    <None Include="Resources\copy1.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\delete2.png" />
+    <None Include="Iconos\add-folder.png" />
+    <Content Include="Iconos\add2.png" />
+    <None Include="Iconos\binoculares.png" />
+    <None Include="Iconos\binoculares%281%29.png" />
+    <None Include="Iconos\avion-de-papel%283%29.png" />
+    <Content Include="Iconos\bookmark_add.png" />
+    <Content Include="Iconos\checks.png" />
+    <Content Include="Iconos\delete2.png" />
+    <Content Include="Iconos\delete21.png" />
+    <Content Include="Iconos\deshacer%281%29.png" />
+    <Content Include="Iconos\deshacer.png" />
+    <Content Include="Iconos\deshacerMultiple%282%29.png" />
+    <Content Include="Iconos\deshacerMultiple%283%29.png" />
+    <Content Include="Iconos\documents_gear.png" />
+    <Content Include="Iconos\document_down.png" />
+    <Content Include="Iconos\document_exchange.png" />
+    <None Include="Iconos\dos-pantallas-de-ordenador.png" />
+    <Content Include="Iconos\earth_network.png" />
+    <None Include="Iconos\email%281%29.png" />
+    <Content Include="Iconos\environment_network.png" />
+    <Content Include="Iconos\folder.png" />
+    <Content Include="Iconos\form_green.png" />
+    <Content Include="Iconos\form_red.png" />
+    <Content Include="Iconos\gears_run.png" />
+    <Content Include="Iconos\gear_preferences.png" />
+    <None Include="Iconos\imagen%281%29.png" />
+    <Content Include="Iconos\pantalla%281%29.png" />
+    <None Include="Iconos\pantalla-de-ordenador.png" />
+    <Content Include="Iconos\pantalla.ico" />
+    <Content Include="Iconos\pantalla.png" />
+    <Content Include="Iconos\preferences.png" />
+    <Content Include="Iconos\scroll.png" />
+    <Content Include="Iconos\scroll_ok.png" />
+    <Content Include="Iconos\scroll_replace.png" />
+    <Content Include="Iconos\scroll_run.png" />
+    <Content Include="Iconos\text.png" />
+    <Content Include="Iconos\text_align_center.png" />
+    <Content Include="Iconos\text_align_justified.png" />
+    <Content Include="Iconos\text_binary.png" />
+    <Content Include="Iconos\text_binary1.png" />
+    <Content Include="Iconos\text_marked.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\check2.png" />
+    <None Include="SqlExecMultiple\Ejemplo_app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
