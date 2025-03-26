@@ -5,6 +5,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <UseWindowsForms>true</UseWindowsForms>
+	  <PackageVersion>1.0.0.0</PackageVersion>
+	  <PackageOutputPath>../Package/</PackageOutputPath>
+	  <Version>1.0.0.0</Version>
+	  <Authors>Kraker</Authors>
+	  <Company>Kraker</Company>
   </PropertyGroup>
 
   <ItemGroup>

@@ -13,12 +13,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Office.Interop.Outlook" Version="15.0.4797.1004" />
-    <PackageReference Include="System.Drawing.Common" Version="9.0.3" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\UtilitiesNet.Extensiones\UtilitiesNet.Extensiones.csproj" />
+    <ProjectReference Include="..\UtilitiesNet.Objetos\UtilitiesNet.Objetos.csproj" />
   </ItemGroup>
 
 </Project>

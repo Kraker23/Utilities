@@ -1,0 +1,18 @@
+﻿
+VB.net
+//Donde se poduce el evento inicializar esto :->
+Public Event CargarTiempoEvento()//si no necesitas parametros dejar vacio los (), sino poner el tipo de dato a pasar
+
+//dentro de las funciones 
+
+RaiseEvent CargarTiempoEvento()
+
+//Quien tiene que escuchar el evento 
+ctlTVSoporteAlias m_oCadenaAlias = New ctlTVSoporteAlias(m_oCampana, m_oEntTV, m_aIdsConPases)
+AddHandler m_oCadenaAlias.CargarTiempoEvento, AddressOf EventoTiempo
+
+//funcion que se ejecutara cuando se produzca el evento
+    Private Function EventoTiempo() As Object
+        MsgBox("Funciona")
+        bTxtTimeLoad.Caption = "Load " & NombrePagina & ": " & (DateTime.Now - fInicial).ToString()
+    End Function

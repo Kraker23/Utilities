@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesNet", "UtilitiesNet\UtilitiesNet.csproj", "{4D521BAE-0DF9-4D3E-9137-E2AAA97F34E5}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesNet.Objetos", "UtilitiesNet.Objetos\UtilitiesNet.Objetos.csproj", "{91F6F322-761E-464C-9204-54731E766E5B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesNet.TestWinForms", "UtilitiesNet.TestWinForms\UtilitiesNet.TestWinForms.csproj", "{63F79C00-F0A3-4C16-AAA1-B8CB8499258F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilitiesNet.Controls", "UtilitiesNet.Controls\UtilitiesNet.Controls.csproj", "{0CBBD74F-6B44-4F8D-ADAC-F3D18603671F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{63F79C00-F0A3-4C16-AAA1-B8CB8499258F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63F79C00-F0A3-4C16-AAA1-B8CB8499258F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63F79C00-F0A3-4C16-AAA1-B8CB8499258F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CBBD74F-6B44-4F8D-ADAC-F3D18603671F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CBBD74F-6B44-4F8D-ADAC-F3D18603671F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CBBD74F-6B44-4F8D-ADAC-F3D18603671F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CBBD74F-6B44-4F8D-ADAC-F3D18603671F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
