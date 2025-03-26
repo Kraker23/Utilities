@@ -5,11 +5,18 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 	  <UseWindowsForms>true</UseWindowsForms>
-	  <PackageVersion>1.0.0.0</PackageVersion>
+	  
+	  
+	  
+	  <!-- Datos para el paquete-->
+	  <PackageVersion>1.0.0.1</PackageVersion>
 	  <PackageOutputPath>../Package/</PackageOutputPath>
-	  <Version>1.0.0.0</Version>
+	  <Version>1.0.0.1</Version>
 	  <Authors>Kraker</Authors>
 	  <Company>Kraker</Company>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <Description>Controles para Windows Forms</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,5 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\UtilitiesNet.Objetos\UtilitiesNet.Objetos.csproj" />
   </ItemGroup>
-
+	<ItemGroup>
+		<None Include="README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 </Project>
