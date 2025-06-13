@@ -21,7 +21,10 @@
     <ProjectReference Include="..\UtilitiesNet.Extensiones\UtilitiesNet.Extensiones.csproj" />
   </ItemGroup>
 	<ItemGroup>
-		<None Include="README.md" Pack="true" PackagePath="\"/>
+		<None Include="README.md" Pack="true" PackagePath="\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
 
 </Project>
