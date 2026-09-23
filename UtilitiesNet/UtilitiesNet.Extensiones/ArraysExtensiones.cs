@@ -15,16 +15,12 @@ namespace UtilitiesNet.Extensiones
             return dst;
         }
 
-        public static string getArrayToString(this string[] source)
+        public static string getArrayToString(this string[] source, char separador = ',')
         {
             string resultado = string.Empty;
-            if (source != null && source.Count() > 0)
+            if (source.HasContent())
             {
-                //foreach (string item in source)
-                //{
-                //    resultado += resultado + ", " + item.ToString();
-                //}
-                resultado = source.toOneString();
+                resultado = source.toOneString(separador);
             }
             return resultado;
         }
@@ -32,23 +28,19 @@ namespace UtilitiesNet.Extensiones
         /// <summary> Convertir un Array en un unico String separado por ;  </summary>
         /// <param name="lista"></param>
         /// <returns></returns>
-        public static string toOneString(this string[] lista)
+        public static string toOneString(this string[] lista, char separador = ',')
         {
             string res = string.Empty;
-            if (lista != null && lista.Count() > 1)
+            if (lista.HasContent() && lista.Count() > 1)
             {
                 foreach (string item in lista)
                 {
-                    res = res.añadirString(item, ';');
-                    //if(string.IsNullOrEmpty(res))
-                    //{
-                    //    res = item + ";";
-                    //}
-                    //else
-                    //{
-                    //    res = res + item + ";";
-                    //}
+                    res = res.añadirString(item, separador);
                 }
+            }
+            else if (lista.HasContent() && lista.Count() == 1)
+            {
+                res = lista.First();
             }
             return res;
         }
